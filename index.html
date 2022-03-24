@@ -652,19 +652,13 @@
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
     });
     var frames = document.getElementsByTagName("iframe");
-    for (let i = 0; i < frames.length; ++i) {
-        //frames[i].onload = function() {this.contentWindow.location.reload(); this.onload = null;};
-        //frames[i].contentWindow.location.reload(true);
-    }
-    var iframeLoadCount = 0;
 
-    function reloadOnce(iframe) {
-        iframeLoadCount++;
-        if (iframeLoadCount <= 2) {
-            iframe.contentWindow.location.reload();
-            console.log("reload()");
+
+    Reveal.on('slidechanged', event => {
+        for (let i = 0; i < frames.length; ++i) {
+            frames[i].contentWindow.location.reload(true);
         }
-    }
+    });
 </script>
 </body>
 </html>
