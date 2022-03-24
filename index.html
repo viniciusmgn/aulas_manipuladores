@@ -660,7 +660,7 @@
 
     function reloadOnce(iframe) {
         iframeLoadCount++;
-        if (iframeLoadCount <= 1) {
+        if (iframeLoadCount <= 2) {
             iframe.contentWindow.location.reload();
             console.log("reload()");
         }
