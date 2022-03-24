@@ -7,7 +7,7 @@
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
 
-    <title>reveal.js</title>
+    <title>Aula 1 - Manipuladores Robóticos</title>
 
     <link rel="stylesheet" href="/aulas_manipuladores/presentation/dist/reset.css">
     <link rel="stylesheet" href="/aulas_manipuladores/presentation/dist/reveal.css">
@@ -180,7 +180,7 @@
                 juntas</b></h3>
             <div style="width:1200px;height:450px">
                 <div style="width: 50%; height:450px; float:left; font-size:25px; text-align:center">
-                    <iframe id="anim1" scrolling="no"
+                    <iframe scrolling="no"
                             src="/aulas_manipuladores/presentation/images/junta_revoluta_robo.html"
                             style="width:500px;height:400px"></iframe>
                     <div style="width: 100%; height:50px;  float:left; font-size:25px; text-align:center; vertical-align: center; align-items: center">
@@ -188,7 +188,7 @@
                     </div>
                 </div>
                 <div style="width: 50%; height:450px; float:left; font-size:25px; text-align:center">
-                    <iframe id="anim2" scrolling="no"
+                    <iframe  scrolling="no"
                             src="/aulas_manipuladores/presentation/images/junta_prismatica_robo.html"
                             style="width:500px;height:400px"></iframe>
                     <div style="width: 100%; height:50px;  float:left; font-size:25px; text-align:center; vertical-align: center; align-items: center">
@@ -211,7 +211,7 @@
             </div>
             <div style="width:1200px;height:450px">
                 <div style="width: 50%; height:400px; float:left; font-size:25px; text-align:center">
-                    <iframe id="anim3" scrolling="no"
+                    <iframe  scrolling="no"
                             src="/aulas_manipuladores/presentation/images/robo_tres_graus.html"
                             style="width:500px;height:400px"></iframe>
                     <div style="width: 100%; height:50px;  float:left; font-size:25px; text-align:center; vertical-align: top; align-items: center">
@@ -219,7 +219,7 @@
                     </div>
                 </div>
                 <div style="width: 50%; height:400px; float:left; font-size:25px; text-align:center">
-                    <iframe id="anim4" scrolling="no"
+                    <iframe  scrolling="no"
                             src="/aulas_manipuladores/presentation/images/robo_seis_graus.html"
                             style="width:500px;height:400px"></iframe>
                     <div style="width: 100%; height:50px;  float:left; font-size:25px; text-align:center; vertical-align: top; align-items: center">
@@ -252,7 +252,7 @@
 
                 </div>
                 <div style="width: 40%; height:500px; float:left; font-size:25px; text-align:center">
-                    <iframe id="anim5" scrolling="no"
+                    <iframe  scrolling="no"
                             src="/aulas_manipuladores/presentation/images/juntas_restricao.html"
                             style="width:500px;height:400px"></iframe>
                 </div>
@@ -299,7 +299,7 @@
 
                 <div style="width:1200px;height:50px; font-size:25px; text-align:center; vertical-align: center; align-items: center">
                     É o conjunto de pontos no espaço tridimensional que o <b class="itext">efetuador</b>
-                    consegue alcançar:
+                    consegue alcançar:<br>
                 </div>
                 <div style="width:1200px;height:500px; font-size:25px; text-align:center; vertical-align: center; align-items: center">
                     <img src="/aulas_manipuladores/presentation/images/areatrabalho.svg"
@@ -311,6 +311,7 @@
 
             </script>
         </section>
+
         <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Conceitos básicos</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Configurações
@@ -463,7 +464,7 @@
                     </div>
                 </div>
                 <div style="width: 40%; height:600px; float:left; font-size:25px; text-align:center">
-                    <iframe id="anim6" scrolling="no"
+                    <iframe  scrolling="no"
                             src="/aulas_manipuladores/presentation/images/descricao_espacial.html"
                             style="width:500px;height:500px"></iframe>
                 </div>
@@ -553,68 +554,80 @@
                 </div>
             </section>
 
-            <section>
-                <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Ementa da disciplina</h3>
-                <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Controle cinemático</b></h3>
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Ementa da disciplina</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Controle
+                cinemático</b></h3>
 
 
-                <div style="width:1200px;height:600px">
-                    <div style="width: 60%; height:400px; float:left; font-size:25px; text-align:left">
+            <div style="width:1200px;height:600px">
+                <div style="width: 60%; height:400px; float:left; font-size:25px; text-align:left">
 
-                        <div style="position:relative;">
-                            <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
-                                 data-fragment-index="0">
-                                <p><b class="itext">Objetivo</b>: controlar as juntas do robô para atingir uma determinada pose no efetuador;<br></p>
-                                <p>Aqui faremos uma hipótese (muito razoável) sobre o robô: que ele tem uma interface de programação que nos permite
-                                    enviar, a cada ciclo de controle, a velocidade de cada junta desejada para o robô, aqui chamada de \(u\);
-                                    <br></p>
-                                <p>Assumimos que ele segue perfeitamente esse comando enviado. Portanto, consideramos um <b class="itext">sistema de controle</b>
-                                    em que a <b class="itext">variável manipulada \(u\)</b>  é a <b class="itext">velocidade da juntas desejada</b> e a
-                                    <b class="itext">variável de processo \(q\)</b> é a <b class="itext">posição das juntas</b>. O modelo que relaciona
-                                    as duas é <b class="itext">$$\dot{q} = u.$$</b>
-                                    <br></p>
-                            </div>
-                            <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
-                                 data-fragment-index="1">
-                                <p>O objetivo então é, dada uma pose desejada para o efetuador \(T_{des}\), criar um <b class="itext">controlador</b> (algoritmo)
-                                    utilizando a posição das juntas atual \(q\) (portanto em malha fechada) que garanta que o efetuador sairá da sua pose inicial (qualquer seja ela)
-                                    e chegue na pose desejada: $$u = h(q)$$</b>
-                                    <br></p>
-                                <p>É chamado de controle <b class="itext">cinemático</b> pois abstrai a  <b class="itext">dinâmica</b> do sistema, isso é,
-                                    as forças/torques que agem no robô, e as massas/momentos de inércia envolvidas;
-                                    <br></p>
-                                <p>O controlador usa a cinemática direta e a cinemática diferencial para calcular a ação de controle;
-                                    <br></p>
-                            </div>
-                            <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
-                                 data-fragment-index="2">
-                                <p>Controle, no geral, <b class="itext">não linear</b> pois a função \(h(q)\)  é, no geral, não linear.</b>
-                                    <br></p>
-                            </div>
+                    <div style="position:relative;">
+                        <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="0">
+                            <p><b class="itext">Objetivo</b>: controlar as juntas do robô para atingir uma determinada
+                                pose no efetuador;<br></p>
+                            <p>Aqui faremos uma hipótese (muito razoável) sobre o robô: que ele tem uma interface de
+                                programação que nos permite
+                                enviar, a cada ciclo de controle, a velocidade de cada junta desejada para o robô, aqui
+                                chamada de \(u\);
+                                <br></p>
+                            <p>Assumimos que ele segue perfeitamente esse comando enviado. Portanto, consideramos um <b
+                                    class="itext">sistema de controle</b>
+                                em que a <b class="itext">variável manipulada \(u\)</b> é a <b class="itext">velocidade
+                                    da juntas desejada</b> e a
+                                <b class="itext">variável de processo \(q\)</b> é a <b class="itext">posição das
+                                    juntas</b>. O modelo que relaciona
+                                as duas é <b class="itext">$$\dot{q} = u.$$</b>
+                                <br></p>
                         </div>
-                    </div>
-                    <div style="width: 40%; float:right; text-align:left; vertical-align: center">
-                        <div  class="vim_indicator current-visible fragment"
-                             data-fragment-index="0" style="position:absolute;top:300px;">
-                            <img src="/aulas_manipuladores/presentation/images/contcinematico1.svg"
-                                 style="width:400px;height:auto;">
+                        <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="1">
+                            <p>O objetivo então é, dada uma pose desejada para o efetuador \(T_{des}\), criar um <b
+                                    class="itext">controlador</b> (algoritmo)
+                                utilizando a posição das juntas atual \(q\) (portanto em malha fechada) que garanta que
+                                o efetuador sairá da sua pose inicial (qualquer seja ela)
+                                e chegue na pose desejada: $$u = h(q)$$</b>
+                                <br></p>
+                            <p>É chamado de controle <b class="itext">cinemático</b> pois abstrai a <b class="itext">dinâmica</b>
+                                do sistema, isso é,
+                                as forças/torques que agem no robô, e as massas/momentos de inércia envolvidas;
+                                <br></p>
+                            <p>O controlador usa a cinemática direta e a cinemática diferencial para calcular a ação de
+                                controle;
+                                <br></p>
                         </div>
-                        <div  class="vim_indicator current-visible fragment"
-                             data-fragment-index="1" style="position:absolute;top:300px;">
-                            <img src="/aulas_manipuladores/presentation/images/contcinematico2.svg"
-                                 style="width:400px;height:auto;">
-                        </div>
-                        <div  class="vim_indicator current-visible fragment"
-                             data-fragment-index="2" style="position:absolute;top:150px;">
-                            <iframe id="anim7" scrolling="no"
-                                    src="/aulas_manipuladores/presentation/images/controlecinematico.html"
-                                    style="width:500px;height:500px"></iframe>
+                        <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="2">
+                            <p>Controle, no geral, <b class="itext">não linear</b> pois a função \(h(q)\) é, no geral,
+                                não linear.</b>
+                                <br></p>
                         </div>
                     </div>
                 </div>
+                <div style="width: 40%; float:right; text-align:left; vertical-align: center">
+                    <div class="vim_indicator current-visible fragment"
+                         data-fragment-index="0" style="position:absolute;top:300px;">
+                        <img src="/aulas_manipuladores/presentation/images/contcinematico1.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                    <div class="vim_indicator current-visible fragment"
+                         data-fragment-index="1" style="position:absolute;top:300px;">
+                        <img src="/aulas_manipuladores/presentation/images/contcinematico2.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                    <div class="vim_indicator current-visible fragment"
+                         data-fragment-index="2" style="position:absolute;top:150px;">
+                        <iframe  scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/controlecinematico.html"
+                                style="width:500px;height:500px"></iframe>
+                    </div>
+                </div>
+            </div>
 
 
-            </section>
+        </section>
 
         <section>
                 <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Ementa da disciplina</h3>
@@ -662,17 +675,220 @@
 
                         </div>
                     </div>
-                    <div style="width: 40%; float:right; text-align:left; vertical-align: center">
-                        <div  class="vim_indicator current-visible fragment"
-                             data-fragment-index="0" style="position:absolute;top:300px;">
-                            <img src="/aulas_manipuladores/presentation/images/contcinematico1.svg"
-                                 style="width:400px;height:auto;">
+                    <div style="width: 40%; float:right; text-align:left; vertical-align: center;">
+                              <img src="/aulas_manipuladores/presentation/images/contdinamico1.svg"
+                                 style="width:400px;height:auto;position:absolute;top:300px">
+                    </div>
+                </div>
+            </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Ementa da disciplina</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Controle
+                dinâmico</b></h3>
+
+
+            <div style="width:1200px;height:600px">
+                <div style="width: 60%; height:400px; float:left; font-size:25px; text-align:left">
+
+                    <div style="position:relative;">
+                        <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="0">
+                                <p><b class="itext">Objetivo</b>: controlar as juntas do robô para atingir uma determinada pose no efetuador, mas agora
+                                    sem considerar que o robô tem uma interface de controle de alto nível de velocidade. Atuaremos diretamente
+                                    no <b class="itext">torque</b> dos motores que movem as juntas;<br></p>
+                            <p>Utilizando o modelo dinâmico do robô, \(\ddot{q}=F(q,\dot{q})\), podemos projetar uma lei de controle
+                                $$\tau = h(q, \dot{q})$$ utilizando a posição e a velocidade das juntas para alcançar uma pose desejada \(T_{des}\);
+                                <br></p>
+                        </div>
+                        <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="1">
+                            <p>Aqui assumimos que as únicas forças que agem no robô vêm dos motores, e portanto são completamente
+                                controláveis. Portanto, não haverá força externa (como contato do robô com o ambiente);</b>
+                                <br></p>
+                            <p>Uma das maneiras de projetar o controle dinâmico é começando a partir do controle cinemático;
+                                <br></p>
+                        </div>
+                        <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="2">
+                            <p>Controle, no geral, <b class="itext">não linear</b> pois a função \(h(q,\dot{q})\) é, no geral,
+                                não linear.</b>
+                                <br></p>
                         </div>
                     </div>
                 </div>
+                <div style="width: 40%; float:right; text-align:left; vertical-align: center">
+                    <div class="vim_indicator current-visible fragment"
+                         data-fragment-index="0" style="position:absolute;top:300px;">
+                        <img src="/aulas_manipuladores/presentation/images/contdinamico1.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                    <div class="vim_indicator current-visible fragment"
+                         data-fragment-index="1" style="position:absolute;top:300px;">
+                        <img src="/aulas_manipuladores/presentation/images/contdinamico2.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                    <div class="vim_indicator current-visible fragment"
+                         data-fragment-index="2" style="position:absolute;top:150px;">
+                        <iframe  scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/controlecinematico.html"
+                                style="width:500px;height:500px"></iframe>
+                    </div>
+                </div>
+            </div>
 
 
-            </section>
+        </section>
+
+                <section>
+            <h3 style="font-size:40px">Robótica na UFMG</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/intro_fig_1.png">
+                <br>
+            </p>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Robótica na UFMG<br></h3>
+
+            <div style="width:1200px;height:500px">
+
+                <div style="width:1200px;height:50px; font-size:25px; text-align:center; vertical-align: center; align-items: center">
+                    Vários grupos, na Ciência da Computação, Engenharia Elétrica/Eletrônica e Engenharia Mecânica.<br>
+                </div>
+                <div style="width:1200px;height:500px; font-size:25px; text-align:center; vertical-align: center; align-items: center">
+                    <img src="/aulas_manipuladores/presentation/images/timedcc.png"
+                         style="width:650px;height:auto;">
+                </div>
+
+            </div>
+            <script>
+
+            </script>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:40px">Robótica na UFMG</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:25px"><b class="itext">CORO</b></h3>
+            <div style="width:1200px;height:600px">
+                <div style="width: 50%; height:400px; float:left; font-size:25px; text-align:left">
+                    <p>Um dos pioneiros na robótica da Escola de Engenharia foi o professor <b class="itext">Guilherme Pereira</b>, que
+                        fundou o laboratório <b class="itext">CORO</b> em 2004;<br></p>
+                    <p>Desde 2018 é professor da <b class="itext">West Virginia University</b>;
+                        <br></p>
+                </div>
+                <div style="width: 20%; float:right; text-align:left; vertical-align: center"></div>
+                <div style="width: 30%; float:right; text-align:left; vertical-align: center">
+                    <img src="/aulas_manipuladores/presentation/images/guilherme.png"
+                         style="width:200px;height:auto;"><br>
+                    <img src="/aulas_manipuladores/presentation/images/logocoro.svg"
+                         style="width:200px;height:auto;">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:40px">Robótica na UFMG</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:25px"><b class="itext">MACRO</b></h3>
+            <div style="width:1200px;height:600px">
+                <div style="width: 50%; height:400px; float:left; font-size:25px; text-align:left">
+                    <p>Atualmente, temos o grupo <b class="itext">MACRO</b>, formado por docentes do depto. de elétrica e
+                        eletrônica;</p>
+                    <p>Formado por 6 docentes e vários discentes;</p>
+                    <p> <a href="http://macro.ppgee.ufmg.br/"><b class="itext">http://macro.ppgee.ufmg.br/</b></a></p>
+                    <p> Eu (Vinicius) sou um dos membros, trabalhando com controle baseado em otimização aplicado a
+                        diversos tipos de robôs: manipuladores, manipuladores móveis, humanoides, drones, aviões
+                        autônomos...;</p>
+                </div>
+
+                <div style="width: 10%; float:right; text-align:left; vertical-align: center"></div>
+                <div style="width: 40%; float:right; text-align:left; vertical-align: center">
+                    <img src="/aulas_manipuladores/presentation/images/logo_macro.png"
+                         style="width:300px;height:auto;position:absolute;top:200px">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:40px">Robótica na UFMG</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:25px"><b class="itext">Membros do MACRO</b></h3>
+
+            <div style="width:1200px;height:600px">
+                <div style="width:1200px;height:200px">
+                    <div style="width: 50%; height:200px; float:left; font-size:25px; text-align:left">
+                        <div style="width: 30%; height:200px; float:left; font-size:25px; text-align:left">
+                            <img src="/aulas_manipuladores/presentation/images/img_armando.png"
+                                 style="width:150px;height:auto;">
+                        </div>
+                        <div style="width: 70%; height:200px; float:left; font-size:20px; text-align:left">
+                            <br> <b class="itext">Armando Alves Neto (DELT)</b> <br>
+                            Controle, robótica, computação, modelagem, eletrônica e visão computacional.
+                        </div>
+                    </div>
+                    <div style="width: 50%; height:200px; float:left; font-size:25px; text-align:left">
+                        <div style="width: 30%; height:200px; float:left; font-size:25px; text-align:left">
+                            <img src="/aulas_manipuladores/presentation/images/img_guilherme.png"
+                                 style="width:150px;height:auto;">
+                        </div>
+                        <div style="width: 70%; height:200px; float:left; font-size:20px; text-align:left">
+                            <br> <b class="itext">Guilherme Raffo (DELT)</b> <br>
+                            Veículos autônomos, sistemas com atraso, controle
+                            não-linear, controle robusto e sistemas subatuados.
+                        </div>
+                    </div>
+                </div>
+                <div style="width:1200px;height:200px">
+                    <div style="width: 50%; height:200px; float:left; font-size:25px; text-align:left">
+                        <div style="width: 30%; height:200px; float:left; font-size:25px; text-align:left">
+                            <img src="/aulas_manipuladores/presentation/images/img_gustavo.png"
+                                 style="width:150px;height:auto;">
+                        </div>
+                        <div style="width: 70%; height:200px; float:left; font-size:20px; text-align:left">
+                            <br> <b class="itext">Gustavo Medeiros (DEE)</b> <br>
+                            Automação e robótica aplicada à monitoração
+                            ambiental, agricultura, mineração e sistemas de produção de óleo e gás.
+                        </div>
+                    </div>
+                    <div style="width: 50%; height:200px; float:left; font-size:25px; text-align:left">
+                        <div style="width: 30%; height:200px; float:left; font-size:25px; text-align:left">
+                            <img src="/aulas_manipuladores/presentation/images/img_luciano.png"
+                                 style="width:150px;height:auto;">
+                        </div>
+                        <div style="width: 70%; height:200px; float:left; font-size:20px; text-align:left">
+                            <br> <b class="itext">Luciano Pimenta (DELT)</b> <br>
+                            Robótica cooperativa, robótica móvel, robótica aérea,
+                            planejamento de movimento, teoria de controle e coordenação
+                            de sistemas multi-agentes.
+                        </div>
+                    </div>
+                </div>
+                <div style="width:1200px;height:200px">
+                    <div style="width: 50%; height:200px; float:left; font-size:25px; text-align:left">
+                        <div style="width: 30%; height:200px; float:left; font-size:25px; text-align:left">
+                            <img src="/aulas_manipuladores/presentation/images/img_ranier.png"
+                                 style="width:150px;height:auto;">
+                        </div>
+                        <div style="width: 70%; height:200px; float:left; font-size:20px; text-align:left">
+                            <br> <b class="itext">Janier Garcia (DELT)</b> <br>
+                            Sistemas embarcados. Sistemas para processamento e execução de
+                            tarefas usando fusão e sensoriamento.
+                        </div>
+                    </div>
+                    <div style="width: 50%; height:200px; float:left; font-size:25px; text-align:left">
+                   <div style="width: 30%; height:200px; float:left; font-size:25px; text-align:left">
+                            <img src="/aulas_manipuladores/presentation/images/img_vinicius.jpg"
+                                 style="width:150px;height:auto;">
+                        </div>
+                        <div style="width: 70%; height:200px; float:left; font-size:20px; text-align:left">
+                            <br> <b class="itext">Vinicius Gonçalves (DEE)</b> <br>
+                            Controle de movimento aplicados a vários tipos de robôs (manipuladores, humanóides, drones).
+                            Intersecção entre robótica e otimização.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 </div>
 <style>
