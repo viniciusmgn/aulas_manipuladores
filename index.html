@@ -653,8 +653,8 @@
     });
     var frames = document.getElementsByTagName("iframe");
     for (let i = 0; i < frames.length; ++i) {
-        frames[i].onload = function() {this.contentWindow.location.reload(); this.onload = null;};
-        frames[i].contentWindow.location.reload(true);
+        //frames[i].onload = function() {this.contentWindow.location.reload(); this.onload = null;};
+        //frames[i].contentWindow.location.reload(true);
     }
     var iframeLoadCount = 0;
 
