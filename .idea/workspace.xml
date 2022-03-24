@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="24/03/2022">
+      <change beforePath="$PROJECT_DIR$/.idea/aulasManipuladores.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aulas_manipuladores.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/controlecinematico.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/controlecinematico.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/descricao_espacial.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/descricao_espacial.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,11 +29,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="aulasManipuladores" />
+      <module name="aulas_manipuladores" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -60,7 +66,8 @@
       <option name="presentableId" value="Default" />
       <updated>1648119248615</updated>
       <workItem from="1648119267794" duration="54000" />
-      <workItem from="1648119515799" duration="6077000" />
+      <workItem from="1648119515799" duration="7341000" />
+      <workItem from="1648130300872" duration="1151000" />
     </task>
     <task id="LOCAL-00001" summary="24/03/2022">
       <created>1648119895019</created>
@@ -209,7 +216,21 @@
       <option name="project" value="LOCAL" />
       <updated>1648128680582</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="24/03/2022">
+      <created>1648128793757</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1648128793757</updated>
+    </task>
+    <task id="LOCAL-00023" summary="24/03/2022">
+      <created>1648129076900</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1648129076900</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

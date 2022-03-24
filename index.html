@@ -588,7 +588,7 @@
                             </div>
                             <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
                                  data-fragment-index="2">
-                                <p>Controle <b class="itext">não linear</b>, no geral, pois a função \(h(q)\) é não linear.</b>
+                                <p>Controle, no geral, <b class="itext">não linear</b> pois a função \(h(q)\)  é, no geral, não linear.</b>
                                     <br></p>
                             </div>
                         </div>
@@ -616,6 +616,63 @@
 
             </section>
 
+        <section>
+                <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Ementa da disciplina</h3>
+                <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Dinâmica de sistemas</b></h3>
+
+
+                <div style="width:1200px;height:600px">
+                    <div style="width: 60%; height:400px; float:left; font-size:25px; text-align:left">
+
+                        <div style="position:relative;">
+                            <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
+                                 data-fragment-index="0">
+                                <p><b class="itext">Objetivo</b>: controlar as juntas do robô para atingir uma determinada pose no efetuador, mas agora
+                                    sem considerar que o robô tem uma interface de controle de alto nível de velocidade. Atuaremos diretamente
+                                    no <b class="itext">torque</b> dos motores que movem as juntas;<br></p>
+                                <p>Portanto, agora não mais estamos falando de <b class="itext">cinemática</b>, mas sim de <b class="itext">dinâmica</b>, uma vez
+                                    que as forças/torques que agem no robô e as massas/momentos de inércia de seus corpos rígidos são relevantes;
+                                    <br></p>
+                                    <br></p>
+                            </div>
+
+                        </div>
+                        <div style="position:relative;">
+                            <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
+                                 data-fragment-index="1">
+                                <p>Temos portanto que aprender a escrever as <b class="itext">equações de dinâmica</b> do sistema, ou seja,
+                                    uma equação diferencial que relaciona a evolução da posição e a velocidade de todas as partículas
+                                    do robô dado os parâmetros do sistema (como as massas e momentos de inércia) com as forças
+                                    (que podem ser variáveis);<br></p>
+                                <p>Como o movimento de todas as partículas do robô é uma consequência <b class="itext">somente</b> ao movimento das juntas (pois
+                                    são corpos rígidos) e assumindo que a única força que age no sistema são os torques em cada motor, <b class="itext">\(\tau\)</b>, desejamos
+                                    obter a equação diferencial <b class="itext">$$\ddot{q} = F(q,\dot{q},\tau)$$</b> que relaciona essas quantias;
+                                    <br></p>
+                                    <br></p>
+                            </div>
+
+                        </div>
+                        <div style="position:relative;">
+                            <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
+                                 data-fragment-index="2">
+                                <p>Aplicar as <b class="itext">Leis de Newton</b> em cada uma das (infinitas) partículas
+                                    que formam o robô não é factível. Mas há várias maneiras de contornar esse
+                                    problema...;<br></p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div style="width: 40%; float:right; text-align:left; vertical-align: center">
+                        <div  class="vim_indicator current-visible fragment"
+                             data-fragment-index="0" style="position:absolute;top:300px;">
+                            <img src="/aulas_manipuladores/presentation/images/contcinematico1.svg"
+                                 style="width:400px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
     </div>
 </div>
 <style>
