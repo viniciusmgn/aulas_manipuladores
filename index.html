@@ -50,6 +50,8 @@
                         <li>Mercado de trabalho</li>
                         <br>
                         <li>O simulador UAIBot</li>
+                        <br>
+                        <li>Trabalho prático</li>
                     </ul>
 
                 </div>
@@ -68,9 +70,14 @@
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p><b class="itext">Prof</b>: Vinicius Mariano Gonçalves</p>
-                    <p><b class="itext">Sala</b>: 2120</p>
+                    <p><b class="itext">Sala</b>: 2120 (DEE)</p>
                     <p><b class="itext">E-mail</b>: vinicius.marianog@gmail.com</p>
-
+                    <p><b class="itext">Pontos:</b></p>
+                    <ul>
+                        <li>Duas provas de 20 pontos cada;</li>
+                        <li>40 pontos na primeira parte do trabalho prático;</li>
+                        <li>20 pontos na apresentação do trabalho prático.</li>
+                    </ul>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: center">
@@ -742,7 +749,7 @@
                                 sistema, ou seja,
                                 uma equação diferencial que relaciona a evolução da posição e a velocidade de todas as
                                 partículas
-                                do robô dado os parâmetros do sistema (como as massas e momentos de inércia) com as
+                                do robô dados os parâmetros do sistema (como as massas e momentos de inércia) com as
                                 forças
                                 (que podem ser variáveis);<br></p>
                             <p>Como o movimento de todas as partículas do robô é uma consequência <b class="itext">somente</b>
@@ -760,8 +767,8 @@
                         <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
                              data-fragment-index="2">
                             <p>Aplicar as <b class="itext">Leis de Newton</b> em cada uma das (infinitas) partículas
-                                que formam o robô não é factível. Mas há várias maneiras de contornar esse
-                                problema...;<br></p>
+                                que formam o robô não é factível. Felizmente, há várias maneiras de contornar esse
+                                problema...<br></p>
                         </div>
 
                     </div>
@@ -810,8 +817,14 @@
                         <div style="position:absolute;top:0;" class="vim_indicator current-visible fragment"
                              data-fragment-index="2">
                             <p>Controle, no geral, <b class="itext">não linear</b> pois a função \(h(q,\dot{q})\) é, no
-                                geral,
-                                não linear.</b>
+                                geral, não linear;</b>
+                                <br></p>
+                            <p><b class="itext">Q</b>: Qual a vantagem do controle dinâmico sobre o cinemático? <br>
+                                <b class="itext">R</b>: Com ele podemos implementar certos tipos de tarefas que
+                                não seriam possíveis usando controle cinemático. Em especial, ele serve como base para o
+                                <b class="itext">controle de força</b> (que não veremos neste curso), onde consideramos
+                                forças externas agindo no robô. Tal controle é necessário quando temos tarefas em que o robô
+                                deve fazer uma força controlada no ambiente.
                                 <br></p>
                         </div>
                     </div>
@@ -852,6 +865,8 @@
                                 para intermediar a comunicação entre códigos de controle (códigos em C++, Python, etc...) e os robôs;<br></p>
                             <p>Permite a reutilização do código em robôs diferentes, pois abstrai detalhes de comunicação específicos de cada
                                 robô (ou seja, comunica com os <span style="font-style: italic">drivers</span> de cada robô);
+                                <br></p>
+                            <p>É similar ao conceito de <b class="itext">OPC</b> em automação;
                                 <br></p>
                             <p>Veremos noções introdutórias desse software nesta disciplina;
                                 <br></p>
@@ -907,7 +922,7 @@
                     <p>Um dos pioneiros na robótica da Escola de Engenharia foi o professor <b class="itext">Guilherme
                         Pereira</b>, que
                         fundou o laboratório <b class="itext">CORO</b> em 2004;<br></p>
-                    <p>Desde 2018 é professor da <b class="itext">West Virginia University</b>;
+                    <p>Desde 2018 é professor da <b class="itext">West Virginia University</b>.
                         <br></p>
                 </div>
                 <div style="width: 20%; float:right; text-align:left; vertical-align: center"></div>
@@ -932,7 +947,7 @@
                     <p><a href="http://macro.ppgee.ufmg.br/"><b class="itext">http://macro.ppgee.ufmg.br/</b></a></p>
                     <p> Eu (Vinicius) sou um dos membros, trabalhando com controle baseado em otimização aplicado a
                         diversos tipos de robôs: manipuladores, manipuladores móveis, humanoides, drones, aviões
-                        autônomos...;</p>
+                        autônomos.</p>
                 </div>
 
                 <div style="width: 10%; float:right; text-align:left; vertical-align: center"></div>
@@ -1362,11 +1377,34 @@ sim = ub.Demo.control_demo_1()
                 </div>
 
             </div>
-            <script>
-
-            </script>
         </section>
 
+        <section>
+            <h3 style="font-size:40px">Trabalho Prático</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/intro_fig_1.png">
+                <br>
+            </p>
+        </section>
+
+        <section>
+
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Trabalho Prático<br></h3>
+
+            <div style="width:1200px;height:500px">
+
+                <div style="width:1200px;height:50px; font-size:25px; text-align:left; vertical-align: left; align-items: center">
+                    <p>Para ao trabalho final da disciplina, vocês devem implementar no simulador UAIBot uma aplicação de robótica;<br></p>
+                    <p>Vocês devem escolher o robô adequado para a aplicação. A implementação deve observar limitações práticas do robô como
+                        <b class="itext">limites de juntas, velocidade e torque nos motores</b>, etc;<br></p>
+                    <p>Os manuais dos robôs implementados no UAIBot podem ser encontrados <a href="https://github.com/viniciusmgn/uaibot_vinicius/tree/master/contents/Manual%20PDFs"><b class="itext">aqui</b></a>;<br></p>
+                    <p>Há muitas ideias interessantes de aplicação <a href="https://www.kuka.com/pt-br/ramos-de-atividade/banco-de-dados-de-soluções"><b class="itext">aqui</b></a>.<br></p>
+                    <p>Mais informações (datas, instruções, etc...) em breve, no Minha UFMG</b>.<br></p>
+                </div>
+
+
+            </div>
+        </section>
     </div>
 </div>
 <style>
