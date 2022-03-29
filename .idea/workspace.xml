@@ -1,88 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="25/03/2022">
+    <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="26/03/2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/abb-logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/areatrabalho.odg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/areatrabalho.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/carnegie-mellon-university-seeklogo.com.cdr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/cinematicadif.odg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/cinematicadif.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/cinematicadir.odg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/cinematicadir.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/comau_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/contcinematico1.odg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/contcinematico1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/contcinematico2.odg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/contcinematico2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/contdinamico1.odg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/contdinamico1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/contdinamico2.odg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/contdinamico2.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/controlecinematico.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/democontrole1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/democontrole2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/democontrole3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/descricao_espacial.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/epson_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/fanuc.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/fanuc_logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/graficosrobos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/guilherme.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/humanoid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/img32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/img_armando.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/img_book.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/img_guilherme.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/img_gustavo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/img_luciano.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/img_ranier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/img_vinicius.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/intro_fig_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/junta_prismatica_robo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/junta_revoluta_robo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/juntas_restricao.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/kuka-logo.svg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo-stanford-university-512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_empresas_industrial.odg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_empresas_industrial.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_macro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_mit.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_montpellier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_ros.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_staubli.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_uai_bot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_ufmg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_universidades.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_uv_tokyo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logo_west_virginia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logocoro.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logouaibot.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/logoufmg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/manip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/manipulation.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/mapa_brasil.odg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/mapa_brasil.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/mobilebase.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/noticia.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/robo_cartesiano.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/robo_cilindrico.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/robo_scara.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/robo_seis_graus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/robo_tres_graus.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/snakerobot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/steward_platform.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/stewart_platform.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/surgery.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/timedcc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/timexquad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/welding.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/yaskawa_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images].png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/aula1/areatrabalho.odg" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/aula1/areatrabalho.odg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/aula1/areatrabalho.svg" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/aula1/areatrabalho.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +66,7 @@
       <updated>1648119248615</updated>
       <workItem from="1648119267794" duration="54000" />
       <workItem from="1648119515799" duration="7341000" />
-      <workItem from="1648130300872" duration="28594000" />
+      <workItem from="1648130300872" duration="30258000" />
     </task>
     <task id="LOCAL-00001" summary="24/03/2022">
       <created>1648119895019</created>
@@ -340,7 +264,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648262003341</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="26/03/2022">
+      <created>1648303103082</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1648303103082</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,18 +291,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="24/03/2022" />
     <MESSAGE value="25/03/2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="25/03/2022" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="26/03/2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="26/03/2022" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aulas_manipuladores$main.coverage" NAME="main Coverage Results" MODIFIED="1648234532652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
