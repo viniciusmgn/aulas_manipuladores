@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="29/03/2022">
+    <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="30/03/2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/aula1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula1.html" afterDir="false" />
     </list>
@@ -63,7 +63,7 @@
       <updated>1648119248615</updated>
       <workItem from="1648119267794" duration="54000" />
       <workItem from="1648119515799" duration="7341000" />
-      <workItem from="1648130300872" duration="31375000" />
+      <workItem from="1648130300872" duration="31899000" />
     </task>
     <task id="LOCAL-00001" summary="24/03/2022">
       <created>1648119895019</created>
@@ -275,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648561317457</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="30/03/2022">
+      <created>1648675499762</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1648675499762</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +304,8 @@
     <MESSAGE value="25/03/2022" />
     <MESSAGE value="26/03/2022" />
     <MESSAGE value="29/03/2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="29/03/2022" />
+    <MESSAGE value="30/03/2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="30/03/2022" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aulas_manipuladores$main.coverage" NAME="main Coverage Results" MODIFIED="1648234532652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
