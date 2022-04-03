@@ -1,0 +1,1105 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+
+    <title>Aula 2 - Manipuladores Robóticos</title>
+
+    <link rel="stylesheet" href="/aulas_manipuladores/presentation/dist/reset.css">
+    <link rel="stylesheet" href="/aulas_manipuladores/presentation/dist/reveal.css">
+    <link rel="stylesheet" href="/aulas_manipuladores/presentation/dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="/aulas_manipuladores/presentation/plugin/highlight/monokai.css">
+</head>
+
+<body>
+<div class="reveal">
+    <div class="slides">
+
+        <section>
+            <h3>Manipuladores Robóticos</h3>
+            <h3 style="font-size:40px">Aula 2: Descrição Espacial</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg" style="width:400px;height:auto;">
+                <br><small>Vinicius Mariano Gonçalves</small>
+            </p>
+        </section>
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Descrição Espacial</h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Um manipulador (ou um robô, no geral) pode ser visto como um conjunto de corpos rígidos (seus
+                        elos) que se movem (transladam e giram) à medida que os motores do robô são atuados.</p>
+                    <p>É importante saber descrever como estará cada um dos elos – sua posição e orientação – à medida
+                        que o tempo varia. Isso é especialmente verdade para o efetuador.</p>
+                    <p>Para isso temos que saber descrever esses corpos no espaço.</p>
+                    <p>Começaremos a aprender como descrever <b class="itext">rotações</b>.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section>
+            <h3 style="font-size:40px">Rotações</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg">
+                <br>
+            </p>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Matriz de
+                Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Temos a seguinte definição:</p>
+
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Definição:</b> Uma <b class="itext">matriz de rotação</b> é uma matriz \(Q
+                            \in \mathbb{R}^{3 \times 3}\) com duas propriedades:</p>
+                        <ul>
+                            <li>\(Q^TQ = QQ^T = I_{3 \times 3}\);</li>
+                            <li>\(\det(Q) = +1\)</li>
+                        </ul>
+                        <p>em que \(I_{3 \times 3}\) é a matriz identidade de ordem 3.</p>
+                    </div>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Matriz de
+                Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>A primeira condição (\(Q^TQ=I_{3 \times 3}\)) tem uma interpretação geométrica. Suponha que ela seja
+                        escrita como:<br>
+                        $$ Q = \LARGE{\Big(}\normalsize{}\begin{array}{ccc}
+                        Q_{xx} & Q_{xy} & Q_{xz} \\
+                        Q_{yx} & Q_{yy} & Q_{yz} \\
+                        Q_{zx} & Q_{zy} & Q_{zz}
+                        \end{array}\LARGE{\Big)}\normalsize{} = \left(\begin{array}{ccc}
+                        Q_{x} & Q_y & Q_z
+                        \end{array}\right)$$
+                    </p>
+                    <p>em que \(Q_x, Q_y\) e \(Q_z\) são os vetores colunas que formam a matriz.</p>
+                    <p>Então, lendo a primeira condição em termos das colunas, deduzimos que elas são <b class="itext">ortonormais</b>,
+                        ou seja, descrevem vetores ortogonais entre si e
+                        de tamanho unitário:</p>
+                    <p>$$\begin{eqnarray}
+                        && Q_x^TQ_y = Q_x^TQ_z = Q_y^TQ_z = 0 \nonumber \\
+                        && Q_x^TQ_x = Q_y^TQ_y = Q_z^TQ_z = 1. \nonumber
+                        \end{eqnarray}$$</p>
+                    </p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Matriz de
+                Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Ou seja, se escolhermos um referencial (conjunto de três vetores unitários ortogonais entre si)
+                        \(\mathcal{F}_0\) e considerarmos cada coluna de \(Q\) como um vetor
+                        escrito nesse referencial, teremos, ao terminar de desenhar os três vetores respectivos as três
+                        colunas, um <b class="itext">outro</b>
+                        conjunto de vetores ortogonais entre si e unitários, ou seja, <b class="itext">outro
+                            referencial, \(\mathcal{F}_1\)</b>. <br>
+                    </p>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="0">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref1.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="1">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref2.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="2">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref3.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="3">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref4.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="4">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref5.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="5">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref6.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="6">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref7.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="7">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref9.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="8">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref10.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="9">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animref11.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Matriz de
+                Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>A segunda condição, (\(\det(Q)=+1\)) implica que esse novo referencial \(\mathcal{F}_1\) é <b
+                            class="itext">positivamente orientado</b> de acordo com a regra da mão direita.<br></p>
+                    <p>Isso significa que se você colocar, com a mão direita, o dedo polegar no eixo \(x\) e o dedo
+                        indicador no eixo \(y\), então o eixo \(z\) estará na palma de sua mão.<br></p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/animref11.svg"
+                             style="width:500px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Matriz de
+                Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Esse procedimento (interpretar as colunas de uma matriz de rotação \(Q\) como vetores em um
+                        referencial \(\mathcal{F}_0\), desenhá-los e obter um outro referencial \(\mathcal{F}_1\)) é
+                        muito relevante e será abordado em breve.</p>
+                    <p>Temos então a <b class="itext">primeira interpretação</b> para uma matriz de rotação
+                        \(Q\):<br><br>
+                    <div style="text-align: center;background-color: #282828">
+                        <b class="itext"><b style="text-align: center; font-style: italic">Uma matriz de rotação \(Q\)
+                            representa um referencial \(\mathcal{F}_1\) escrito com relação a um outro referencial
+                            \(\mathcal{F}_0\).</b></b></p>
+                    </div>
+                    <p>Note que os dois referenciais têm o mesmo centro!</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/animref11.svg"
+                             style="width:500px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Matriz de
+                Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Vamos agora para a <b class="itext">segunda interpretação</b> de uma matriz de rotação \(Q\):<br>
+                    <div style="text-align: center;background-color: #282828">
+                        <p><b class="itext"><b style="font-style: italic">Uma matriz de rotação \(Q\) implementa a
+                            rotação, em torno de um eixo específico escrito em um referencial \(\mathcal{F}_0\) -
+                            seguindo a regra da mão direita- e de um ângulo
+                            específico, de um ponto!</b></b><br>
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Matriz de
+                Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p><b class="itext">Exemplo</b>: Considere a matriz de rotação \(Q\):
+                        $$Q = \Large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} & 0 \\
+                        \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0 \\
+                        0 & 0 & 1
+                        \end{array}\Large{\Bigg)}\normalsize{}$$</p>
+                    <p>Considere um referencial \(\mathcal{F}_0\), e um ponto que é escrito como um vetor coluna \(p\)
+                        em \(\mathcal{F}_0\). Então, o vetor \(p'=Qp\) representa, também escrito em \(\mathcal{F}_0\),
+                        o ponto
+                        \(p\) rodado de <b class="itext">45 graus</b> no eixo <b class="itext">\(z_0\)</b>.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Matriz de
+                Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Então, se:
+                        $$p = \Large{\Bigg(}\normalsize{}\begin{array}{c}
+                        \frac{\sqrt{2}}{2} \\
+                        \frac{\sqrt{2}}{2} \\
+                        \frac{1}{2}
+                        \end{array}\Large{\Bigg)}\normalsize{} \ \ \ , \ \ \ p' = Qp =  \Large{\Bigg(}\normalsize{}\begin{array}{c}
+                        0 \\
+                        1 \\
+                        \frac{1}{2}
+                        \end{array}\Large{\Bigg)}.$$</p>
+                    <p>O ponto \(p'\) é o ponto \(p\) rodado de 45 graus no eixo \(z_0\).</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:150px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="0">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/pontorodando1.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:150px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="1">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/pontorodando2.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:150px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="2">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/pontorodando3.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:150px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="3">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/pontorodando4.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:150px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="4">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/pontorodando5.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:150px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="5">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/pontorodando6.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:150px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="6">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/pontorodando7.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:150px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="7">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/pontorodando8.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:150px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="8">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/pontorodando9.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Matriz de
+                Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>No <b class="itext">UAIBot</b> é possível calcular o eixo e o ângulo (em radianos) de uma matriz
+                        de rotação
+                        usando a função
+                        <b class="itext">Utils.axis_angle</b>:</p>
+                    <pre><code class="language-python" style="text-align:left">
+import numpy as np
+import uaibot as ub
+
+Q = np.array([[0,-1,0],[1,0,0],[0,0,1]])
+axis, angle = ub.Utils.axis_angle(Q)
+
+print(axis) #Imprime [0. 0. 1.]
+print(angle) #Imprime 1.570 rad
+                        </code></pre>
+                    <p>Note que o eixo está escrito em um referencial \(\mathcal{F}_0\) genérico. O eixo é
+                        contextualizado quando aplicamos
+                        a matriz de rotação em um ponto \(p\) escrito em um referencial específico.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Composição de
+                Matrizes de Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Duas rotações seguidas representadas por matrizes \(Q_1\) e \(Q_2\) <b class="itext">(nessa
+                        ordem!)</b> em um referencial
+                        \(\mathcal{F}_0\) formam uma <b class="itext">outra</b> rotação no referencial \(\mathcal{F}_0\)
+                        representada por uma matriz de
+                        rotação \(Q_3=Q_2Q_1\) (o produto das matrizes)</p>
+                    <p><b class="itext">Note a ordem!</b> A segunda rotação vem primeiro no produto! Rotações mais
+                        recentes vêm à esquerda!</p>
+                    <p>Note também que os eixos de rotação sempre estão escritos no referencial \(\mathcal{F}_0\), que é
+                        fixo ao longo das rotações.</p>
+                    <p><b class="itext">Atenção!</b> rotações não comutam, no geral: $$Q_2Q_1 \not= Q_1Q_2.$$</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Composição de
+                Matrizes de Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p><b class="itext">Exemplo:</b></p>
+                    <p>$$Q_1 = \large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        1 & 0 & 0 \\
+                        0 & 0 & -1 \\
+                        0 & 1 & 0
+                        \end{array}\large{\Bigg)}\normalsize{} \ \ , \ \ Q_2 = \large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        0 & 0 & 1 \\
+                        0 & 1 & 0 \\
+                        -1 & 0 & 0
+                        \end{array}\large{\Bigg)}\normalsize{}$$</p>
+                    <p>A primeira matriz representa uma rotação de 90 graus em x, e a segunda 90 graus de y.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Composição de
+                Matrizes de Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Então:</p>
+                    <p>$$Q_1Q_2 =  \large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        0 & 0 & 1 \\
+                        1 & 0 & 0 \\
+                        0 & 1 & 0
+                        \end{array} \large{\Bigg)}\normalsize{}\ \ , \ \ Q_2Q_1 = \large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        0 & 1 & 0 \\
+                        0 & 0 & -1 \\
+                        -1 & 0 & 0
+                        \end{array} \large{\Bigg)}\normalsize{}.$$</p>
+                    <p>A primeira matriz é uma rotação no eixo \(r=( \frac{\sqrt{3}}{3} \ \frac{\sqrt{3}}{3} \
+                        \frac{\sqrt{3}}{3} )^T\) de um
+                        ângulo de 2,09 radianos.</p>
+                    <p>A segunda matriz é uma rotação no eixo \(r=( \frac{\sqrt{3}}{3} \ \frac{\sqrt{3}}{3} \
+                        -\frac{\sqrt{3}}{3} )^T\) de um
+                        ângulo de 2,09 radianos.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Rotações
+                Elementares</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Temos as <b class="itext">rotações elementares</b>, rotações em x, y e z:</p>
+                    <p>$$R_x(\theta) = \Large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        1 & 0 & 0 \\
+                        0 & \cos(\theta) & -\sin(\theta) \\
+                        0 & \sin(\theta) & \ \ \cos(\theta)
+                        \end{array}\Large{\Bigg)}\normalsize{}.$$</p>
+                    <p>$$R_y(\theta) = \Large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        \ \cos(\theta) & 0 & \sin(\theta) \\
+                        0 & 1 & 0 \\
+                        -\sin(\theta) & 0 & \cos(\theta)
+                        \end{array}\Large{\Bigg)}\normalsize{}.$$</p>
+                    <p>$$R_z(\theta) = \Large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        \cos(\theta) & -\sin(\theta) & 0 \\
+                        \sin(\theta) & \ \ \cos(\theta) & 0 \\
+                        0 & 0 & 1
+                        \end{array}\Large{\Bigg)}\normalsize{}.$$</p>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Rotações no
+                UAIBot</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>No <b class="itext">UAIBot</b>, as rotações elementares estão implementadas:</p>
+                    <p>
+                    <pre><code class="language-python" style="text-align:left">
+import uaibot as ub
+
+theta=3.14/2
+Rx = ub.Utils.rotx(theta)
+Ry = ub.Utils.roty(theta)
+Rz = ub.Utils.rotz(theta)
+                        </code></pre>
+                    </p>
+                    <p>Nesse caso, as matrizes serão 4x4 em vez de 3x3, mas você pode recuperar as matrizes de rotação
+                        descartando a
+                        última linha e a última coluna. O porquê dessas matrizes estarem embutidas na matriz 4x4 ficará
+                        claro em breve.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Rotações no
+                UAIBot</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Rotações em um eixo arbitrário \(r\) e um ângulo \(\theta\) também estão implementadas</p>
+                    <p>
+                    <pre><code class="language-python" style="text-align:left">
+import uaibot as ub
+
+theta=3.14/2
+r = [1,2,3]
+
+R = ub.Utils.rot(r, theta)
+                        </code></pre>
+                    </p>
+                    <p>O eixo \(r\), se não estiver normalizado, é normalizado internamente na função. O tamanho do
+                        vetor \(r\) não importa.</p>
+                    <p>Assim como antes, as matrizes serão 4x4 em vez de 3x3, mas, novamente, você pode recuperar as
+                        matrizes de rotação descartando a
+                        última linha e a última coluna.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Decomposição de
+                Matrizes de Rotação</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Teorema</b>: toda matriz de rotação \(Q\) pode ser decomposta em:</p>
+                        <p>$$Q = R_z(\alpha)R_y(\beta)R_x(\gamma).$$</p>
+                    </div>
+                    <p>Os ângulos \(\alpha, \beta, \gamma\) são chamados de <b class="itext">ângulos de Euler</b> da
+                        rotação.</p>
+                    <p>Há outras convenções de ângulo de Euler (ex: \(R_x(\alpha)R_y(\beta)R_x(\gamma)\)), mas essa é o
+                        mais comum.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Ângulos de Euler
+                no UAIBot</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>No UAIBot, os ângulos de Euler podem ser calculados usando a função <b class="itext">Utils.euler_angles</b>
+                    </p>
+                    <p>
+                    <pre><code class="language-python" style="text-align:left">
+import uaibot as ub
+import numpy as np
+
+Q = np.array([[0,0,1],[1,0,0],[0,1,0]])
+alpha, beta, gamma = ub.Utils.euler_angles(Q)
+print([alpha, beta, gamma])
+                        </code></pre>
+                    </p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Representações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Note que uma matriz de rotação tem 9 números.</p>
+                    <p>Entretanto, esses 9 números <b class="itext">não podem ser escolhidos arbitrariamente!</b> Ou seja, nem toda matriz
+                    3x3 é uma matriz de rotação.</p>
+                    <p>Pode se mostrar que a restrição \(Q^TQ = I_{3 \times 3}\) impõe que há apenas <b class="itext">3 graus de liberdade</b> para escolher os números.</p>
+                    <p>Então 9 números parece ser uma representação pouco econômica de uma rotação. Há outras?</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Representações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p><b class="itext">Sim!</b> Por exemplo, os <b class="itext">Ângulos de Euler</b> podem ser usados para representar uma rotação
+                    com apenas 3 números (a quantidade mínima de informação).</p>
+                    <p>Essa representação tem problemas, entretanto. Por exemplo: como compor duas rotações representadas por ângulos de Euler?
+                    Em matrizes de rotação, basta multiplicá-las.</p>
+                    <p><b class="itext">A representação não é única! </b>Por exemplo, as triplas \(\alpha = t, \beta = \frac{\pi}{2}, \gamma = t\) representam a mesma rotação para todo \(t\) .</p>
+                    <p><b class="itext">É descontínua!</b> Rotações que são próximas podem ter ângulos de Euler radicalmente diferentes. Isso atrapalha na hora de derivar.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Representações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p><b class="itext">Há outras.</b> Por exemplo, os <b class="itext">Quaternions</b> representam uma rotação com 4 números.</p>
+                    <p>Ela é quase única (apenas dois quatérnions para cada rotação), e é uma representação contínua.</p>
+                    <p>Usaremos matrizes de transformação neste curso, entretanto, pois são mais comuns na literatura de robótica.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conexão entre duas interpretações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Vimos que temos duas interpretações para uma matriz de rotação:</p>
+                    <p><b class="itext">(A): Ela representa uma referencial \(\mathcal{F}_1\) escrito em um referencial \(\mathcal{F}_0\)...</b></p>
+                    <p><b class="itext">(B): Ela representa uma operação de rotação de um determinado eixo e ângulo escritos em um referencial \(\mathcal{F}_0\)...</b></p>
+                    <p>O que conecta as duas?</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conexão entre duas interpretações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Considere um referencial \(\mathcal{F}_0\). Nesse referencial, os eixos \(x_0\), \(y_0\) e \(z_0\) são escritos como
+                    os vetores \(x_0=(1 \ 0 \ 0)^T, y_0 = (0 \ 1 \ 0)^T\) e \(z_0 = (0 \ 0 \ 1)^T\).</p>
+                    <p>Se aplicarmos a rotação especificada por \(Q\) <b class="itext">(interpretação (B))</b> em cada um desses vetores, obteremos novos
+                    vetores \(x_1=Qx_0, y_1=Qy_0, z_1=Qz_0\)...</p>
+                    <p>Esses três vetores, quando consideramos como escritos em \(\mathcal{F}_0\), formam um <b class="itext">novo referencial positivamente orientado \(\mathcal{F}_1\)</b>, que é
+                    <b class="itext">exatamente o mesmo que obteríamos usando a interpretação (A)!</b></p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px">Corpos Rígidos</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg">
+                <br>
+            </p>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Do ponto de vista da Física, <b class="itext">corpo rígido</b> é um objeto idealizado que não
+                        pode sofrer deformações, contrações, expansões ou quebras
+                        devido às forças que nele agem.</p>
+                    <p>Obviamente é uma aproximação, e se o objeto é um corpo rígido ou não depende das forças que
+                        estamos considerando.</p>
+                    <p>Para forças razoáveis, podemos dizer que um cilindro de aço é um corpo rígido, enquanto uma bola
+                        de praia não.</b></p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/corporigido.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Do ponto de vista da Matemática, <b class="itext">corpo rígido</b> é um conjunto em que, para duas partículas quaisquer
+                        \(P_1\) e \(P_2\) dele, a distância entre elas permanece <b class="itext">constante</b> ao longo do movimento.</p>
+                    <p>Ou seja, se \(p_1(t)\) e \(p_2(t)\) são as posições de duas partículas \(P_1\) e \(P_2\) ao longo do tempo,
+                    escritas com relação a um referêncial \(\mathcal{F}_0\), então para todos tempos \(t_A\) e \(t_B\) temos:
+                    $$\|p_1(t_A)-p_2(t_A)\| = \|p_1(t_B)-p_2(t_B)\|$$</p>
+                    <p>em que \(\| \cdot \|\) é a <b class="itext">norma Euclidiana</b> do vetor.</p>
+                </div>
+
+<div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="0">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/corporigidomovendo1.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="1">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/corporigidomovendo2.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="2">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/corporigidomovendo3.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Descrevendo o movimento</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Queremos agora fazer a descrição matemática do movimento de um corpo rígido.</p>
+                    <p>Por isso, entenda-se descrever a trajetória de <b class="itext">todas as partículas</b> que formam um corpo rígido.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Descrevendo o movimento</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Note que isso seria extremamente difícil para um objeto genérico, como uma bola de praia.
+                    Afinal, a bola de praia pode transladar, rodar, contrair, distorcer, etc... de infinitas maneiras, extremamente
+                    complexas.</p>
+                    <p>Felizmente, para um corpo rígido a movimentação das partículas está severamente limitada, o que nos permite
+                        uma descrição concisa do movimento.</p>
+                    <p>Antes de entender como podemos fazer isso, precisamos entender o que é uma <b class="itext">transformação rígida</b>.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação Rígida</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Definição:</b> Uma <b class="itext">transformação rígida</b> é uma função \(T: \mathbb{R}^3 \mapsto
+                            \mathbb{R}^3\) com a seguinte
+                            propriedade: para dois pontos \(p_1\) e \(p_2\) quaisquer:
+                            $$\|T(p_1)-T(p_2)\|=\|p_1-p_2\|.$$<br></p>
+                    </div>
+                    <p>Em outras palavras, uma transformação rígida <b class="itext">preserva a distância entre pontos</b>!</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Temos o seguinte teorema:</p>
+                    <p><div style="background-color: #282828"><b class="itext">Teorema:</b> para toda transformação rígida \(T\), existe uma matriz de rotação
+                        \(Q\) e um vetor \(s \in \mathbb{R}^3\) tal que \(T(p) = \pm(Qp+s)\), em que \(\pm\) representa
+                        uma troca
+                        de sinal arbitrária em cada elemento do vetor \(p'=Qp+s\).</div></p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>A interpretação desse teorema é que toda transformação rígida é composta por três
+                        sub-operações:</p>
+                    <p>
+                    <ul>
+                        <li>Uma <b class="itext">rotação</b> por uma matriz \(Q\)...</li>
+                        <li>... seguido por uma <b class="itext">translação</b> por um vetor \(s\)...</li>
+                        <li>... seguido por uma <b class="itext">reflexão</b> em torno dos eixos principais.</li>
+                    </ul>
+                    </p>
+                    <p>Note que, em tudo isso, está subentendido um referencial \(\mathcal{F}_0\).</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Trabalharemos aqui com transformações rígidas <b class="itext">próprias</b>, sem reflexão:</p>
+                    <p>$$T(p) = Qp+s$$</p>
+                    <p>ou seja, uma <b class="itext">rotação</b> e uma <b class="itext">translação</b>.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<style>
+    .reveal .progress {
+        color: #34eb5e;
+    }
+
+    .reveal .controls {
+        color: #34eb5e;
+    }
+
+    body {
+        background-image: url(/aulas_manipuladores/presentation/images/aula1/logo_ufmg.svg) !important;
+        background-color: black;
+        background-size: 8% !important;
+        background-repeat: no-repeat !important;
+        background-position: 96% 3% !important;
+    }
+
+    .itext {
+        color: #34eb5e;
+    }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
+<script src="/aulas_manipuladores/presentation/dist/reveal.js"></script>
+<script src="/aulas_manipuladores/presentation/plugin/notes/notes.js"></script>
+<script src="/aulas_manipuladores/presentation/plugin/markdown/markdown.js"></script>
+<script src="/aulas_manipuladores/presentation/plugin/highlight/highlight.js"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        hash: true,
+        width: 1200,
+        height: 700,
+        margin: 0,
+        minScale: 0.2,
+        maxScale: 2.0,
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+    var frames = document.getElementsByTagName("iframe");
+
+
+    Reveal.on('slidechanged', event => {
+        for (let i = 0; i < frames.length; ++i) {
+            frames[i].contentWindow.location.reload(true);
+        }
+    });
+</script>
+</body>
+</html>
+
