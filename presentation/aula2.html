@@ -96,7 +96,8 @@
                 Rotação</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>A primeira condição (\(Q^TQ=I_{3 \times 3}\)) tem uma interpretação geométrica. Suponha que ela seja
+                    <p>A primeira condição (\(Q^TQ=I_{3 \times 3}\)) tem uma interpretação geométrica. Suponha que ela
+                        seja
                         escrita como:<br>
                         $$ Q = \LARGE{\Big(}\normalsize{}\begin{array}{ccc}
                         Q_{xx} & Q_{xy} & Q_{xz} \\
@@ -361,7 +362,8 @@
                         \frac{\sqrt{2}}{2} \\
                         \frac{\sqrt{2}}{2} \\
                         \frac{1}{2}
-                        \end{array}\Large{\Bigg)}\normalsize{} \ \ \ , \ \ \ p' = Qp =  \Large{\Bigg(}\normalsize{}\begin{array}{c}
+                        \end{array}\Large{\Bigg)}\normalsize{} \ \ \ , \ \ \ p' = Qp =
+                        \Large{\Bigg(}\normalsize{}\begin{array}{c}
                         0 \\
                         1 \\
                         \frac{1}{2}
@@ -539,7 +541,8 @@ print(angle) #Imprime 1.570 rad
                         1 & 0 & 0 \\
                         0 & 0 & -1 \\
                         0 & 1 & 0
-                        \end{array}\large{\Bigg)}\normalsize{} \ \ , \ \ Q_2 = \large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        \end{array}\large{\Bigg)}\normalsize{} \ \ , \ \ Q_2 =
+                        \large{\Bigg(}\normalsize{}\begin{array}{ccc}
                         0 & 0 & 1 \\
                         0 & 1 & 0 \\
                         -1 & 0 & 0
@@ -563,11 +566,12 @@ print(angle) #Imprime 1.570 rad
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Então:</p>
-                    <p>$$Q_1Q_2 =  \large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                    <p>$$Q_1Q_2 = \large{\Bigg(}\normalsize{}\begin{array}{ccc}
                         0 & 0 & 1 \\
                         1 & 0 & 0 \\
                         0 & 1 & 0
-                        \end{array} \large{\Bigg)}\normalsize{}\ \ , \ \ Q_2Q_1 = \large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        \end{array} \large{\Bigg)}\normalsize{}\ \ , \ \ Q_2Q_1 =
+                        \large{\Bigg(}\normalsize{}\begin{array}{ccc}
                         0 & 1 & 0 \\
                         0 & 0 & -1 \\
                         -1 & 0 & 0
@@ -738,13 +742,16 @@ print([alpha, beta, gamma])
 
         <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Representações</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b
+                    class="itext">Representações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Note que uma matriz de rotação tem 9 números.</p>
-                    <p>Entretanto, esses 9 números <b class="itext">não podem ser escolhidos arbitrariamente!</b> Ou seja, nem toda matriz
-                    3x3 é uma matriz de rotação.</p>
-                    <p>Pode se mostrar que a restrição \(Q^TQ = I_{3 \times 3}\) impõe que há apenas <b class="itext">3 graus de liberdade</b> para escolher os números.</p>
+                    <p>Entretanto, esses 9 números <b class="itext">não podem ser escolhidos arbitrariamente!</b> Ou
+                        seja, nem toda matriz
+                        3x3 é uma matriz de rotação.</p>
+                    <p>Pode se mostrar que a restrição \(Q^TQ = I_{3 \times 3}\) impõe que há apenas <b class="itext">3
+                        graus de liberdade</b> para escolher os números.</p>
                     <p>Então 9 números parece ser uma representação pouco econômica de uma rotação. Há outras?</p>
                 </div>
 
@@ -757,17 +764,22 @@ print([alpha, beta, gamma])
             </div>
         </section>
 
-       <section>
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Representações</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b
+                    class="itext">Representações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p><b class="itext">Sim!</b> Por exemplo, os <b class="itext">Ângulos de Euler</b> podem ser usados para representar uma rotação
-                    com apenas 3 números (a quantidade mínima de informação).</p>
-                    <p>Essa representação tem problemas, entretanto. Por exemplo: como compor duas rotações representadas por ângulos de Euler?
-                    Em matrizes de rotação, basta multiplicá-las.</p>
-                    <p><b class="itext">A representação não é única! </b>Por exemplo, as triplas \(\alpha = t, \beta = \frac{\pi}{2}, \gamma = t\) representam a mesma rotação para todo \(t\) .</p>
-                    <p><b class="itext">É descontínua!</b> Rotações que são próximas podem ter ângulos de Euler radicalmente diferentes. Isso atrapalha na hora de derivar.</p>
+                    <p><b class="itext">Sim!</b> Por exemplo, os <b class="itext">Ângulos de Euler</b> podem ser usados
+                        para representar uma rotação
+                        com apenas 3 números (a quantidade mínima de informação).</p>
+                    <p>Essa representação tem problemas, entretanto. Por exemplo: como compor duas rotações
+                        representadas por ângulos de Euler?
+                        Em matrizes de rotação, basta multiplicá-las.</p>
+                    <p><b class="itext">A representação não é única! </b>Por exemplo, as triplas \(\alpha = t, \beta =
+                        \frac{\pi}{2}, \gamma = t\) representam a mesma rotação para todo \(t\) .</p>
+                    <p><b class="itext">É descontínua!</b> Rotações que são próximas podem ter ângulos de Euler
+                        radicalmente diferentes. Isso atrapalha na hora de derivar.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -779,14 +791,18 @@ print([alpha, beta, gamma])
             </div>
         </section>
 
-       <section>
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Representações</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b
+                    class="itext">Representações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p><b class="itext">Há outras.</b> Por exemplo, os <b class="itext">Quaternions</b> representam uma rotação com 4 números.</p>
-                    <p>Ela é quase única (apenas dois quatérnions para cada rotação), e é uma representação contínua.</p>
-                    <p>Usaremos matrizes de transformação neste curso, entretanto, pois são mais comuns na literatura de robótica.</p>
+                    <p><b class="itext">Há outras.</b> Por exemplo, os <b class="itext">Quaternions</b> representam uma
+                        rotação com 4 números.</p>
+                    <p>Ela é quase única (apenas dois quatérnions para cada rotação), e é uma representação
+                        contínua.</p>
+                    <p>Usaremos matrizes de transformação neste curso, entretanto, pois são mais comuns na literatura de
+                        robótica.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -798,14 +814,17 @@ print([alpha, beta, gamma])
             </div>
         </section>
 
-       <section>
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conexão entre duas interpretações</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conexão entre
+                duas interpretações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Vimos que temos duas interpretações para uma matriz de rotação:</p>
-                    <p><b class="itext">(A): Ela representa uma referencial \(\mathcal{F}_1\) escrito em um referencial \(\mathcal{F}_0\)...</b></p>
-                    <p><b class="itext">(B): Ela representa uma operação de rotação de um determinado eixo e ângulo escritos em um referencial \(\mathcal{F}_0\)...</b></p>
+                    <p><b class="itext">(A): Ela representa uma referencial \(\mathcal{F}_1\) escrito em um referencial
+                        \(\mathcal{F}_0\)...</b></p>
+                    <p><b class="itext">(B): Ela representa uma operação de rotação de um determinado eixo e ângulo
+                        escritos em um referencial \(\mathcal{F}_0\)...</b></p>
                     <p>O que conecta as duas?</p>
                 </div>
 
@@ -818,17 +837,21 @@ print([alpha, beta, gamma])
             </div>
         </section>
 
-       <section>
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Rotações</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conexão entre duas interpretações</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conexão entre
+                duas interpretações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Considere um referencial \(\mathcal{F}_0\). Nesse referencial, os eixos \(x_0\), \(y_0\) e \(z_0\) são escritos como
-                    os vetores \(x_0=(1 \ 0 \ 0)^T, y_0 = (0 \ 1 \ 0)^T\) e \(z_0 = (0 \ 0 \ 1)^T\).</p>
-                    <p>Se aplicarmos a rotação especificada por \(Q\) <b class="itext">(interpretação (B))</b> em cada um desses vetores, obteremos novos
-                    vetores \(x_1=Qx_0, y_1=Qy_0, z_1=Qz_0\)...</p>
-                    <p>Esses três vetores, quando consideramos como escritos em \(\mathcal{F}_0\), formam um <b class="itext">novo referencial positivamente orientado \(\mathcal{F}_1\)</b>, que é
-                    <b class="itext">exatamente o mesmo que obteríamos usando a interpretação (A)!</b></p>
+                    <p>Considere um referencial \(\mathcal{F}_0\). Nesse referencial, os eixos \(x_0\), \(y_0\) e
+                        \(z_0\) são escritos como
+                        os vetores \(x_0=(1 \ 0 \ 0)^T, y_0 = (0 \ 1 \ 0)^T\) e \(z_0 = (0 \ 0 \ 1)^T\).</p>
+                    <p>Se aplicarmos a rotação especificada por \(Q\) <b class="itext">(interpretação (B))</b> em cada
+                        um desses vetores, obteremos novos
+                        vetores \(x_1=Qx_0, y_1=Qy_0, z_1=Qz_0\)...</p>
+                    <p>Esses três vetores, quando consideramos como escritos em \(\mathcal{F}_0\), formam um <b
+                            class="itext">novo referencial positivamente orientado \(\mathcal{F}_1\)</b>, que é
+                        <b class="itext">exatamente o mesmo que obteríamos usando a interpretação (A)!</b></p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -850,7 +873,8 @@ print([alpha, beta, gamma])
 
         <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b>
+            </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Do ponto de vista da Física, <b class="itext">corpo rígido</b> é um objeto idealizado que não
@@ -873,18 +897,23 @@ print([alpha, beta, gamma])
 
         <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b>
+            </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Do ponto de vista da Matemática, <b class="itext">corpo rígido</b> é um conjunto em que, para duas partículas quaisquer
-                        \(P_1\) e \(P_2\) dele, a distância entre elas permanece <b class="itext">constante</b> ao longo do movimento.</p>
-                    <p>Ou seja, se \(p_1(t)\) e \(p_2(t)\) são as posições de duas partículas \(P_1\) e \(P_2\) ao longo do tempo,
-                    escritas com relação a um referêncial \(\mathcal{F}_0\), então para todos tempos \(t_A\) e \(t_B\) temos:
-                    $$\|p_1(t_A)-p_2(t_A)\| = \|p_1(t_B)-p_2(t_B)\|$$</p>
+                    <p>Do ponto de vista da Matemática, <b class="itext">corpo rígido</b> é um conjunto em que, para
+                        duas partículas quaisquer
+                        \(P_1\) e \(P_2\) dele, a distância entre elas permanece <b class="itext">constante</b> ao longo
+                        do movimento.</p>
+                    <p>Ou seja, se \(p_1(t)\) e \(p_2(t)\) são as posições de duas partículas \(P_1\) e \(P_2\) ao longo
+                        do tempo,
+                        escritas com relação a um referêncial \(\mathcal{F}_0\), então para todos tempos \(t_A\) e
+                        \(t_B\) temos:
+                        $$\|p_1(t_A)-p_2(t_A)\| = \|p_1(t_B)-p_2(t_B)\|$$</p>
                     <p>em que \(\| \cdot \|\) é a <b class="itext">norma Euclidiana</b> do vetor.</p>
                 </div>
 
-<div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
                              data-fragment-index="0">
@@ -913,16 +942,19 @@ print([alpha, beta, gamma])
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
         <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Descrevendo o movimento</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Descrevendo o
+                movimento</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Queremos agora fazer a descrição matemática do movimento de um corpo rígido.</p>
-                    <p>Por isso, entenda-se descrever a trajetória de <b class="itext">todas as partículas</b> que formam um corpo rígido.</p>
+                    <p>Por isso, entenda-se descrever a trajetória de <b class="itext">todas as partículas</b> que
+                        formam um corpo rígido.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -936,15 +968,19 @@ print([alpha, beta, gamma])
 
         <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Descrevendo o movimento</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Descrevendo o
+                movimento</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Note que isso seria extremamente difícil para um objeto genérico, como uma bola de praia.
-                    Afinal, a bola de praia pode transladar, rodar, contrair, distorcer, etc... de infinitas maneiras, extremamente
-                    complexas.</p>
-                    <p>Felizmente, para um corpo rígido a movimentação das partículas está severamente limitada, o que nos permite
+                        Afinal, a bola de praia pode transladar, rodar, contrair, distorcer, etc... de infinitas
+                        maneiras, extremamente
+                        complexas.</p>
+                    <p>Felizmente, para um corpo rígido a movimentação das partículas está severamente limitada, o que
+                        nos permite
                         uma descrição concisa do movimento.</p>
-                    <p>Antes de entender como podemos fazer isso, precisamos entender o que é uma <b class="itext">transformação rígida</b>.</p>
+                    <p>Antes de entender como podemos fazer isso, precisamos entender o que é uma <b class="itext">transformação
+                        rígida</b>.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -956,18 +992,21 @@ print([alpha, beta, gamma])
             </div>
         </section>
 
-    <section>
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação Rígida</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <div style="background-color: #282828">
-                        <p><b class="itext">Definição:</b> Uma <b class="itext">transformação rígida</b> é uma função \(T: \mathbb{R}^3 \mapsto
+                        <p><b class="itext">Definição:</b> Uma <b class="itext">transformação rígida</b> é uma função
+                            \(T: \mathbb{R}^3 \mapsto
                             \mathbb{R}^3\) com a seguinte
                             propriedade: para dois pontos \(p_1\) e \(p_2\) quaisquer:
                             $$\|T(p_1)-T(p_2)\|=\|p_1-p_2\|.$$<br></p>
                     </div>
-                    <p>Em outras palavras, uma transformação rígida <b class="itext">preserva a distância entre pontos</b>!</p>
+                    <p>Em outras palavras, uma transformação rígida <b class="itext">preserva a distância entre
+                        pontos</b>!</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -986,10 +1025,14 @@ print([alpha, beta, gamma])
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Temos o seguinte teorema:</p>
-                    <p><div style="background-color: #282828"><b class="itext">Teorema:</b> para toda transformação rígida \(T\), existe uma matriz de rotação
+                    <p>
+                    <div style="background-color: #282828"><b class="itext">Teorema:</b> para toda transformação rígida
+                        \(T\), existe uma matriz de rotação
                         \(Q\) e um vetor \(s \in \mathbb{R}^3\) tal que \(T(p) = \pm(Qp+s)\), em que \(\pm\) representa
                         uma troca
-                        de sinal arbitrária em cada elemento do vetor \(p'=Qp+s\).</div></p>
+                        de sinal arbitrária em cada elemento do vetor \(p'=Qp+s\).
+                    </div>
+                    </p>
 
                 </div>
 
@@ -1044,6 +1087,599 @@ print([alpha, beta, gamma])
                     <div style="display:table-cell;vertical-align: middle">
                         <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
                              style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Obviamente, há uma conexão entre o movimento de <b class="itext">corpos rígidos</b> e uma <b
+                            class="itext">transformação rígida.</b></p>
+                    <p>Sejam \(\mathcal{P}(t_A), \mathcal{P}(t_B) \subseteq \mathbb{R}^3\) conjuntos que representem as
+                        posições das partículas de um
+                        mesmo corpo rígido \(\mathcal{P}\) em dois tempos diferentes, \(t=t_A\) e \(t=t_B\).</p>
+                    <p>Então existe uma <b class="itext">única</b> transformação rígida \(T_{AB}\) tal que todo ponto de
+                        \(\mathcal{P}(t_B)\)
+                        pode ser obtido a partir de um ponto de \(\mathcal{P}(t_A)\) através da aplicação de \(T_{AB}\).
+                        Matematicamente, existe uma transformação
+                        \(T_{AB}\) tal que:
+                        $$\forall p_B \in \mathcal{P}(t_B), \exists p_A \in \mathcal{P}(t_A) \ \mbox{tal que} \ p_B =
+                        T_{AB}(p_A).$$ </b></p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/crtr1.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Em outras palavras, o conjunto em um tempo \(t_B\) pode ser obtido a partir do conjunto no tempo
+                        \(t_A\) pela aplicação
+                        em todos os pontos de uma transformação rígida \(T_{AB}\).</b></p>
+                    <p>No desenho ao lado, por exemplo, o conjunto no tempo \(t_B\) é o conjunto no tempo \(t_A\)
+                        aplicando a transformação
+                        rígida \(T_{AB}\) que representa o deslocamento de uma unidade no eixo \(y_0\).</p>
+                    <p>Note que, novamente, temos a figura implícita de um referencial \(\mathcal{F}_0\).</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/crtr2.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Essa observação, que o conjunto em tempos diferentes está relacionado a uma única transformação
+                        rígida que depende dos dois tempos, nos
+                        permite fazer uma observação <b class="itext">importantíssima</b>: </b></p>
+                    <div style="text-align: center;background-color: #282828">
+                        <b class="itext"><b style="text-align: center; font-style: italic">
+                            Podemos descrever o movimento de um corpo rígido fornecendo, a todo instante de tempo \(t\),
+                            a transformação
+                            rígida \(T_t\) que relaciona os conjuntos nos tempos \(0\) e \(t\).
+                        </b></b></p>
+                    </div>
+                    <p>De fato: se soubermos como está o objeto no tempo \(t=0\) e a transformação \(T_t\) (em que está
+                        implícito um referencial \(\mathcal{F}_0\) em que ela está escrita), conseguimos descrever sem
+                        ambiguidade o movimento
+                        de todas as partículas que formam o corpo ao longo do tempo \(t\), e, portanto, do corpo como
+                        todo.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/crtr1.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Uma transformação rígida \(T(p) = Qp+s\) é especificada por uma matriz de rotação \(Q \in
+                        \mathbb{R}^{3 \times 3}\) e
+                        um deslocamento \(s \in \mathbb{R}^3\).</p>
+
+                    <p>Portanto, para especificar \(T_t(p)\) precisamos especificar a todo tempo a matriz \(Q(t)\) e o
+                        deslocamento
+                        \(s(t)\).</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/crtr1.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p><b class="itext">Exemplo:</b> suponha um corpo rígido que caí em queda livre, sem rodar. O corpo
+                        inicialmente
+                        está parado (sem velocidade inicial). A gravidade está alinhada ao eixo \(z_0\).</p>
+
+                    <p>Nesse caso, \(T_t(p) = Q(t)p+s(t)\), em que:
+                    <ul>
+                        <li>\(Q(t)=I_{3 \times 3}\) para todo \(t\), pois o objeto não roda;</li>
+                        <li>\(s(t) = (0 \ \ 0 \ \ {-}\frac{gt^2}{2})^T\), em que \(g\) é a aceleração da gravidade.</li>
+                    </ul>
+                    </p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/quedalivre.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Note que essa descrição faz com que em \(t=0\), \(T_t(p) = p\), ou seja, quando
+                        \(t=0\) temos que a transformação é aquela que mantém todos os pontos no lugar que eles já
+                        estavam.</p>
+                    <p>Isso implica \(Q(0)=I_{3 \times 3}\) e \(s(0)=0_{3 \times 1}\) (ver o exemplo anterior, por
+                        exemplo).</p>
+                    <p>Óbvio, pois decidimos descrever o movimento com relação ao posicionamento em \(t=0\): é a
+                        transformação
+                        que temos que fazer do tempo \(0\) até o tempo \(t\).</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/crtr1.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>O análogo dessa restrição na descrição de movimento de uma partícula seria que, em \(t=0\), a
+                        partícula estaria em
+                        \(p(t)=0\).</p>
+                    <p>Isso significaria que o referencial \(\mathcal{F}_0\) em que estamos descrevendo o movimento
+                        estaria forçado
+                        a ter seu centro na posição inicial da partícula. Isso é inconveniente, principalmente se
+                        tivermos mais de uma partícula,
+                        e querermos descrever o movimento de todas elas com relação a um único referencial.</p>
+                    <p>Vamos eliminar essa restrição para corpos rígidos também...</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/crtr1.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p><b class="itext">Vamos grudar um referencial \(\mathcal{F}_{obj}\) no objeto!</b></p>
+                    <p>Por <b class="itext">grudar</b> entenda-se que toda transformação rígida que o objeto sofrer, o
+                        referencial também irá.</p>
+                    <p>Note que um referencial, se considerarmos como formado por três "setas" ortogonais rígidas,
+                        também é um corpo rígido. Então
+                        podemos pensar, sem problemas, em aplicar uma transformação rígida em um referencial.</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="0">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/objetocref1.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="1">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/objetocref2.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="2">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/objetocref3.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Então, <b class="itext">em vez de especificar a transformação do objeto no tempo \(t=0\) até um
+                        tempo \(t\) genérico,
+                        especificamos a transformação entre o referencial base, \(\mathcal{F}_0\), e o do objeto,
+                        \(\mathcal{F}_{obj}\) naquele tempo \(t\)!</b></p>
+                    <p>No tempo \(t\) mostrado ao lado, por exemplo, a transformação \(T_t\) seria a de rotação de -30
+                        graus no eixo \(x_0\) (note
+                        que ele está rodado 30 graus no sentido negativo), o deslocamento de 2 unidades em \(y_0\) e 1
+                        unidade em \(z_0\).</p>
+                    <p>Note que, nessa nova descrição, não necessariamente \(T_0(p)=p\). Isso só acontece se, em
+                        \(t=0\), o referencial do objeto coincidir com o referencial
+                        \(\mathcal{F}_0\).</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/referencialtransf.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Corpo Rígido</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Transformação
+                Rígida e Movimento de Corpos Rígidos</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Para descrever o movimento de um corpo rígido, precisamos fornecer a todo tempo \(t\) a
+                        transformação
+                        \(T_t\). </p>
+                    <p>Já que \(T_t(p) = Q(t)p+s(t)\), isso equivale a fornecer, a todo instante de tempo \(t\), a
+                        matriz de rotação
+                        \(Q(t)\) e o vetor de deslocamento \(s(t)\).</p>
+                    <p>Podemos fornecer essas duas informações usando apenas <b class="itext"> uma </b> matriz.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/referencialtransf.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px">Matriz de Transformação Homogênea</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg">
+                <br>
+            </p>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Definição:</b> Uma <b class="itext">matriz de transformação homogênea (MTH)</b> é uma matriz \(H
+                            \in \mathbb{R}^{4 \times 4}\) montada da seguinte forma:</p>
+                        $$H = \left(\begin{array}{cc} Q & s \\ 0_{1 \times 3} & 1 \end{array}\right)$$
+                        <p>em que \(Q \in \mathbb{R}^{3 \times 3}\) é uma matriz de rotação, \(s \in \mathbb{R}^{3 \times 1}\) é um vetor
+                            coluna, e \(0_{1 \times 3}\) é um vetor linha nulo de três elementos.</p>
+                    </div>
+                    <p>Uma matriz de transformação homogênea representa uma transformação rígida, e vice-e-versa.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Composição de
+                transformações rígidas</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>MTHs têm várias utilidades ao representar transformações rígidas.</p>
+                    <p>Por exemplo, a <b class="itext">composição</b> de transformações rígidas também é uma
+                        transformação rígida.
+                        Se \(T_1(p) = Q_1p+s_1\) e \(T_2(p) = Q_2p+s_2\). Então:
+                        $$T_2(T_1(p)) = (Q_2Q_1)p + (Q_2s_1+s_2).$$</p>
+                    <p>Note que, assim como no caso de rotações, as transformações não necessariamente comutam:
+                        (\(T_2T_1 \not= T_1T_2\))</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Composição de
+                transformações rígidas</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Sejam as respectivas MTH das transformações \(T_1\), \(T_2\) e \(T_3 = T_2T_1\):</p>
+                    <p>$$H_1 = \left(\begin{array}{cc} Q_1 & s_1 \\ 0_{1 \times 3} & 1 \end{array}\right) \ , \ H_2 =
+                        \left(\begin{array}{cc} Q_2 & s_2 \\ 0_{1 \times 3} & 1 \end{array}\right),$$</p>
+                    <p>$$H_3 = \left(\begin{array}{cc} Q_2Q_1 & Q_2s_1+s_2 \\ 0_{1 \times 3} & 1 \end{array}\right).$$</p>
+                    <p>Não é difícil ver que <b class="itext">\(H_3 = H_2H_1\)</b>, ou seja, se representarmos
+                        transformações rígidas
+                        por MTH, <b class="itext">a composição de duas transformações é o produto matricial (na ordem
+                            correta) das respectivas MTHs!</b></p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">MTH Básicas</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Temos 4 MTHs básicas, representando <b class="itext">rotações em \(x, y\) e \(z\)</b> e <b class="itext">uma translação de um vetor \(s \in \mathbb{R}^{3 \times 1}\)</b> </p>
+                    <p>$$\tilde{R}_x(\theta) = \left(\begin{array}{cc} R_x(\theta) & 0_{3 \times 1} \\ 0_{1 \times 3} & 1 \end{array}\right) \ , \
+                        \tilde{R}_y(\theta) = \left(\begin{array}{cc} R_y(\theta) & 0_{3 \times 1} \\ 0_{1 \times 3} & 1 \end{array}\right), $$</p>
+                     <p>$$\tilde{R}_z(\theta) = \left(\begin{array}{cc} R_z(\theta) & 0_{3 \times 1} \\ 0_{1 \times 3} & 1 \end{array}\right) \ , \
+                        \tilde{D}(s) = \left(\begin{array}{cc} I_{3 \times 3} & s \\ 0_{1 \times 3} & 1 \end{array}\right). $$</p>
+                    <p>Em que \(R_x(\theta), R_y(\theta)\) e \(R_z(\theta)\) são as matrizes de rotação 3x3.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">No UAIBOT</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>No <b class="itext">UAIBot</b>, essas quatro matrizes são implementadas com as funções
+                    <b class="itext">Utils.rotx, Utils.roty, Utils.rotz, Utils.trn</b> </p>
+                    <pre><code class="language-python" style="text-align:left">
+import numpy as np
+import uaibot as ub
+
+theta=3.14/2
+s = [1,2,3]
+
+Rx = ub.Utils.rotx(theta)
+Ry = ub.Utils.roty(theta)
+Rz = ub.Utils.rotz(theta)
+D = ub.Utils.trn(s)
+                        </code></pre>
+                    <p>Agora está explicado o porquê das matrizes de rotação serem 4x4 (e não 3x3): elas estão na sua forma de MTH.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:300px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas Interpretações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Vimos que uma matriz de rotação \(Q\) tem duas intepretações (como referencial e como operador).</b> </p>
+                    <p>Uma MTH também tem duas, analogamente. Já vimos uma:</p>
+                    <div style="text-align: center;background-color: #282828">
+                        <b class="itext"><b style="text-align: center; font-style: italic">Uma MTH representa uma operação de transformação rígida, dado um referencial \(\mathcal{F}_0\), pois
+                            a partir dela podemos extrair os elementos \(Q\) e \(s\) e criar a transformação \(T(p)=Qp+s\).</b></b></p>
+                    </div>
+                    <p>Uma matriz de rotação representa uma operação de rotação, que é um caso especial de transformação rígida. Uma MTH
+                    representa uma transformação rígida mais geral.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas Interpretações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Podemos imaginar qual é a segunda interpretação:</b> </p>
+                    <div style="text-align: center;background-color: #282828">
+                        <b class="itext"><b style="text-align: center; font-style: italic">
+                            Uma MTH representa um referencial \(\mathcal{F}_1\) escrito em outro referencial \(\mathcal{F}_0\).
+                        </b></b></p>
+                    </div>
+                    <p>A diferença é que, enquanto uma matriz de rotação representa um referencial \(\mathcal{F}_1\) que tem o mesmo
+                    centro que \(\mathcal{F}_0\), uma MTH representa um referencial genérico cujos centros não necessariamente coincidem.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas Interpretações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>É muito simples ler o referencial.</p>
+                    <p><ul>
+                    <li>Primeiro desenhamos o referencial considerando só a matriz de rotação, \(Q\), conforme visto anteriormente.</li>
+                    <li>Depois, usamos o vetor \(s\) para deslocar o centro.</li>
+                    </ul></p>
+
+                </div>
+
+<div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="0">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm1.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="1">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm2.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="2">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm3.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="3">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm4.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="4">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm5.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="5">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm6.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="6">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm7.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="7">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm8.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="8">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm9.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
+                             data-fragment-index="9">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/animhtm10.svg"
+                                 style="width:500px;height:auto;">
+                        </div>
                     </div>
                 </div>
             </div>
