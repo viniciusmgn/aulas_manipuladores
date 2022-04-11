@@ -1390,15 +1390,19 @@ print([alpha, beta, gamma])
         </section>
 
         <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação Homogênea</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b></h3>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b>
+            </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <div style="background-color: #282828">
-                        <p><b class="itext">Definição:</b> Uma <b class="itext">matriz de transformação homogênea (MTH)</b> é uma matriz \(H
+                        <p><b class="itext">Definição:</b> Uma <b class="itext">matriz de transformação homogênea
+                            (MTH)</b> é uma matriz \(H
                             \in \mathbb{R}^{4 \times 4}\) montada da seguinte forma:</p>
                         $$H = \left(\begin{array}{cc} Q & s \\ 0_{1 \times 3} & 1 \end{array}\right)$$
-                        <p>em que \(Q \in \mathbb{R}^{3 \times 3}\) é uma matriz de rotação, \(s \in \mathbb{R}^{3 \times 1}\) é um vetor
+                        <p>em que \(Q \in \mathbb{R}^{3 \times 3}\) é uma matriz de rotação, \(s \in \mathbb{R}^{3
+                            \times 1}\) é um vetor
                             coluna, e \(0_{1 \times 3}\) é um vetor linha nulo de três elementos.</p>
                     </div>
                     <p>Uma matriz de transformação homogênea representa uma transformação rígida, e vice-e-versa.</p>
@@ -1448,7 +1452,8 @@ print([alpha, beta, gamma])
                     <p>Sejam as respectivas MTH das transformações \(T_1\), \(T_2\) e \(T_3 = T_2T_1\):</p>
                     <p>$$H_1 = \left(\begin{array}{cc} Q_1 & s_1 \\ 0_{1 \times 3} & 1 \end{array}\right) \ , \ H_2 =
                         \left(\begin{array}{cc} Q_2 & s_2 \\ 0_{1 \times 3} & 1 \end{array}\right),$$</p>
-                    <p>$$H_3 = \left(\begin{array}{cc} Q_2Q_1 & Q_2s_1+s_2 \\ 0_{1 \times 3} & 1 \end{array}\right).$$</p>
+                    <p>$$H_3 = \left(\begin{array}{cc} Q_2Q_1 & Q_2s_1+s_2 \\ 0_{1 \times 3} & 1
+                        \end{array}\right).$$</p>
                     <p>Não é difícil ver que <b class="itext">\(H_3 = H_2H_1\)</b>, ou seja, se representarmos
                         transformações rígidas
                         por MTH, <b class="itext">a composição de duas transformações é o produto matricial (na ordem
@@ -1464,17 +1469,23 @@ print([alpha, beta, gamma])
             </div>
         </section>
 
-    <section>
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
                 Homogênea</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">MTH Básicas</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">MTH Básicas</b>
+            </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Temos 4 MTHs básicas, representando <b class="itext">rotações em \(x, y\) e \(z\)</b> e <b class="itext">uma translação de um vetor \(s \in \mathbb{R}^{3 \times 1}\)</b> </p>
-                    <p>$$\tilde{R}_x(\theta) = \left(\begin{array}{cc} R_x(\theta) & 0_{3 \times 1} \\ 0_{1 \times 3} & 1 \end{array}\right) \ , \
-                        \tilde{R}_y(\theta) = \left(\begin{array}{cc} R_y(\theta) & 0_{3 \times 1} \\ 0_{1 \times 3} & 1 \end{array}\right), $$</p>
-                     <p>$$\tilde{R}_z(\theta) = \left(\begin{array}{cc} R_z(\theta) & 0_{3 \times 1} \\ 0_{1 \times 3} & 1 \end{array}\right) \ , \
-                        \tilde{D}(s) = \left(\begin{array}{cc} I_{3 \times 3} & s \\ 0_{1 \times 3} & 1 \end{array}\right). $$</p>
+                    <p>Temos 4 MTHs básicas, representando <b class="itext">rotações em \(x, y\) e \(z\)</b> e <b
+                            class="itext">uma translação de um vetor \(s \in \mathbb{R}^{3 \times 1}\)</b></p>
+                    <p>$$\tilde{R}_x(\theta) = \left(\begin{array}{cc} R_x(\theta) & 0_{3 \times 1} \\ 0_{1 \times 3} &
+                        1 \end{array}\right) \ , \
+                        \tilde{R}_y(\theta) = \left(\begin{array}{cc} R_y(\theta) & 0_{3 \times 1} \\ 0_{1 \times 3} & 1
+                        \end{array}\right), $$</p>
+                    <p>$$\tilde{R}_z(\theta) = \left(\begin{array}{cc} R_z(\theta) & 0_{3 \times 1} \\ 0_{1 \times 3} &
+                        1 \end{array}\right) \ , \
+                        \tilde{D}(s) = \left(\begin{array}{cc} I_{3 \times 3} & s \\ 0_{1 \times 3} & 1
+                        \end{array}\right). $$</p>
                     <p>Em que \(R_x(\theta), R_y(\theta)\) e \(R_z(\theta)\) são as matrizes de rotação 3x3.</p>
                 </div>
 
@@ -1490,11 +1501,12 @@ print([alpha, beta, gamma])
         <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
                 Homogênea</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">No UAIBOT</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">No UAIBOT</b>
+            </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>No <b class="itext">UAIBot</b>, essas quatro matrizes são implementadas com as funções
-                    <b class="itext">Utils.rotx, Utils.roty, Utils.rotz, Utils.trn</b> </p>
+                        <b class="itext">Utils.rotx, Utils.roty, Utils.rotz, Utils.trn</b></p>
                     <pre><code class="language-python" style="text-align:left">
 import numpy as np
 import uaibot as ub
@@ -1507,7 +1519,8 @@ Ry = ub.Utils.roty(theta)
 Rz = ub.Utils.rotz(theta)
 D = ub.Utils.trn(s)
                         </code></pre>
-                    <p>Agora está explicado o porquê das matrizes de rotação serem 4x4 (e não 3x3): elas estão na sua forma de MTH.</p>
+                    <p>Agora está explicado o porquê das matrizes de rotação serem 4x4 (e não 3x3): elas estão na sua
+                        forma de MTH.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -1519,20 +1532,25 @@ D = ub.Utils.trn(s)
             </div>
         </section>
 
-    <section>
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
                 Homogênea</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas Interpretações</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas
+                Interpretações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Vimos que uma matriz de rotação \(Q\) tem duas intepretações (como referencial e como operador).</b> </p>
+                    <p>Vimos que uma matriz de rotação \(Q\) tem duas intepretações (como referencial e como
+                        operador).</b> </p>
                     <p>Uma MTH também tem duas, analogamente. Já vimos uma:</p>
                     <div style="text-align: center;background-color: #282828">
-                        <b class="itext"><b style="text-align: center; font-style: italic">Uma MTH representa uma operação de transformação rígida, dado um referencial \(\mathcal{F}_0\), pois
-                            a partir dela podemos extrair os elementos \(Q\) e \(s\) e criar a transformação \(T(p)=Qp+s\).</b></b></p>
+                        <b class="itext"><b style="text-align: center; font-style: italic">Uma MTH representa uma
+                            operação de transformação rígida, dado um referencial \(\mathcal{F}_0\), pois
+                            a partir dela podemos extrair os elementos \(Q\) e \(s\) e criar a transformação
+                            \(T(p)=Qp+s\).</b></b></p>
                     </div>
-                    <p>Uma matriz de rotação representa uma operação de rotação, que é um caso especial de transformação rígida. Uma MTH
-                    representa uma transformação rígida mais geral.</p>
+                    <p>Uma matriz de rotação representa uma operação de rotação, que é um caso especial de transformação
+                        rígida. Uma MTH
+                        representa uma transformação rígida mais geral.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -1544,20 +1562,24 @@ D = ub.Utils.trn(s)
             </div>
         </section>
 
-    <section>
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
                 Homogênea</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas Interpretações</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas
+                Interpretações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Podemos imaginar qual é a segunda interpretação:</b> </p>
                     <div style="text-align: center;background-color: #282828">
                         <b class="itext"><b style="text-align: center; font-style: italic">
-                            Uma MTH representa um referencial \(\mathcal{F}_1\) escrito em outro referencial \(\mathcal{F}_0\).
+                            Uma MTH representa um referencial \(\mathcal{F}_1\) escrito em outro referencial
+                            \(\mathcal{F}_0\).
                         </b></b></p>
                     </div>
-                    <p>A diferença é que, enquanto uma matriz de rotação representa um referencial \(\mathcal{F}_1\) que tem o mesmo
-                    centro que \(\mathcal{F}_0\), uma MTH representa um referencial genérico cujos centros não necessariamente coincidem.</p>
+                    <p>A diferença é que, enquanto uma matriz de rotação representa um referencial \(\mathcal{F}_1\) que
+                        tem o mesmo
+                        centro que \(\mathcal{F}_0\), uma MTH representa um referencial genérico cujos centros não
+                        necessariamente coincidem.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -1569,21 +1591,26 @@ D = ub.Utils.trn(s)
             </div>
         </section>
 
-<section>
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
                 Homogênea</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas Interpretações</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas
+                Interpretações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>É muito simples ler o referencial.</p>
-                    <p><ul>
-                    <li>Primeiro desenhamos o referencial considerando só a matriz de rotação, \(Q\), conforme visto anteriormente.</li>
-                    <li>Depois, usamos o vetor \(s\) para deslocar o centro.</li>
-                    </ul></p>
+                    <p>
+                    <ul>
+                        <li>Primeiro desenhamos o referencial considerando só a matriz de rotação, \(Q\), conforme visto
+                            anteriormente.
+                        </li>
+                        <li>Depois, usamos o vetor \(s\) para deslocar o centro.</li>
+                    </ul>
+                    </p>
 
                 </div>
 
-<div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <div style="position:absolute;top:80px;" class="vim_indicator current-visible fragment"
                              data-fragment-index="0">
@@ -1682,6 +1709,300 @@ D = ub.Utils.trn(s)
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Duas
+                Interpretações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Assim como no caso das matrizes de rotação, há uma conexão entre as duas interpretações.</b> </p>
+                    <p>Se aplicarmos a transformação descrita por \(H\) nos referencial \(\mathcal{F}_0\), obtemos um
+                        referencial
+                        \(\mathcal{F}_1\) que é o mesmo que obteríamos pela interpretação que \(H\) representa um
+                        referencial.</b> </p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Considere um corpo rígido em que, em um determinado de instante tempo \(t=10s\), tenha sua
+                        pose descrita pela MTH \(H\) no referencial \(\mathcal{F}_0\). Desenhe como o objeto estará no
+                        tempo
+                        \(t=10s\).</p>
+                </div>
+                <div style="width:1200px; vertical-align: middle; display:table; align-items: center">
+                    <div style="display:table-cell;vertical-align: middle; align-items: center">
+                        <div style="position:absolute;top:240px;right:325px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="0">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/exemplomovimento1.svg"
+                                 style="width:650px;height:auto;">
+                        </div>
+                        <div style="position:absolute;top:240px;right:325px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="1">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/exemplomovimento2.svg"
+                                 style="width:650px;height:auto;">
+                        </div>
+                        <div style="position:absolute;top:240px;right:325px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="2">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/exemplomovimento3.svg"
+                                 style="width:650px;height:auto;">
+                        </div>
+                        <div style="position:absolute;top:240px;right:325px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="3">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/exemplomovimento4.svg"
+                                 style="width:650px;height:auto;">
+                        </div>
+                        <div style="position:absolute;top:240px;right:325px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="4">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/exemplomovimento5.svg"
+                                 style="width:650px;height:auto;">
+                        </div>
+                        <div style="position:absolute;top:240px;right:325px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="5">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/exemplomovimento6.svg"
+                                 style="width:650px;height:auto;">
+                        </div>
+                        <div style="position:absolute;top:240px;right:325px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="6">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/exemplomovimento7.svg"
+                                 style="width:650px;height:auto;">
+                        </div>
+                        <div style="position:absolute;top:240px;right:325px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="7">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/exemplomovimento8.svg"
+                                 style="width:650px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p><b class="itext">Muito importante:</b> a informação dada nos permite apenas saber como está o
+                        corpo rígido no tempo \(t=10s\)!
+                        Sem mais informações, <b class="itext">não é possível inferir mais nada</b>. Por exemplo, não
+                        sabemos nada como ele estava no tempo
+                        \(t=0\) nem como ele se moveu de lá para o tempo \(t=10s\). </p>
+                </div>
+                <div style="width:1200px; vertical-align: middle; display:table; align-items: center">
+                    <div style="display:table-cell;vertical-align: middle; align-items: center">
+                        <div style="position:absolute;top:240px;right:325px">
+                            <img src="/aulas_manipuladores/presentation/images/aula2/exemplomovimento8.svg"
+                                 style="width:650px;height:auto;">
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Matriz de transformação
+                Homogênea</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Descrição
+                Contínua do Movimento</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <p>Para sabermos o movimento completo, precisaríamos saber, a todo instante de tempo \(t\), a matriz
+                        de transformação
+                        homogênea \(H(t)\).</p>
+                    <p>Na animação ao lado, é fornecido, a todo instante de tempo, a matriz \(H(t)\). Desta forma, é
+                        possível fazer um
+                        rastreamento contínuo do movimento do objeto.</p>
+                </div>
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula2/anim1.html"
+                            style="width:500px;height:550px"></iframe>
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <section>
+            <h3 style="font-size:40px">Composição de MTHs</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula2/titulo.svg">
+                <br>
+            </p>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Composição de MTHs</h3>
+
+            <div style="width:1200px;height:800px">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <p>Para terminar, temos que falar um pouco mais sobre a <b class="itext">composição</b> de
+                        transformações rígidas, descritas
+                        como MTHs.</p>
+                    <p>A partir de agora, vamos usar os símbolos \(R_x(\theta), R_y(\theta), R_z(\theta), D_x(d),
+                        D_y(d), D_z(d)\) para as
+                        <b class="itext">MTHs</b> de rotações e deslocamentos, respectivamente, em que \(\theta, d \in
+                        \mathbb{R}\).</p>
+                </div>
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                            style="width:500px;height:550px"></iframe>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Composição de MTHs</h3>
+
+            <div style="width:1200px;height:800px">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <p>Considere um referencial \(\mathcal{F}_0\). Aplicamos as transformações representadas pelas MTHs
+                        \(H_1, H_2, H_3\) e
+                        \(H_4\), <b class="itext">nessa ordem</b>.</p>
+                    <p>Teremos então uma MTH final \(H_{F} = H_4 H_3 H_2 H_1\), em que as transformações mais recentes
+                        vêm à esquerda, multiplicando a matriz.</p>
+                    <p>Note que <b class="itext">todas as transformações são interpretadas em \(\mathcal{F}_0\).</b>
+                        Portanto, se \(H_2\) é um deslocamento em \(z\) de
+                        5 unidades, aplicaremos um deslocamento em <b class="itext">\(z_0\)</b> de 5 unidades.</p>
+                </div>
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                            style="width:500px;height:550px"></iframe>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Composição de MTHs</h3>
+
+            <div style="width:1200px;height:800px">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <p>Considere a sequência de transformações a seguir:</p>
+                    <p><b class="itext">$$H = R_x(\pi/4) D_y(-0.25) R_z(\pi/2) D_x(1).$$</b></p>
+                    <p>Note a ordem (\(D_x(1)\) primeiro, \(R_z(\pi/2)\) depois, etc...)</p>
+                    <p>Lemos da <b class="itext">direita para a esquerda!</b></p>
+                    <p>Veja o vídeo ao lado com a sequência de transformações.</p>
+                    <p>Note que <b class="itext">todas as transformações são feitas com relação ao referencial \(\mathcal{F}_0\)</b>.</p>
+                </div>
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula2/anim2.html"
+                            style="width:500px;height:550px"></iframe>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Composição de MTHs</h3>
+
+            <div style="width:1200px;height:800px">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <p><b class="itext">Há outra maneira de interpretar a mesma transformação!</b></p>
+                    <p>Chegaremos no <b class="itext">mesmo</b> referencial final \(H\) se lermos <b class="itext">da esquerda para direita, mas
+                    considerando que as transformações são interpretadas no referencial atual em vez de \(\mathcal{F}_0\)!</b></p>
+                    <p>Veja o vídeo ao lado com a sequência de transformações.</p>
+                    <p>Note que o referencial final é o <b class="itext">mesmo!</b> Só os referenciais intermediários mudam.</p>
+                </div>
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula2/anim3.html"
+                            style="width:500px;height:550px"></iframe>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Composição de MTHs</h3>
+
+            <div style="width:1200px;height:800px">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <p>Assim, ao fazer uma composição de transformações, podemos multiplicar a matriz à esquerda ou a direita:</p>
+                    <ul>
+                        <li><b class="itext">À esquerda</b>: fazemos a transformação usando o referencial <b class="itext">inicial</b>, \(\mathcal{F}_0\)!</li>
+                        <li><b class="itext">À direita</b>: fazemos a transformação usando o referencial <b class="itext">atual</b>!</li>
+                    </ul>
+                    <p>As duas aplicações são úteis. Em robótica, entretanto, é mais comum fazermos aplicações à direita (no referencial atual).</p>
+                </div>
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                            style="width:500px;height:550px"></iframe>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Conclusão</h3>
+
+            <div style="width:1200px;height:800px">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <p>Podemos descrever o movimento de um corpo rígido se (1) escolhermos um referencial base \(\mathcal{F}_0\) e
+                        (2) grudarmos um referencial \(\mathcal{F}_{obj}\) nele.</p>
+                    <p>A partir disso, basta fornecer a todo instante de tempo \(t\) a MTH que representa a transformação rígida entre o
+                    referencial  \(\mathcal{F}_0\) (fixo) e o do objeto \(\mathcal{F}_{obj}\) (móvel) naquele instante de tempo \(t\). </p>
+                    <p>Tendo como está o referencial \(\mathcal{F}_{obj}\) naquele tempo, conseguimos dizer exatamente como estão todas as
+                    partículas do corpo rígido naquele instante de tempo, cumprindo nosso objetivo de fazer a <b class="itext">descrição de movimento</b>
+                    do objeto.</p>
+                </div>
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula2/titulo.svg"
+                            style="width:500px;height:550px"></iframe>
+                </div>
+
+
             </div>
         </section>
     </div>
