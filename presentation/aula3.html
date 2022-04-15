@@ -968,10 +968,10 @@
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Cálculo das transformações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Em posse dos parâmetros, é muito fácil calcular a transformação do referencial \(\mathcal{F}_{DHi}\) para o
-                    \(\mathcal{F}_{DH(i+1)}\).</p>
+                    <p>Em posse dos parâmetros, é muito fácil calcular a transformação do referencial \(\mathcal{F}_{DH(i-1)}\) para o
+                    \(\mathcal{F}_{DHi}\), para \(i=1,2,...,n\).</p>
                     <p>A transformação é a seguir:
-                     <b class="itext">$$H_{DHi}^{DH(i+1)}(q_i) = R_z(\theta_i)D_z(d_i)R_x(\alpha_i)D_x(a_i).$$</b></p>
+                     <b class="itext">$$H_{DH(i-1)}^{DHi}(q_i) = R_z(\theta_i)D_z(d_i)R_x(\alpha_i)D_x(a_i).$$</b></p>
                     <p><b class="itext">Note que a transformação deve ser lida da esquerda para à direita, pois usamos o referencial atual, e não
                     o inicial, para interpretar as transformações!</b></p>
                     <p>Então primeiro é a rotação em \(z\), depois o deslocamento em \(z\), depois a rotação em \(x\), e finalmente o deslocamento em \(x\).</p>
@@ -996,14 +996,14 @@
                 transformações</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>A MTH \(H_{DHi}^{DH(i+1)}(q_i)\) pode ser interpretada ou como a transformação de
-                        \(\mathcal{F}_{DHi}\) para
-                        \(\mathcal{F}_{DH(i+1)}\) <b class="itext">interpretada em \(\mathcal{F}_{DHi}\)</b>
+                    <p>A MTH \(H_{DH(i-1)}^{DHi}(q_i)\) pode ser interpretada ou como a transformação de
+                        \(\mathcal{F}_{DH(i-1)}\) para
+                        \(\mathcal{F}_{DHi}\) <b class="itext">interpretada em \(\mathcal{F}_{DH(i-1)}\)</b>
                         (intepretação como transformação rígida) ou
-                        como o referencial \(\mathcal{F}_{DH(i+1)}\) <b class="itext">escrito em
-                            \(\mathcal{F}_{DHi}\)</b> (interpretação como referencial).</p>
+                        como o referencial \(\mathcal{F}_{DHi}\) <b class="itext">escrito em
+                            \(\mathcal{F}_{DH(i-1)}\)</b> (interpretação como referencial).</p>
 
-                    <p>Note que \(H_{DHi}^{DH(i+1)}(q_i)\) depende de \(q_i\), pois ou \(\theta_i\) (junta rotativa) ou \(d_i\) (junta linear)
+                    <p>Note que \(H_{DH(i-1)}^{DHi}(q_i)\) depende de \(q_i\), pois ou \(\theta_i\) (junta rotativa) ou \(d_i\) (junta linear)
                     depende de \(q_i\).</p>
                 </div>
 
@@ -1083,6 +1083,536 @@
                     <p>Com essas duas matrizes de ajuste, temos:
                     <b class="itext">$$H_{0}^e(q) = H_0^{DH0} H_{DH0}^{DHn}(q) H_{DHn}^{e}.$$</b></p>
 
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">A convenção de
+                Denavit-Hartenberg</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Onde encontrar</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Os parâmetros de DH podem ser obtidos medindo o robô diretamente, ou em seu manual.</p>
+                    <p>Infelizmente, há outras convenções além da DH. Assim, algumas vezes o manual fornece os parâmetros para
+                    outra convenção.</p>
+                    <p>De toda forma, é a definição mais usada.</p>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section>
+            <h3 style="font-size:40px">Cinemática Inversa</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula3/titulo.svg">
+                <br>
+            </p>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>No problema de <b class="itext">cinemática inversa</b> temos uma MTH desejada para o efetuador, \(\hat{H}_{0}^{e}\)
+                    e queremos encontrar \(q\) tal que \(H_0^{e}(q) =\hat{H}_{0}^{e}\).</p>
+                    <p>Esse problema pode ter <b class="itext">uma, nenhuma ou múltiplas soluções</b>.</p>
+                    <p>Temos que resolver um complexo sistema de equações não-lineares.</p>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Para exemplificar essa complexidade, vamos resolver um problema que é, aparentemente, bem simples.</p>
+                    <p>Considere o robô planar com duas juntas rotativas ao lado. Queremos que a posição do efetuador seja uma
+                    posição desejada \(x=x_a\) e \(z=z_a\).</p>
+                    <p>Não nos preocupamos com a orientação. É um problema de cinemática inversa "parcial".</p>
+                    <p>Mesmo assim, veremos que não é simples.</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Usando a notação de \(c_1,s_1,c_{12}\) e \(s_{12}\) definida anteriormente, temos as igualdades:</p>
+                    <p><b class="itext">$$L_1c_1 + L_2c_{12} = x_a,$$</b></p>
+                    <p><b class="itext">$$L_1s_1 + L_2s_{12} = z_a$$</b></p>
+                    <p>obtidas pela cinemática direta (ver Exemplo 1 de Cinemática Direta).</p>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Eleve ao quadrado as duas igualdades e some.</p>
+                    <p>Use o fato que \(c_1^2+s_1^2 = c_{12}^2+s_{12}^2 = 1\), e que \(c_1c_{12} + s_1s_{12} = \cos(q_2)\):</p>
+                    <p><b class="itext">$$L_1^2+L_2^2 + 2L_1L_2\cos(q_2) = x_a^2+z_a^2.$$</b></p>
+                    <p>E portanto:</p>
+                    <p><b class="itext">$$\cos(q_2) = \frac{x_a^2+z_a^2-(L_1^2+L_2^2)}{2L_1L_2}.$$</b></p>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Para a equação</p>
+                    <p><b class="itext">$$\cos(q_2) = \frac{x_a^2+z_a^2-(L_1^2+L_2^2)}{2L_1L_2}$$</b></p>
+                    <p>ter solução, temos que o lado direito deve estar entre -1 e 1. Reescrevendo essa condição, temos:</p>
+                    <p><b class="itext">$$(L_1-L_2)^2 \leq x_a^2+z_a^2 \leq (L_1+L_2)^2$$</b></p>
+                    <p>Reflita um pouco e perceberá que essa condição faz todo sentido, geometricamente.</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Se a condição for satisfeita, temos duas soluções:</p>
+                    <p><b class="itext">$$q_2 = \pm \cos^{-1}\left(\frac{x_a^2+z_a^2-(L_1^2+L_2^2)}{2L_1L_2}\right).$$</b></p>
+                    <p>Vamos assumir de agora em diante que escolhemos uma dessas duas soluções. Substituindo no sistema original
+                    e usando \(c_{12} = c_1c_2-s_1s_2\) e \(s_{12} = c_1s_2+c_2s_1\) (em que \(c_2=\cos(q_2)\) e \(s_2=\sin(q_2)\)):</p>
+                    <p><b class="itext">$$(L_1+L_2c_2)c_1 - L_2s_2s_1 = x_a,$$</b></p>
+                    <p><b class="itext">$$L_2s_2 c_1 + (L_1+L_2c_2)s_1 = z_a$$</b></p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Temos então um sistema linear com duas equações e incógnitas para as variáveis \(s_1\) e \(c_1\):</p>
+                    <p><b class="itext">$$\left(\begin{array}{cc} L_1+L_2c_2 & -L_2s_2 \\ L_2s_2 & L_1+L_2c_2\end{array}\right)\left(\begin{array}{c} c_1 \\ s_1 \end{array}\right) = \left(\begin{array}{c} x_a \\ z_a \end{array}\right).$$</b></p>
+                    <p>Isolando:</p>
+                   <p><b class="itext">$$c_1 = U = \frac{(L_1+L_2c_2)x_a + L_2s_2z_a}{G}$$</b></p>
+                    <p><b class="itext">$$s_1 = V = \frac{-L_2s_2x_a + (L_1+L_2c_2)z_a}{G}$$</b></p>
+                    <p>em que \(G = L_1^2+L_2^2 + 2L_1L_2c_2\).</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Usando a expressão para \(c_2\) que temos, é fácil ver que \(G=x_a^2+z_a^2\). Portanto, se assumirmos que o ponto alvo não
+                    está na origem, temos que \(G \not=0\).</p>
+                    <p>Para que um sistema de equações da forma \(\cos(q_1)=U\) e \(\sin(q_1)=V\) tenha solução, é necessário e suficiente que
+                    \(U^2+V^2=1\). De fato, podemos mostrar que isso é verdade nesse caso.</p>
+                   <p>Nesse caso, a solução para \(q_1\) é única. Geralmente, em sistemas computacionais, a função <b class="itext">atan2(V,U)</b> dá esse valor.</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Temos o código em Python para calcular a cinemática inversa:</p>
+                    <pre><code class="language-python" style="text-align:left; height:300px">
+import numpy as np
+
+def find_q1(L1,L2,xa,za,q2):
+  G =  xa**2+za**2
+  c2 = np.cos(q2)
+  s2 = np.sin(q2)
+  U = ( (L1+L2*c2)*xa + L2*s2*za )/G
+  V = ( -L2*s2*xa + (L1+L2*c2)*za )/G
+  return np.arctan2(V,U)
+
+def solve_ik(L1,L2,xa,za):
+  G =  xa**2+za**2
+  if G >= (L1+L2)**2 or G <= (L1-L2)**2:
+    raise Exception("Não tem solução!")
+  else:
+
+    q2_A = np.arccos( (G - (L1**2+L2**2))/(2*L1*L2) )
+    q2_B = -q2_A
+
+    return [find_q1(L1,L2,xa,za,q2_A), q2_A], [find_q1(L1,L2,xa,za,q2_B), q2_B]
+
+
+#Testa:
+L1 = 1
+L2 = 1.5
+xa = 0.8
+za = 0.5
+
+q_A, q_B = solve_ik(L1,L2,xa,za)
+
+print(q_A)
+print(q_B)
+                        </code></pre>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Considerando \(G \not=0\), quando temos solução, temos duas soluções (ver ao lado).</p>
+                    <p>A exceção é quando \(q_2=0\), em que só temos uma solução.</p>
+                    <p>O caso em que \(G=0\) pode ser tratado separadamente.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="display:table-cell;vertical-align: middle; align-items: center">
+                        <div style="position:absolute;top:50px;right:50px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="0">
+                            <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv2a.svg"
+                                 style="width:400px;height:auto;">
+                        </div>
+                        <div style="position:absolute;top:50px;right:50px"
+                             class="vim_indicator current-visible fragment"
+                             data-fragment-index="1">
+                            <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv2b.svg"
+                                 style="width:400px;height:auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+ <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Cinemática Inversa</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conclusão</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Resolver o problema de cinemática inversa para um robô tridimensional com vários graus de liberdade de maneira análitica, como fizemos aqui, é muitas vezes inviável</p>
+                    <p>Há pesquisas dedicadas somente ao problema de cinemática inversa analítica para robôs específicos.</p>
+                   <p>Entretanto, os <b class="itext">métodos numéricos</b> são mais práticos para robôs gerais.</p>
+                    <p>A técnica de <b class="itext">controle cinemático</b> que veremos em breve pode ser fácilmente adapdatada para esse propósito.</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/exemplocinematicainv.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px">Funções no UAIBot</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula3/titulo.svg">
+                <br>
+            </p>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Funções no UAIBot</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Configuração</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>No <b class="itext">UAIBot</b>, podemos acessar a configuração atual do robô como <b class="itext">robot.q</b>, em que
+                    <b class="itext">robot</b> é o nome da variável do robô:</p>
+                    <pre><code class="language-python" style="text-align:left">
+import numpy as np
+import uaibot as ub
+
+robot = ub.Robot.create_kuka_kr5()
+#Mostra a configuração atual
+print(robot.q)
+#Mostra a configuração "base"
+print(robot.q0)
+                        </code></pre>
+                    <p>Ambos são vetores numpy com shape (n,1) (n linhas e 1 colunas).</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Funções no UAIBot</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Configuração</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Podemos especificar qual é a configuração no instante de tempo \(t\) com <b class="itext">.add_ani_frame</b>.</p>
+                    <p>Quando ela é chamada, mudamos a configuração atual do robô (<b class="itext">robot.q</b>).</p>
+                    <pre><code class="language-python" style="text-align:left">
+import numpy as np
+import uaibot as ub
+
+robot = ub.Robot.create_kuka_kr5()
+sim = ub.Simulation([robot])
+
+#Vamos fazer a primeira junta variar de 0 até 2*pi, enquanto as outras continuam em
+# zero. O tempo irá variar de 0,01 em 0,01 segundos, até 10 segundos.
+dt=0.01
+tmax=10
+for i in range(round(tmax/dt)):
+    t = i*dt
+    robot.add_ani_frame(time = t, q = [ (2*np.pi)*t/tmax, 0, 0, 0, 0, 0])
+
+#Vamos ver o resultado
+sim.run()
+                        </code></pre>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Funções no UAIBot</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Cinemática direta</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>A cinemática direta pode ser calculada com a função <b class="itext">.fkm</b> (de Forward KineMatics).</p>
+                    <p>Todas as MTHs são calculadas com relação ao referencial do cenário de simulação:</p>
+                    <p></p>
+                    <pre><code class="language-python" style="text-align:left; height:300px">
+import numpy as np
+import uaibot as ub
+
+#Apenas configura como as matrizes serão mostradas
+np.set_printoptions(precision=4, suppress=True)
+
+robot = ub.Robot.create_kuka_kr5()
+
+#Sem parâmetros, calcula para a configuração atual (robot.q) e o efetuador
+print(robot.fkm())
+
+#Podemos especificar a configuração
+print(robot.fkm(q=[0,1,2,3,4,5]))
+
+#Podemos escolher se queremos calcular a MTH para o efetuador (padrão) ou se
+#para os referenciais de DH. Nesse último caso, temos uma lista com n matrizes
+#(para o primeiro referencial, FDH0, não é calculado, pois ele é fixo)
+
+#Calcula para o efetuador
+print(robot.fkm(q=robot.q, axis='eef'))
+#Calcula para os referenciais de DH
+htm_dh = robot.fkm(q=[0,1,2,3,4,5], axis='dh')
+for i in range(len(htm_dh)):
+    print(htm_dh[i])
+                        </code></pre>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Funções no UAIBot</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Parâmetros de DH</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>No <b class="itext">UAIBot</b> podemos acessar os parâmetros DH do robô:</p>
+                    <pre><code class="language-python" style="text-align:left">
+import numpy as np
+import uaibot as ub
+
+robot = ub.Robot.create_kuka_kr5()
+
+#As juntas vão de i=0 até i=n-1
+for i in range(len(robot.links)):
+    #Tipo: 0 (rotativa), 1 (linear)
+    print("Tipo:"+str(i+1)+": "+str(robot.links[i].joint_type))
+    print("theta"+str(i+1)+": "+str(robot.links[i].theta)+" rad")
+    print("d"+str(i+1)+": "+str(robot.links[i].d)+" m")
+    print("alpha"+str(i+1)+": "+str(robot.links[i].alpha)+" rad")
+    print("a"+str(i+1)+": "+str(robot.links[i].a)+" m")
+    print("\n")
+
+
+                        </code></pre>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula3/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Funções no UAIBot</h3>
+            </h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Cinemática inversa</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>A cinemática inversa pode ser calculada com a função <b class="itext">.ikm</b> (de Inverse KineMatics):</p>
+                    <p></p>
+                    <pre><code class="language-python" style="text-align:left; height:300px">
+import numpy as np
+import uaibot as ub
+
+robot = ub.Robot.create_kuka_kr5()
+sim = ub.Simulation([robot])
+
+#Vamos criar uma mth alvo para o efetuador que é igual à inicial, mas deslocada
+#um pouco para baixo
+target =  ub.Utils.trn([0,0,-0.3]) @ robot.fkm()
+
+#Vamos descobrir qual é a configuração que dá essa mth para o efetuador:
+q_ikm = robot.ikm(htm_target = target)
+
+#Vamos fazer uma animação suave do robô indo da configuração inicial até
+#a configuração alvo
+dt=0.01
+tmax = 10
+for i in range(round(tmax/dt)):
+    t = i*dt
+    q_c = (1-t/tmax) * robot.q0 + (t/tmax) * q_ikm
+    robot.add_ani_frame(time=t, q=q_c)
+
+sim.run()
+                        </code></pre>
 
                 </div>
 
