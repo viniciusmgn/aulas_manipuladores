@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="14/04/2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/aula3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/aula3/anim4.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/aula3/anim4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/aula3/anim5.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/aula3/anim5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/aula3/anim6.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/aula3/anim6.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +79,8 @@
       <workItem from="1648130300872" duration="73242000" />
       <workItem from="1649536623417" duration="15485000" />
       <workItem from="1649795627616" duration="34252000" />
+      <workItem from="1650027847602" duration="11704000" />
+      <workItem from="1650066853605" duration="5762000" />
     </task>
     <task id="LOCAL-00001" summary="24/03/2022">
       <created>1648119895019</created>
