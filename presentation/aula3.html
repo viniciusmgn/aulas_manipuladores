@@ -347,7 +347,7 @@
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Precisamos agora achar a matriz de rotação \(Q(q)\).</p>
-                    <p>Note, pela imagem ao lado, que, desconsiderando a translação (já resolvinda quando calculamos
+                    <p>Note, pela imagem ao lado, que, desconsiderando a translação (já resolvida quando calculamos
                         \(s(q)\)), o referencial
                         \(\mathcal{F}_e\) é o referencial \(\mathcal{F}_0\) rodado de \(q_1+q_2\) no eixo \(y_0\) <b
                                 class="itext">no sentido horário!</b> Como definimos a rotação positiva como sendo no
@@ -660,18 +660,18 @@
                                 <b class="itext">junta<sub>i+1</sub></b>;
                             </li>
                             <li>Identifique o <b class="itext">ponto<sub>i,i+1</sub></b>, que é o ponto na <b
-                                    class="itext">reta<sub>i</sub></b> mais próximo da <b
-                                    class="itext">reta<sub>i+1</sub></b>;
+                                    class="itext">linha<sub>i</sub></b> mais próximo da <b
+                                    class="itext">linha<sub>i+1</sub></b>;
                             </li>
                             <li>Identifique o <b class="itext">ponto<sub>i+1,i</sub></b>, que é o ponto na <b
-                                    class="itext">reta<sub>i+1</sub></b> mais próximo da <b
-                                    class="itext">reta<sub>i</sub></b>;
+                                    class="itext">linha<sub>i+1</sub></b> mais próximo da <b
+                                    class="itext">linha<sub>i</sub></b>;
                             </li>
                             <li>O <b class="itext">centro</b> de \(\mathcal{F}_{DHi}\) é o ponto <b
                                     class="itext">ponto<sub>i+1,i</sub></b>;
                             </li>
                             <li>O eixo <b class="itext">\(z_{DHi}\)</b> é escolhido como sendo em uma das duas direções
-                                na <b class="itext">reta<sub>i-1</sub></b>;
+                                na <b class="itext">linha<sub>i+1</sub></b>;
                             </li>
                             <li>O eixo <b class="itext">\(x_{DHi}\)</b> é escolhido como o vetor que vai de <b
                                     class="itext">ponto<sub>i,i+1</sub></b> até <b
@@ -700,11 +700,11 @@
                     <ul>
                         <li>Para \(i=0\), não existe <b class="itext">junta<sub>0</sub></b>. Então, para \(i=0\),
                             simplesmente
-                            escolhemos o centro arbitrariamente na <b class="itext">reta<sub>1</sub></b>, e o eixo <b
+                            escolhemos o centro arbitrariamente na <b class="itext">linha<sub>1</sub></b>, e o eixo <b
                                     class="itext">\(x_{DH0}\)</b>
                             arbitrariamente, contanto que seja ortogonal ao eixo <b class="itext">\(z_{DH0}\)</b>.
                         </li>
-                        <li>Se as retas <b class="itext">reta<sub>i</sub></b> e <b class="itext">reta<sub>i+1</sub></b>
+                        <li>Se as retas <b class="itext">linha<sub>i</sub></b> e <b class="itext">linha<sub>i+1</sub></b>
                             são paralelas, existem
                             infinitas escolhas possíveis para o par de pontos <b class="itext">ponto<sub>i,i+1</sub></b>
                             e <b class="itext">ponto<sub>i+1,i</sub></b>. Escolha
@@ -714,12 +714,12 @@
                             regra de escolha de
                             <b class="itext">\(x_{DHi}\)</b> é mal-definida. Escolha qualquer um dos dois vetores que
                             são mutuamente ortogonais às
-                            retas <b class="itext">reta<sub>i</sub></b> e <b class="itext">reta<sub>i+1</sub></b>.
+                            retas <b class="itext">linha<sub>i</sub></b> e <b class="itext">linha<sub>i+1</sub></b>.
                         </li>
                         <li>Se \(i=n\), não existe <b class="itext">junta<sub>n+1</sub></b>. Nesse caso, escolhemos a
                             reta
-                            <b class="itext">reta<sub>n+1</sub></b> arbitrariamente. Geralmente usamos a reta anterior,
-                            <b class="itext">reta<sub>n</sub></b>.
+                            <b class="itext">linha<sub>n+1</sub></b> arbitrariamente. Geralmente usamos a reta anterior,
+                            <b class="itext">linha<sub>n</sub></b>.
                         </li>
                     </ul>
 
