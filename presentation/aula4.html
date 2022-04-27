@@ -1012,6 +1012,33 @@
             </div>
 
         </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 2</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+
+                    <p>A velocidade angular é a mesma do exemplo anterior, sendo independente da terceira configuração:</p>
+                    <p>$$\omega =\Large{\Bigg(}\normalsize{}\begin{array}{ccc} 0 & 0 & 0 \\ -1 & -1 & 0\\ 0 & 0 & 0\end{array}\Large{\Bigg)}\normalsize{}
+                        \Large{\Bigg(}\normalsize{}\begin{array}{c} \dot{q}_1 \\ \dot{q}_2 \\ \dot{q}_3 \end{array}\Large{\Bigg)}\normalsize{}.$$</b></p>
+                    <p>Vamos chamar essa matriz \(3 \times 3\) de <b class="itext">\(J_\omega(q)\)</b>. Note que ela não depende de \(\dot{q}\) e nem de \(q\), mas não há erro matemático
+                        em dizer que ela é uma função (constante) de \(q\)...</p>
+                    <p>Com essa notação:</p>
+                    <p><b class="itext">$$\omega = J_\omega(q)\dot{q}.$$</b></p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadir.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
       <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conclusão dos Exemplos</b></h3>
@@ -1069,6 +1096,841 @@
                     <p><b class="itext">$$\omega = g_\omega(q,\dot{q}) = J_\omega(q)\dot{q}.$$</b></p>
                     <p>podemos concluir que as duas velocidades são (no geral) funções não lineares da configuração atual, \(q\), mas
                     <b class="itext">sempre lineares em \(\dot{q}\).</b></p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Jacobiana Geométrica para manipuladores gerais</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+
+                    <p>Há uma "receita de bolo" para construir a Jacobiana geométrica do referencial do efetuador usando a <b class="itext">convenção de Denavit-Hartenberg</b>.</p>
+                    <p>Para isso, usamos as matrizes <b class="itext">\(H_0^e(q)\)</b> (MTH do referencial \(\mathcal{F}_0\) para \(\mathcal{F}_e\)) e
+                    <b class="itext">\(H_0^{DHi}(q) = H_0^{DH0} H_{DH0}^{DHi}(q)\)</b> (MTH do referencial \(\mathcal{F}_0\) para \(\mathcal{F}_{DHi}\)). </p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Jacobiana Geométrica para manipuladores gerais</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="font-size:25px; text-align:left">
+                    <p>Sejam <b class="itext">\(s_{DHi}(q)\)</b> e <b class="itext">\(z_{DHi}(q)\)</b> a translação e eixo \(z\) da MTH <b class="itext">\(H_0^{DHi}(q)\)</b>,
+                        respectivemente (última e penúltima coluna das matrizes, respectivamente, sem o último elemento). </p>
+                     <p>Seja <b class="itext">\(s_{e}(q)\)</b>a translação  da MTH <b class="itext">\(H_0^{e}(q)\)</b>.</p>
+                    <p>Montaremos as duas matrizes coluna-a-coluna, para \(j=1,2,...,n\):</p>
+                    <div style="background-color: #282828">
+                        <ul>
+                            <li>j-ésima coluna de \(J_v(q) = \left\{
+	\begin{array}{ll}
+		z_{DH(j-1)}(q) \times (s_e(q)-s_{DH(j-1)}(q))  & \mbox{se a j-ésima junta é rotativa }\\
+		z_{DH(j-1)}(q) & \mbox{se a j-ésima junta é linear }
+	\end{array}
+\right.\)</b>
+                            </li>
+                            <br>
+                            <li>j-ésima coluna de \(J_\omega(q) = \left\{
+	\begin{array}{ll}
+		z_{DH(j-1)}(q)  & \mbox{se a j-ésima junta é rotativa }\\
+		0_{3 \times 1} & \mbox{se a j-ésima junta é linear }
+	\end{array}
+\right.\)</b>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">No UAIBot</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+
+                    <p>No <b class="itext">UAIBot</b> usamos a função <b class="itext">.jac_geo</b> para calcular a Jacobiana geométrica.</p>
+                    <pre><code class="language-python" style="text-align:left">
+import numpy as np
+import uaibot as ub
+
+robot = ub.Robot.create_kuka_kr5()
+#Calcula a Jacobiana geométrica para um dada configuração
+#A MTH da cinemática direta (cd) vem como sub-produto
+jg, cd = robot.jac_geo(q=[0,1,-1,2,3,4])
+#Se não especificarmos a configuração, ele assume a atual (robot.q)
+jg, cd = robot.jac_geo()
+#Assumindo que o robô tem na configuração atual uma velocidade instantânea
+#de 1 rad/s para cada junta, vamos calcular os vetores velocidade linear
+#e angular
+qdot = np.array([1,1,1,1,1,1]).reshape((6,1)) #Ele tem que ser um vetor coluna
+v = jg[0:3,:] @ qdot
+w = jg[3:6,:] @ qdot
+                        </code></pre>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px">Análises com a Jacobiana Geométrica</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg">
+                <br>
+            </p>
+        </section>
+
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+
+                    <p>A matriz Jacobiana geométrica em uma configuração \(q\) nos permite fazer uma série de análises interessantes acerca
+                    da <b class="itext">manipulabilidade</b> do manipulador nessa configuração.</p>
+                    <p>Essencialmente, ela pode nos dizer o quão difícil (ou se é impossível) fazer um dado movimento naquela configuração
+                    \(q\).</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Alcançabilidade de Velocidades</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+
+                    <p>A primeira pergunta é a seguinte: <b class="itext">dado que estamos em uma configuração \(q\), é possível fazer
+                    (simultanemente) qualquer velocidade linear \(v_{d}\) e angular \(\omega_d\) desejada manipulando a velocidade de junta \(\dot{q}\)?</b></p>
+                    <p>Do ponto de vista matemático, queremos saber se o <b class="itext">sistema linear</b> de equações:</p>
+                    $$J_{geo}(q)\dot{q} = \left(\begin{array}{c} J_v(q) \\ J_{\omega}(q) \end{array}\right)\dot{q} = \left(\begin{array}{c} v_d \\ \omega_d \end{array}\right) = h_d$$
+                    <p>tem uma solução \(\dot{q}\) para qualquer vetor \(h_d \in \mathbb{R}^6\).</p>
+                    <p>Um vetor com a velocidade linear e angular "empilhada", como \(h_d\), recebe o nome de <b class="itext">torção (twist)</b>.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Posto de uma Matriz</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+
+                    <p>Vamos relembrar um pouco de Álgebra Linear:</p>
+                    <p>Seja \(A\) uma matriz com \(m\) linhas e \(n\) colunas. Queremos saber se para todo \(b \in \mathbb{R}^m\) a equação
+                    \(Au=b\) tem uma solução \(u \in \mathbb{R}^n\).</p>
+                    <p>Para responder essa pergunta, temos que lembrar o conceito de <b class="itext">posto (rank)</b> de uma matriz:</p>
+                                        <div style="background-color: #282828">
+                        <p><b class="itext">Definição:</b> O <b class="itext">posto</b> de uma matriz \(A \in \mathbb{R}^{m \times n}\), posto(\(A\)), é o número
+                        de <b class="itext">colunas linearmente independentes</b> de \(A\).</p>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Posto de uma Matriz</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Alguns resultados:</p>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Teorema 1:</b> O <b class="itext">posto</b> de uma matriz também é igual ao número de
+                            <b class="itext">linhas</b> linearmente independentes.</p>
+                    </div>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Teorema 2:</b> O posto de uma matriz com \(n\) colunas e \(m\) linhas nunca é maior que
+                        o mínimo entre \(n\) e \(m\). Quando o posto é esse valor (\(\min(n,m)\)) dizemos que a matriz tem
+                        <b class="itext">posto completo</b>.</p>
+                    </div>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Teorema 3:</b> O posto de uma matriz é o número de <b class="itext">valores singulares não nulos</b>
+                        da matriz \(A\), sendo os valores singulares de uma matriz \(A\) os autovalores da matriz \(A^TA\).</p>
+                    </div>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Teorema 4:</b> O conjunto de de vetores \(h_d\) tal que a equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma solução \(u\)
+                        é um conjunto de dimensão posto(\(A\)).</p>
+                    </div>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Espaço Vetorial</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Outra definição importante:</p>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Definição:</b> Um <b class="itext">espaço vetorial</b> em \(\mathbb{R}^{d}\) é um conjunto de vetores \(\mathcal{V}\) que são
+                        d-dimensionais tal que se \(v_1, v_2 \in \mathcal{V}\) e \(\alpha_1, \alpha_2\) são escalares, então
+                        \(\alpha v_1 + \alpha v_2 \in \mathcal{X}\).</p>
+                    </div>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Imagem e Espaço Nulo de Uma Matriz</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Outras definições importante:</p>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Definição:</b> O conjunto de \(b\)'s tal que existe ao menos um \(u\) tal que \(Au=b\) é chamado de <b class="itext">imagem de \(A\)</b>,
+                    \(\texttt{Im}(A)\), e é um espaço vetorial.</p>
+                    </div>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Teorema 6:</b> A dimensão de \(\texttt{Im}(A)\) é posto(\(A\)).</p>
+                    </div>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Definição:</b> Seja \(A \in \mathbb{R}^{m \times n}\). O conjunto de \(u\)'s tal que \(Au=0_{m \times 1}\) é chamado de <b class="itext">espaço nulo de \(A\)</b>,
+                    \(\texttt{Ker}(A)\), e é um espaço vetorial.</p>
+                    </div>
+                    <p>Obs: ele se chama "\(\texttt{Ker}\)" pois em inglês damos o nome "Kernel" (núcleo).</p>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Teorema 7:</b> A dimensão de \(\texttt{Ker}(A)\) é  n-posto(\(A\)).</p>
+                    </div>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Alcançabilidade de Velocidades</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Temos então um resultado importante:</p>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Teorema 8:</b> A equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma
+                            solução \(u\) para qualquer \(b\) se e somente se
+                            \(n \geq m\) e \(A\) tem posto completo.</p>
+                    </div>
+
+                    <p>Portanto, a equação \(J_{geo}(q)\dot{q} = h_d\) tem solução para qualquer torção \(h_d \in \mathbb{R}^6\) se e somente se
+                        \(n \geq 6\) (o robô tem no mínimo 6 juntas) e \(J_{geo}(q)\) tem posto completo (no caso, 6).</b></p>
+                    <p>Além disso, o Teorema 4 nos diz que quanto menor o posto de \(J_{geo}(q)\), menor a dimensão de torções \(h_d\)
+                    "realizáveis" na configuração \(q\), ou seja, em que é possível escolher \(\dot{q}\) que nos dê essa torção  \(h_d\).</p>
+                    <p>Portanto, o <b class="itext">espaço de torções alcancáveis</b> na configuração \(q\) é \(\texttt{Im}(J_{geo}(q))\).</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Configurações singulares</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Considerando um robô com no mínimo 6 juntas, dizemos que uma configuração \(q\) é
+                    <b class="itext">singular</b> se o posto de \(J_{geo}(q)\) não é completo.</p>
+                    <p>Em uma configuração singular não é possível executar qualquer torção \(v_d, \omega_d\), o que limita a movimentação do robô.</p>
+                    <p>São configurações difíceis de se trabalhar, e os engenheiros de controle devem evitá-las sempre que possível. O porquê
+                    ficará mais claro quando discutirmos melhor o controle de manipuladores.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Torções inexequíveis</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Se um manipulador não puder executar qualquer torção \(h_d\) em uma configuração \(q\), quais
+                    ele não pode executar nessa configuração?</p>
+                    <div style="background-color: #282828">
+                        <p><b class="itext">Teorema 9:</b> A equação \(Au=b\) não tem solução \(u\) se \(b\) é não nulo e
+                        \(A^Tb = 0_{n \times 1}\).</p>
+                    </div>
+                    <p>Para encontrar algumas torções não executáveis, podemos encontramos vetores \(h_d\) tal que \(J_{geo}(q)^Th_d = 0_{n \times 1}\). </p>
+                    <p>O Teorema 9 fornece maneiras de encontrar algumas torções que não são executáveis, mas há torções não executáveis que
+                    não satisfazem \(J_{geo}(q)^Th_d = 0_{n \times 1}\).</p>
+                    <p>O espaço de torções não executáveis <b class="itext">não é</b> um espaço vetorial!</p>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Configurações quase singulares</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Considerar apenas as configurações singulares como problemáticas não é prático.</p>
+                    <p>Na prática, há configurações \(q\) que não são  <b class="itext">exatamente</b> singulares, mas são praticamente
+                    singulares, pois para executar uma torção \(h_d\) precisamos de uma velocidade de configuração \(\dot{q}\) muitíssimo alta
+                    (e portanto inexequível, na prática).</p>
+                    <p>São aquelas configurações em que a matriz \(J_{geo}(q)\) tem valores singulares muito próximos de zero, mas não
+                    exatamente zero.</p>
+                    <p>Devido à continuidade da matriz \(J_{geo}(q)\) na configuração \(q\), as configurações quase singulares são configurações
+                    próximas das configurações singulares.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo de não-alcançabilidade</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Considere o robô Kuka KR5 ao lado. A configuração ao lado (que é a inicial dele) é singular.</p>
+                    <p>Ele não consegue executar os vetores (em cyan e em amarelo, respectivamente) \(v_d = (1,78 \ 0 \ 0)^T\) e \(\omega_d = (0 \ 0 \ 1)^T\) simultaneamente, por exemplo.</p>
+                    <p>Há muitas outras que ele não consegue executar...</p>
+                    <p>De fato, se \(h_{ne}\) é uma torção não executável e \(h_{e}\) é executável, então \(h_{ne}+h_{e}\) não é executável.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                    <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula4/anim5.html"
+                            style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Movimento no Espaço Nulo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Vamos fazer agora uma análise que é, de certa forma, complementar à análise de alcançabilidade.</p>
+                    <p>Suponha que em uma configuração \(q\) exista um vetor não-nulo \(\dot{q}\) tal que \(J_{geo}(q)\dot{q} = 0_{6 \times 1}\).</p>
+                    <p>Isso significa que existe um "movimento instantâneo" (relativo à velocidade de junta instantânea \(\dot{q}\)) que, embora mexa
+                    partes do robô, <b class="itext">mantém o efetuador exatamente como ele está</b>!</p>
+                    <p>Portanto, o <b class="itext">espaço de velocidades de configuração inócuas ao efetuador</b> na configuração \(q\) é \(\texttt{Ker}(J_{geo}(q))\).</p>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Movimento no Espaço Nulo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Se o robô tem mais de 6 juntas, para toda configuração \(q\) existem vetores não-nulo \(\dot{q}\) tal que \(J_{geo}(q)\dot{q} = 0_{6 \times 1}\).</p>
+                    <p>Veja o KUKA LBR IIWA ao lado, que tem 7 juntas. Ele sempre consegue fazer movimentos que não mudam a pose do efetuador...</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                    <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula4/anim6.html"
+                            style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Resumo:</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Em resumo, para um robô com \(n\) juntas:</p>
+                    <ul>
+                        <li>O <b class="itext">espaço de torções alcancáveis</b> na configuração \(q\) é \(\texttt{Im}(J_{geo}(q))\), e tem
+                        dimensão posto(\(A\))...</li>
+                        <li>O <b class="itext">espaço de velocidades de configuração inócuas ao efetuador</b> na configuração \(q\) é \(\texttt{Ker}(J_{geo}(q))\), e tem
+                        dimensão \(n\)-posto(\(A\))...</li>
+                    </ul>
+                    <p> Há também intepretações para \(\texttt{Im}(J_{geo}(q)^T)\) e \(\texttt{Ker}(J_{geo}(q)^T)\), mas serão vistas
+                    em outra oportunidade.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px">Cinemática Diferencial Inversa</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg">
+                <br>
+            </p>
+        </section>
+
+    <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição:</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Estamos interessados agora em, efetivamente, resolver a equação</p>
+                    <b class="itext">$$J_{geo}(q)\dot{q} = h_d$$</b>
+                    <p>dado uma configuração \(q\) e uma torção desejada \(h_d\).</p>
+                    <p>Esse é o problema da <b class="itext">Cinemática Diferencial Inversa</b>!</p>
+                    <p>Esse problema, e problemas similares, é uma peça fundamental para grande parte das estratégias de controle
+                    de manipuladores.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Mais Álgebra Linear</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Só pode acontecer uma das três possibilidades com um sistema linear \(Au=b\) da forma:</p>
+                    <ul>
+                        <li>...ele tem <b class="itext">uma solução única</b>...</li>
+                        <li>...ele tem <b class="itext">infinitas soluções</b>...</li>
+                        <li>...ele <b class="itext">não tem solução</b>.</li>
+                    </ul>
+                    <p>Não pode ocorrer dele ter, por exemplo, exatamente 4 soluções (e não mais)!</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>É razoável pensar o seguinte:</p>
+                    <ul>
+                        <li>Se \(Au=b\) só tem uma solução, queremos encontrá-la.</li>
+                        <li>Se \(Au=b\) tem infinitas soluções, queremos encontrar aquela que seja a <b class="itext">melhor</b> de acordo com
+                        algum critério.</li>
+                        <li>Se \(Au=b\) não tem solução, queremos encontrar o vetor \(u\) <b class="itext">que mais se aproxima de resolver a equação</b>.</li>
+                    </ul>
+                    <p>Vamos formalizar o conceito de "melhor" no segundo e terceira situação.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Há várias maneiras de formalizar o conceito de "melhor", mas a maneira a seguir é
+                    <b class="itext">muito conveniente</b> matematicamente:</p>
+                    <ul>
+                        <li>Se \(Au=b\) só tem uma solução, queremos encontrá-la.</li>
+                        <li>Se \(Au=b\) tem infinitas soluções, queremos encontrar a que <b class="itext">minimiza \(\|u\|^2\)</b> (solução de menor norma).</li>
+                        <li>Se \(Au=b\) não tem solução, queremos encontrar a que  <b class="itext">minimiza \(\|Au-b\|^2\)</b> (melhor solução em termos de mínimos quadrados).</li>
+                    </ul>
+                    <p>O que procuramos é um algoritmo que considere os três casos e obtenha a respectiva solução.</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Há uma maneira elegante de implementar essa solução. Considere o seguinte <b class="itext">problema de otimização</b>:</p>
+                    <b class="itext">$$\min_{u} \|Au-b\|^2 + \epsilon \|u\|^2$$</b>
+                    <p>Iremos nos convencer agora  que resolver esse problema para um \(\epsilon\) muito pequeno, mas positivo (\(\lim_{\epsilon \rightarrow +0}\)) é equivalente a implementar
+                    a solução de três partes que queríamos...</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>O "truque" consiste em observar que a função objetivo \(\|Au-b\|^2 + \epsilon \|u\|^2\) pondera
+                    dois objetivos, que podem ser conflitantes: o de minimizar \(\|Au-b\|^2\) e o de minimizar \(\|u\|^2\).</p>
+                    <p>Considerando \(\epsilon\) muito pequeno, minimizar \(\|Au-b\|^2\) tem muito mais prioridade do que minimizar
+                    \(\|u\|^2\), e a segunda parcela só será considerada se conseguirmos minimizar totalmente \(\|Au-b\|^2\) , ou seja, se
+                    \(Au=b\)..</p>
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <ul>
+                        <li>Se Au=b só tiver uma solução, minimizaremos \(\|Au-b\|^2\) completamente, sem se preocupar com minimizar \(\|u\|^2\).
+                    O resultado será o único \(u\) que resolve \(Au=b\).</li>
+                        <li>Se tivermos infinitas soluções, minimizaremos \(\|Au-b\|^2\) completamente. Dentre aqueles \(u\) em que \(Au=b\), o problema
+                    escolherá o que minimiza a função objetivo de menor prioridade, \(\|u\|^2\), justamente como queríamos.</li>
+                        <li>Se não tivermos nenhuma, o problema só minimizará \(\|Au-b\|^2\) da melhor maneira possível, sem se preocupar com
+                    minimizar \(\|u\|^2\).</li>
+                    </ul>
+                    <p>Sendo bem preciso, o terceiro caso tem uma análise um pouco mais complicada, pois podem existir infinitos \(u\) que
+                    minimizam \(\|Au-b\|^2\) sem ter \(Au=b\). Nesse caso, a segunda função objetivo atua novamente.</p>
+
+
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>O problema de otimização:</p>
+                    <b class="itext">$$\min_{u} \|Au-b\|^2 + \epsilon \|u\|^2$$</b>
+                    <p>pode ser resolvido analíticamente, tirando o gradiente da função objetivo com relação a variavél \(u\) e igualando a zero.</p>
+                    <p>A solução é:</p>
+                    <b class="itext">$$u = (A^TA + \epsilon I_{n \times n})^{-1}A^Tb.$$</b>
+                    <p>Podemos mostrar que, para \(\epsilon > 0\), a matriz \(A^TA + \epsilon I_{n \times n}\) é sempre invertível.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">As pseudoinversas</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Vamos introduzir a notação:</p>
+                    <b class="itext">$$A^{\dagger(\epsilon)} = (A^TA + \epsilon I_{n \times n})^{-1}A^T.$$</b>
+                    <p>Então, nossa solução, com \(\epsilon \rightarrow +0\), é:</p>
+                    <p><b class="itext">$$u = \lim_{\epsilon \rightarrow +0}  A^{\dagger(\epsilon)} b = \left(\lim_{\epsilon \rightarrow +0}  A^{\dagger(\epsilon)}\right)b.$$</b></p>
+                    <p>A matriz \(A^{\dagger} = \left(\lim_{\epsilon \rightarrow +0}  A^{\dagger(\epsilon)}\right)\) recebe o nome
+                    <b class="itext">pseudoinversa</b> da matriz \(A\), enquanto \(A^{\dagger(\epsilon)}\) o nome <b class="itext">pseudoinversa amortecida</b> da matriz \(A\).</p>
+                    <p>Finalmente, temos a nossa solução:</p>
+                    <b class="itext">$$u = A^{\dagger}b.$$</b>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Problemas com as pseudoinversas</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Infelizmente, essa solução não é muito boa.</p>
+                    <p>Quando \(A\) está próxima de ser singular, \(A^{\dagger}\), e portanto \(u\), tende a "explodir" (ter valores muito grandes).</p>
+                    <p>Não é prático quando nosso \(u\) representa a velocidade de junta, por exemplo.</p>
+                    <p>Por esse motivo, <b class="itext">trabalhamos com a pseudoinversa amortecida</b>, \(u = A^{\dagger(\epsilon)}b\), com
+                    \(\epsilon\) pequeno, mas não nulo.</p>
+                    <p>Temos uma troca (trade-off) entre nosso desejo original para \(u\) e termos uma solução mais razoável (com valores pequenos) para o problema.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Introdução ao Controle de Robôs</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Dado uma torção alvo na configuração \(q\) e no tempo \(t\), \(h_d(q,t)\), e um fator de amortecimento \(\epsilon\), podemos calcular a respectiva
+                    velocidade de junta:</p>
+                    <b class="itext">$$\dot{q} = J_{geo}(q)^{\dagger(\epsilon)}h_d(q,t).$$</b>
+                    <p>Se o robô tiver uma interface para enviar a velocidade de configuração, podemos usar essa equação para fazer
+                    <b class="itext">controle!</b></p>
+                    <p>O desafio é justamente escolher \(h_d\) que vai nos permitir realizar a tarefa desejada.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">No UAIBot</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+
+                    <p>No <b class="itext">UAIBot</b> usamos a função <b class="itext">Utils.dp_inv</b> para calcular a pseudoinversa amortecida</p>
+                    <pre><code class="language-python" style="text-align:left">
+import numpy as np
+import uaibot as ub
+
+robot = ub.Robot.create_kuka_kr5()
+#Calcula a Jacobiana geométrica para a configuração atual
+jg, cd = robot.jac_geo()
+#Define a torção desejada
+h_des = np.array([1,0,0,0,0,0]).reshape((6,1))
+#Calcula a velocidade
+eps=0.001
+qdot = ub.Utils.dp_inv(jg,eps) @ h_des
+                        </code></pre>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Um controle simples</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+
+                    <p>Vamos fazer o efetuador ficar indo de um lado para o outro, sem mudar sua orientação.</p>
+                    <p>Para isso, basta escolher algo como \(v_d(t) = (\cos(t) \ 0 \ 0)^T\) e \(\omega_d(t) = (0 \ 0 \ 0)^T\).</p>
+                    <pre><code class="language-python" style="text-align:left">
+import numpy as np
+import uaibot as ub
+
+robot = ub.Robot.create_kuka_kr5()
+#Calcula a Jacobiana geométrica para a configuração atual
+jg, cd = robot.jac_geo()
+#Define a torção desejada
+h_des = np.array([1,0,0,0,0,0]).reshape((6,1))
+#Calcula a velocidade
+eps=0.001
+qdot = ub.Utils.dp_inv(jg,eps) @ h_des
+                        </code></pre>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+<section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conclusão</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Em posse da Jacobiana geométrica, podemos mapear torções em velocidades de junta.</p>
+
+                    <p>Isso é muito útil pois frequentemente é mais fácil planejar o controle na torção, mas o robô recebe o comando em velocidade
+                    de junta. Esse mapeamento resolve o problema.</p>
+                    <p>Na próxima aula veremos que a Jacobiana geométrica será utilizada como ingrediente principal para o cálculo
+                    de <b class="itext">outras Jacobianas</b>, relativas a um espaço onde planejar as velocidades é ainda mais simples
+                    do que no espaço de torções.</p>
+                    <p>Nesse espaço, planejaremos nosso <b class="itext">controlador</b>.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
