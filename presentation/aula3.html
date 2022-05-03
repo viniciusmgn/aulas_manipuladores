@@ -1560,7 +1560,7 @@ robot = ub.Robot.create_kuka_kr5()
 #As juntas vão de i=0 até i=n-1
 for i in range(len(robot.links)):
     #Tipo: 0 (rotativa), 1 (linear)
-    print("Tipo:"+str(i+1)+": "+str(robot.links[i].joint_type))
+    print("Tipo"+str(i+1)+": "+str(robot.links[i].joint_type))
     print("theta"+str(i+1)+": "+str(robot.links[i].theta)+" rad")
     print("d"+str(i+1)+": "+str(robot.links[i].d)+" m")
     print("alpha"+str(i+1)+": "+str(robot.links[i].alpha)+" rad")

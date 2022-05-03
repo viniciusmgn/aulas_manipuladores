@@ -1240,9 +1240,9 @@ w = jg[3:6,:] @ qdot
                     <p>A primeira pergunta é a seguinte: <b class="itext">dado que estamos em uma configuração \(q\), é possível fazer
                     (simultanemente) qualquer velocidade linear \(v_{d}\) e angular \(\omega_d\) desejada manipulando a velocidade de junta \(\dot{q}\)?</b></p>
                     <p>Do ponto de vista matemático, queremos saber se o <b class="itext">sistema linear</b> de equações:</p>
-                    $$J_{geo}(q)\dot{q} = \left(\begin{array}{c} J_v(q) \\ J_{\omega}(q) \end{array}\right)\dot{q} = \left(\begin{array}{c} v_d \\ \omega_d \end{array}\right) = h_d$$
-                    <p>tem uma solução \(\dot{q}\) para qualquer vetor \(h_d \in \mathbb{R}^6\).</p>
-                    <p>Um vetor com a velocidade linear e angular "empilhada", como \(h_d\), recebe o nome de <b class="itext">torção (twist)</b>.</p>
+                    $$J_{geo}(q)\dot{q} = \left(\begin{array}{c} J_v(q) \\ J_{\omega}(q) \end{array}\right)\dot{q} = \left(\begin{array}{c} v_d \\ \omega_d \end{array}\right) = \xi_d$$
+                    <p>tem uma solução \(\dot{q}\) para qualquer vetor \(\xi_d \in \mathbb{R}^6\).</p>
+                    <p>Um vetor com a velocidade linear e angular "empilhada", como \(\xi_d\), recebe o nome simplesmente de <b class="itext">velocidade</b>.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -1302,7 +1302,7 @@ w = jg[3:6,:] @ qdot
                         da matriz \(A\), sendo os valores singulares de uma matriz \(A\) os autovalores da matriz \(A^TA\).</p>
                     </div>
                     <div style="background-color: #282828">
-                        <p><b class="itext">Teorema 4:</b> O conjunto de de vetores \(h_d\) tal que a equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma solução \(u\)
+                        <p><b class="itext">Teorema 4:</b> O conjunto de de vetores \(b\) tal que a equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma solução \(u\)
                         é um conjunto de dimensão posto(\(A\)).</p>
                     </div>
                 </div>
@@ -1388,11 +1388,11 @@ w = jg[3:6,:] @ qdot
                             \(n \geq m\) e \(A\) tem posto completo.</p>
                     </div>
 
-                    <p>Portanto, a equação \(J_{geo}(q)\dot{q} = h_d\) tem solução para qualquer torção \(h_d \in \mathbb{R}^6\) se e somente se
+                    <p>Portanto, a equação \(J_{geo}(q)\dot{q} = \xi_d\) tem solução para qualquer velocidade \(\xi_d \in \mathbb{R}^6\) se e somente se
                         \(n \geq 6\) (o robô tem no mínimo 6 juntas) e \(J_{geo}(q)\) tem posto completo (no caso, 6).</b></p>
-                    <p>Além disso, o Teorema 4 nos diz que quanto menor o posto de \(J_{geo}(q)\), menor a dimensão de torções \(h_d\)
-                    "realizáveis" na configuração \(q\), ou seja, em que é possível escolher \(\dot{q}\) que nos dê essa torção  \(h_d\).</p>
-                    <p>Portanto, o <b class="itext">espaço de torções alcancáveis</b> na configuração \(q\) é \(\texttt{Im}(J_{geo}(q))\).</p>
+                    <p>Além disso, o Teorema 4 nos diz que quanto menor o posto de \(J_{geo}(q)\), menor a dimensão de velocidades \(\xi_d\)
+                    "realizáveis" na configuração \(q\), ou seja, em que é possível escolher \(\dot{q}\) que nos dê essa velocidade  \(\xi_d\).</p>
+                    <p>Portanto, o <b class="itext">espaço de velocidades alcancáveis</b> na configuração \(q\) é \(\texttt{Im}(J_{geo}(q))\).</p>
 
                 </div>
 
@@ -1414,7 +1414,7 @@ w = jg[3:6,:] @ qdot
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Considerando um robô com no mínimo 6 juntas, dizemos que uma configuração \(q\) é
                     <b class="itext">singular</b> se o posto de \(J_{geo}(q)\) não é completo.</p>
-                    <p>Em uma configuração singular não é possível executar qualquer torção \(v_d, \omega_d\), o que limita a movimentação do robô.</p>
+                    <p>Em uma configuração singular não é possível executar qualquer velocidade \(v_d, \omega_d\), o que limita a movimentação do robô.</p>
                     <p>São configurações difíceis de se trabalhar, e os engenheiros de controle devem evitá-las sempre que possível. O porquê
                     ficará mais claro quando discutirmos melhor o controle de manipuladores.</p>
                 </div>
@@ -1431,19 +1431,19 @@ w = jg[3:6,:] @ qdot
 
      <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Torções inexequíveis</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">velocidades inexequíveis</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Se um manipulador não puder executar qualquer torção \(h_d\) em uma configuração \(q\), quais
+                    <p>Se um manipulador não puder executar qualquer velocidade \(\xi_d\) em uma configuração \(q\), quais
                     ele não pode executar nessa configuração?</p>
                     <div style="background-color: #282828">
                         <p><b class="itext">Teorema 9:</b> A equação \(Au=b\) não tem solução \(u\) se \(b\) é não nulo e
                         \(A^Tb = 0_{n \times 1}\).</p>
                     </div>
-                    <p>Para encontrar algumas torções não executáveis, podemos encontramos vetores \(h_d\) tal que \(J_{geo}(q)^Th_d = 0_{n \times 1}\). </p>
-                    <p>O Teorema 9 fornece maneiras de encontrar algumas torções que não são executáveis, mas há torções não executáveis que
-                    não satisfazem \(J_{geo}(q)^Th_d = 0_{n \times 1}\).</p>
-                    <p>O espaço de torções não executáveis <b class="itext">não é</b> um espaço vetorial!</p>
+                    <p>Para encontrar algumas velocidades não executáveis, podemos encontramos vetores \(\xi_d\) tal que \(J_{geo}(q)^T\xi_d = 0_{n \times 1}\). </p>
+                    <p>O Teorema 9 fornece maneiras de encontrar algumas velocidades que não são executáveis, mas há velocidades não executáveis que
+                    não satisfazem \(J_{geo}(q)^T\xi_d = 0_{n \times 1}\).</p>
+                    <p>O espaço de velocidades não executáveis <b class="itext">não é</b> um espaço vetorial!</p>
 
 
                 </div>
@@ -1465,7 +1465,7 @@ w = jg[3:6,:] @ qdot
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Considerar apenas as configurações singulares como problemáticas não é prático.</p>
                     <p>Na prática, há configurações \(q\) que não são  <b class="itext">exatamente</b> singulares, mas são praticamente
-                    singulares, pois para executar uma torção \(h_d\) precisamos de uma velocidade de configuração \(\dot{q}\) muitíssimo alta
+                    singulares, pois para executar uma velocidade \(\xi_d\) precisamos de uma velocidade de configuração \(\dot{q}\) muitíssimo alta
                     (e portanto inexequível, na prática).</p>
                     <p>São aquelas configurações em que a matriz \(J_{geo}(q)\) tem valores singulares muito próximos de zero, mas não
                     exatamente zero.</p>
@@ -1491,7 +1491,7 @@ w = jg[3:6,:] @ qdot
                     <p>Considere o robô Kuka KR5 ao lado. A configuração ao lado (que é a inicial dele) é singular.</p>
                     <p>Ele não consegue executar os vetores (em cyan e em amarelo, respectivamente) \(v_d = (1,78 \ 0 \ 0)^T\) e \(\omega_d = (0 \ 0 \ 1)^T\) simultaneamente, por exemplo.</p>
                     <p>Há muitas outras que ele não consegue executar...</p>
-                    <p>De fato, se \(h_{ne}\) é uma torção não executável e \(h_{e}\) é executável, então \(h_{ne}+h_{e}\) não é executável.</p>
+                    <p>De fato, se \(h_{ne}\) é uma velocidade não executável e \(h_{e}\) é executável, então \(h_{ne}+h_{e}\) não é executável.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -1556,7 +1556,7 @@ w = jg[3:6,:] @ qdot
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Em resumo, para um robô com \(n\) juntas:</p>
                     <ul>
-                        <li>O <b class="itext">espaço de torções alcancáveis</b> na configuração \(q\) é \(\texttt{Im}(J_{geo}(q))\), e tem
+                        <li>O <b class="itext">espaço de velocidades alcancáveis</b> na configuração \(q\) é \(\texttt{Im}(J_{geo}(q))\), e tem
                         dimensão posto(\(A\))...</li>
                         <li>O <b class="itext">espaço de velocidades de configuração inócuas ao efetuador</b> na configuração \(q\) é \(\texttt{Ker}(J_{geo}(q))\), e tem
                         dimensão \(n\)-posto(\(A\))...</li>
@@ -1589,8 +1589,8 @@ w = jg[3:6,:] @ qdot
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Estamos interessados agora em, efetivamente, resolver a equação</p>
-                    <b class="itext">$$J_{geo}(q)\dot{q} = h_d$$</b>
-                    <p>dado uma configuração \(q\) e uma torção desejada \(h_d\).</p>
+                    <b class="itext">$$J_{geo}(q)\dot{q} = \xi_d$$</b>
+                    <p>dado uma configuração \(q\) e uma velocidade desejada \(\xi_d\).</p>
                     <p>Esse é o problema da <b class="itext">Cinemática Diferencial Inversa</b>!</p>
                     <p>Esse problema, e problemas similares, é uma peça fundamental para grande parte das estratégias de controle
                     de manipuladores.</p>
@@ -1733,7 +1733,7 @@ w = jg[3:6,:] @ qdot
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <ul>
-                        <li>Se Au=b só tiver uma solução, minimizaremos \(\|Au-b\|^2\) completamente, sem se preocupar com minimizar \(\|u\|^2\).
+                        <li>Se \(Au=b\) só tiver uma solução, minimizaremos \(\|Au-b\|^2\) completamente, sem se preocupar com minimizar \(\|u\|^2\).
                     O resultado será o único \(u\) que resolve \(Au=b\).</li>
                         <li>Se tivermos infinitas soluções, minimizaremos \(\|Au-b\|^2\) completamente. Dentre aqueles \(u\) em que \(Au=b\), o problema
                     escolherá o que minimiza a função objetivo de menor prioridade, \(\|u\|^2\), justamente como queríamos.</li>
@@ -1833,12 +1833,12 @@ w = jg[3:6,:] @ qdot
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Introdução ao Controle de Robôs</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Dado uma torção alvo na configuração \(q\) e no tempo \(t\), \(h_d(q,t)\), e um fator de amortecimento \(\epsilon\), podemos calcular a respectiva
+                    <p>Dado uma velocidade alvo na configuração \(q\) e no tempo \(t\), \(\xi_d(q,t)\), e um fator de amortecimento \(\epsilon\), podemos calcular a respectiva
                     velocidade de junta:</p>
-                    <b class="itext">$$\dot{q} = J_{geo}(q)^{\dagger(\epsilon)}h_d(q,t).$$</b>
+                    <b class="itext">$$\dot{q} = J_{geo}(q)^{\dagger(\epsilon)}\xi_d(q,t).$$</b>
                     <p>Se o robô tiver uma interface para enviar a velocidade de configuração, podemos usar essa equação para fazer
                     <b class="itext">controle!</b></p>
-                    <p>O desafio é justamente escolher \(h_d\) que vai nos permitir realizar a tarefa desejada.</p>
+                    <p>O desafio é justamente escolher \(\xi_d\) que vai nos permitir realizar a tarefa desejada.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -1866,11 +1866,11 @@ import uaibot as ub
 robot = ub.Robot.create_kuka_kr5()
 #Calcula a Jacobiana geométrica para a configuração atual
 jg, cd = robot.jac_geo()
-#Define a torção desejada
-h_des = np.array([1,0,0,0,0,0]).reshape((6,1))
-#Calcula a velocidade
+#Define a velocidade desejada
+xi_d = np.array([1,0,0,0,0,0]).reshape((6,1))
+#Calcula a velocidade de junta
 eps=0.001
-qdot = ub.Utils.dp_inv(jg,eps) @ h_des
+qdot = ub.Utils.dp_inv(jg,eps) @ xi_d
                         </code></pre>
                 </div>
 
@@ -1891,28 +1891,46 @@ qdot = ub.Utils.dp_inv(jg,eps) @ h_des
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
 
-                    <p>Vamos fazer o efetuador ficar indo de um lado para o outro, sem mudar sua orientação.</p>
-                    <p>Para isso, basta escolher algo como \(v_d(t) = (\cos(t) \ 0 \ 0)^T\) e \(\omega_d(t) = (0 \ 0 \ 0)^T\).</p>
+                    <p>Vamos fazer o efetuador ficar indo para cima e para baixo, sem mudar sua orientação.
+                    Para isso, basta escolher algo como \(v_d(t) = (0 \ 0 \ 0{,}2\cos(t))^T\) e \(\omega_d(t) = (0 \ 0 \ 0)^T\).</p>
                     <pre><code class="language-python" style="text-align:left">
 import numpy as np
 import uaibot as ub
 
 robot = ub.Robot.create_kuka_kr5()
-#Calcula a Jacobiana geométrica para a configuração atual
-jg, cd = robot.jac_geo()
-#Define a torção desejada
-h_des = np.array([1,0,0,0,0,0]).reshape((6,1))
-#Calcula a velocidade
+sim = ub.Simulation([robot])
+#Parâmetros
+dt=0.01
 eps=0.001
-qdot = ub.Utils.dp_inv(jg,eps) @ h_des
+
+for i in range(2000): #Simula por 20 segundos
+    #Calcula o tempo discreto a partir do tempo contínuo
+    t = i*dt
+    #Calcula a velocidade desejada
+    xi_d = np.array([0,0,0.2*np.cos(t),0,0,0]).reshape((6,1))
+    #Calcula a Jacobiana geométrica (na configuração atual)
+    jg, cd = robot.jac_geo()
+    #Calcula qual deve ser a velocidade de junta
+    qdot = ub.Utils.dp_inv(jg, eps) @ xi_d
+    #Aqui, simulamos o movimento do robô de acordo com essa velocidade de junta
+    #instantânea.
+    #Usamos uma integração de Euler de primeira ordem:
+    #próxima configuração = configuração atual + velocidade de configuração *dt
+    qprox = robot.q + qdot*dt
+    robot.add_ani_frame(t, q = qprox)
+
+sim.run()
+
+
+
+
                         </code></pre>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
+                     <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/aula4/anim7.html"
+                            style="width:500px;height:550px"></iframe>
                 </div>
             </div>
 
@@ -1923,13 +1941,13 @@ qdot = ub.Utils.dp_inv(jg,eps) @ h_des
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conclusão</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Em posse da Jacobiana geométrica, podemos mapear torções em velocidades de junta.</p>
+                    <p>Em posse da Jacobiana geométrica, podemos mapear velocidades em velocidades de junta.</p>
 
-                    <p>Isso é muito útil pois frequentemente é mais fácil planejar o controle na torção, mas o robô recebe o comando em velocidade
+                    <p>Isso é muito útil pois frequentemente é mais fácil planejar o controle na velocidade, mas o robô recebe o comando em velocidade
                     de junta. Esse mapeamento resolve o problema.</p>
                     <p>Na próxima aula veremos que a Jacobiana geométrica será utilizada como ingrediente principal para o cálculo
                     de <b class="itext">outras Jacobianas</b>, relativas a um espaço onde planejar as velocidades é ainda mais simples
-                    do que no espaço de torções.</p>
+                    do que no espaço de velocidades.</p>
                     <p>Nesse espaço, planejaremos nosso <b class="itext">controlador</b>.</p>
                 </div>
 
