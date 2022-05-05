@@ -611,7 +611,7 @@
                     <p>Simples, em posse da sua descrição do movimento como uma MTH, \(H_{0}^{obj}(t)\), extraímos
                     as respectivas rotação \(Q(t)\) e translação \(s(t)\).</p>
                     <p>A velocidade linear é \(v(t) = \dot{s}(t)\).</p>
-                    <p>A velocidade linear é encontrada pela equação \(S(\omega(t)) = \dot{Q}(t)Q(t)^T\).</p>
+                    <p>A velocidade angular é encontrada pela equação \(S(\omega(t)) = \dot{Q}(t)Q(t)^T\).</p>
                     <p>Repito que os dois vetores estarão medidos no referencial \(\mathcal{F}_0\).</p>
 
                 </div>
@@ -1299,7 +1299,7 @@ w = jg[3:6,:] @ qdot
                     </div>
                     <div style="background-color: #282828">
                         <p><b class="itext">Teorema 3:</b> O posto de uma matriz é o número de <b class="itext">valores singulares não nulos</b>
-                        da matriz \(A\), sendo os valores singulares de uma matriz \(A\) os autovalores da matriz \(A^TA\).</p>
+                        da matriz \(A\), sendo os valores singulares de uma matriz \(A\) a raiz quadrada dos autovalores da matriz \(A^TA\).</p>
                     </div>
                     <div style="background-color: #282828">
                         <p><b class="itext">Teorema 4:</b> O conjunto de de vetores \(b\) tal que a equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma solução \(u\)
@@ -1807,7 +1807,7 @@ w = jg[3:6,:] @ qdot
 
 <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Problemas com as pseudoinversas</b></h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Problemas com a pseudoinversa</b></h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Infelizmente, essa solução não é muito boa.</p>
@@ -1858,7 +1858,7 @@ w = jg[3:6,:] @ qdot
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
 
-                    <p>No <b class="itext">UAIBot</b> usamos a função <b class="itext">Utils.dp_inv</b> para calcular a pseudoinversa amortecida</p>
+                    <p>No <b class="itext">UAIBot</b> usamos a função <b class="itext">Utils.dp_inv</b> para calcular a pseudoinversa amortecida:</p>
                     <pre><code class="language-python" style="text-align:left">
 import numpy as np
 import uaibot as ub
@@ -1872,6 +1872,7 @@ xi_d = np.array([1,0,0,0,0,0]).reshape((6,1))
 eps=0.001
 qdot = ub.Utils.dp_inv(jg,eps) @ xi_d
                         </code></pre>
+                    <p>O nome vem do fato de em inglês chamarmos a matriz de <b class="itext">damped pseudoinverse</b>.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
