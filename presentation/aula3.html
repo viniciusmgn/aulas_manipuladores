@@ -1597,7 +1597,7 @@ sim = ub.Simulation([robot])
 
 #Vamos criar uma mth alvo para o efetuador que é igual à inicial, mas deslocada
 #um pouco para baixo
-target =  ub.Utils.trn([0,0,-0.3]) @ robot.fkm()
+target =  ub.Utils.trn([0,0,-0.3]) * robot.fkm()
 
 #Vamos descobrir qual é a configuração que dá essa mth para o efetuador:
 q_ikm = robot.ikm(htm_target = target)

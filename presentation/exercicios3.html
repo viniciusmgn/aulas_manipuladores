@@ -160,7 +160,7 @@
                     <p>Sabendo disso, explique o porquê da transformação entre dois referenciais de Denavit-Hartenberg
                         necessitar de
                         menos parâmetros (no caso, 4).</p>
-                    <p><a href="/aulas_manipuladores/presentation/respostas3.html#/4"><b
+                    <p><a href="/aulas_manipuladores/presentation/respostas3.html#/3"><b
                             class="hlink">Resposta</b></a></p>
                 </div>
 
@@ -195,6 +195,72 @@
 
         </section>
 
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exercício 7</b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Considere o cenário ao lado, que pode ser criado pelo código a seguir no UAIBot:</p>
+                    <pre><code class="language-python" style="text-align:left">
+import uaibot as ub
+import numpy as np
+
+#Cria o cenário
+robot = ub.Robot.create_abb_crb(ub.Utils.trn([0,0,0.2]))
+
+texture_table = ub.Texture(
+    url='https://raw.githubusercontent.com/viniciusmgn/uaibot_vinicius/master/contents/Textures/rough_metal.jpg',
+    wrap_s='RepeatWrapping', wrap_t='RepeatWrapping', repeat=[1, 1])
+
+material_table = ub.MeshMaterial(texture_map=texture_table, roughness=1, metalness=1, opacity=1)
+table1 = ub.Box(name="table1", htm = ub.Utils.trn([0.8,0,0.15]), width=0.5, depth=0.5, height=0.4, mesh_material=material_table)
+table2 = ub.Box(name="table2", htm = ub.Utils.trn([0,-0.8,0.15]), width=0.5, depth=0.5, height=0.4, mesh_material=material_table)
+table3 = ub.Box(name="table3", htm = ub.Utils.trn([0,0,0.1]), width=0.3, depth=0.3, height=0.2, mesh_material=material_table)
+obstacle = ub.Box(name="obstacle", htm = ub.Utils.trn([0.8,-0.8,0.5]), width=0.6, depth=0.6, height=1, mesh_material=material_table)
+
+material_cube = ub.MeshMaterial(roughness=1, metalness=1, opacity=1, color="purple")
+cube = ub.Box(name="cube", htm = ub.Utils.trn([0.8,0,0.4]), width=0.1, depth=0.1, height=0.1, mesh_material=material_cube)
+
+sim = ub.Simulation.create_sim_factory([robot, table1, table2, table3, obstacle, cube])
+                        </code></pre>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                            <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/exercicios3/anim1.html"
+                            style="width:500px;height:550px"></iframe>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exercício 7</b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Crie um código no UAIBot para que ele pegue o bloco roxo em uma mesa e entregue na outra, sem
+                    bater nos obstáculos. O robô deve pegar e entregar o objeto por cima!</p>
+                    <p>Use a cinemática inversa e interpolação linear, tal qual como <a href="/aulas_manipuladores/presentation/aula3.html#/61"><b
+                            class="hlink">neste exemplo</b> </a> da Aula 3.
+                    </p>
+                    <p>Use a função <b class="itext">robot.attach_object(cube)</b> para fazer o efetuador pegar o objeto quando estiver na pose correta.</p>
+                    <p>A função <b class="itext">ikm</b> aceita um parâmetro <b class="itext">q0</b>, tentando encontrar uma configuração na cinemática
+                    inversa próxima de <b class="itext">q0</b>. Use isso a seu favor.</p>
+                    <p><a href="/aulas_manipuladores/presentation/respostas3.html#/5"><b
+                            class="hlink">Resposta</b></a></p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                            <iframe scrolling="no"
+                            src="/aulas_manipuladores/presentation/images/exercicios3/anim1.html"
+                            style="width:500px;height:550px"></iframe>
+                </div>
+            </div>
+
+        </section>
 
     </div>
 </div>
