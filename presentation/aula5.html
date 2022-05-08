@@ -23,551 +23,35 @@
 
         <section>
             <h3>Manipuladores Robóticos</h3>
-            <h3 style="font-size:40px">Aula 4: Cinemática Diferencial</h3>
+            <h3 style="font-size:40px">Aula 5: Controle Cinemático</h3>
             <p>
-                <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg" style="width:400px;height:auto;">
+                <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png" style="width:500px;height:auto;">
                 <br><small>Vinicius Mariano Gonçalves</small>
             </p>
         </section>
 
         <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Controle Cinemático</h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Sabemos como descrever a <b class="itext">pose</b> do efetuador com relação a um referencial
-                        \(\mathcal{F}_0\).</p>
-                    <p>A <b class="itext">cinemática direta</b> mapeia a "posição" das juntas (configuração) na
-                        "posição" do corpo rígido (pose).</p>
-                    <p>Estamos agora interessado em mapear não as "posições", mas as "velocidades". Esse é o objetivo da
-                        <b class="itext">cinemática diferencial</b>.</p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px">O operador S</h3>
-            <p>
-                <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg">
-                <br>
-            </p>
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">O operador S</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição</b>
-            </h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Antes de prosseguir, temos que apresentar um conceito importante:</p>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Definição:</b> Seja \(a = (a_x \ a_y \ a_z)^T\) um vetor tridimensional.
-                            Definimos a função
-                            \(S: \mathbb{R}^3 \mapsto \mathbb{R}^{3 \times 3}\) como:
-                            $$S(a) = \Large{\Bigg(}\normalsize{}\begin{array}{ccc} 0 & -a_z & a_y \\ a_z & 0 & -a_x \\
-                            -a_y & a_x & 0 \end{array}\Large{\Bigg)}\normalsize{}. $$<br></p>
-                    </div>
-                    <p>O nome "S" vem de <span style="font-style: italic">skew-symmetric</span>, que é o termo inglês
-                        para "anti-simétrica".</p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">O operador S</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Propriedades</b>
-            </h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Essa matriz tem propriedades interessantes:</p>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Propriedade 1:</b> Ela é <b class="itext">anti-simétrica</b>, ou seja,
-                            \(S(a)^T = -S(a)\).<br></p>
-                    </div>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Propriedade 2:</b> Ela <b class="itext">implementa o produto vetorial usando
-                            um produto matrical</b>. Seja \(b\) um vetor coluna tridimensional.
-                            Então \(S(a)b = a \times b\).<br></p>
-                    </div>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Propriedade 3:</b> \(S(a)b = a \times b = -(b \times a) = -S(b)a\). <br></p>
-                    </div>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Propriedade 4:</b> Se \(Q\) é uma matriz de rotação, então \(S(Qa) =
-                            QS(a)Q^T\). <br></p>
-                    </div>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">O operador S</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">O operador S e
-                rotações no tempo</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Há uma profunda relação entre o operador/função \(S\) e matrizes de rotação variantes no
-                        tempo:</p>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Teorema:</b> Seja \(Q(t)\) uma matriz de rotação variante no tempo. Então
-                            existe um vetor tridimensional
-                            \(\omega(t)\) tal que \(\frac{d}{dt}Q(t) = \dot{Q}(t) = S\big(\omega(t)\big)Q(t)\).<br></p>
-                    </div>
-                    <p>Pelo teorema, \( S\big(\omega(t)\big) = \dot{Q}(t)Q(t)^T \). </p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">O operador S</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Primeiro
-                exemplo</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Considere a rotação a seguir (rotação no eixo \(z\) de um ângulo \(2t\)). Calcule
-                        \(\omega(t)\):</p>
-                    <p>
-                        $$Q(t) = \Large{\Bigg(}\normalsize{}\begin{array}{ccc}
-                        \cos(2t) & -\sin(2t) & 0 \\
-                        \sin(2t) & \cos(2t) & 0 \\
-                        0 & 0 & 1 \end{array}\Large{\Bigg)}\normalsize{}. $$
-                    </p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">O operador S</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Primeiro
-                exemplo</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Então:</p>
-                    <p>
-                        $$\dot{Q}(t) = \Large{\Bigg(}\normalsize{}\begin{array}{ccc}
-                        -2\sin(2t) & -2\cos(2t) & 0 \\
-                        2\cos(2t) & -2\sin(2t) & 0 \\
-                        0 & 0 & 0 \end{array}\Large{\Bigg)}\normalsize{}. $$
-                    </p>
-                    <p>Usando a propriedade que \(\cos(\theta)^2+\sin(\theta)^2=1\):</p>
-                    <p>
-                        $$\dot{Q}(t)Q(t)^T = \Large{\Bigg(}\normalsize{}\begin{array}{ccc}
-                        0 & -2 & 0 \\
-                        2 & 0 & 0 \\
-                        0 & 0 & 0 \end{array}\Large{\Bigg)}\normalsize{}. $$
-                    </p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">O operador S</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Primeiro
-                exemplo</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Da definição de \(S\), podemos extrair que:</p>
-                    <p>
-                        $$\omega(t) = \Large{\Bigg(}\normalsize{}\begin{array}{c}
-                        0 \\
-                        0 \\
-                        2 \end{array}\Large{\Bigg)}\normalsize{}. $$
-                    </p>
-                    <p>Neste exemplo o vetor \(\omega(t)\) é constante, mas isso nem sempre acontece, como veremos.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">O operador S</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Segundo
-                exemplo</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Considere a rotação a seguir (uma rotação complexa). Calcule \(\omega(t)\):</p>
-                    <p>
-                        $$Q(t) = \Large{\Bigg(}\normalsize{}\begin{array}{ccc}
-                        \cos(2t) & -\sin(4t)/2 & \sin(2t)^2 \\
-                        \sin(2t) & \cos(2t)^2 & -\sin(4t)/2 \\
-                        0 & \sin(2t) & \cos(2t) \end{array}\Large{\Bigg)}\normalsize{}. $$
-                    </p>
-                    <p>Com um pouco de trigonometria, podemos mostrar que:</p>
-                    <p>
-                        $$\dot{Q}(t)Q(t)^T = \Large{\Bigg(}\normalsize{}\begin{array}{ccc}
-                        0 & -2 & 2\sin(2t) \\
-                        2 & 0 & -2\cos(2t) \\
-                        -2\sin(2t) & 2\cos(2t) & 0 \end{array}\Large{\Bigg)}\normalsize{}. $$
-                    </p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">O operador S</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Segundo
-                exemplo</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Portanto, usando a definição do operador \(S\), podemos ver que:</p>
-                    <p>
-                        $$\omega(t) = \Large{\Bigg(}\normalsize{}\begin{array}{c}
-                        2\cos(2t) \\
-                        2\sin(2t) \\
-                        2 \end{array}\Large{\Bigg)}\normalsize{}. $$
-                    </p>
-                    <p>Agora o vetor \(\omega(t)\) não é constante.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">O operador S</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Interpretação</b>
-            </h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>O vetor \(\omega(t)\) tem uma interpretação importante na mecânica, como veremos em breve.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-        <section>
-            <h3 style="font-size:40px">Velocidade Linear e Angular</h3>
-            <p>
-                <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg">
-                <br>
-            </p>
-        </section>
-
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Velocidade de
-                Corpos Rígidos</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Agora vamos aprender a descrever a <b class="itext">velocidade</b> de corpos rígidos, sem ainda
-                        estar vinculado ao
-                        contexto de manipuladores robóticos.</p>
-                    <p>Uma <b class="itext">partícula</b> no espaço 3D com vetor posição \(p(t)\) escrita em um
-                        referencial \(\mathcal{F}_0\)
-                        tem sua velocidade descrita pelo vetor \(v(t) = \dot{p}(t)\), outro vetor 3D.</p>
-                    <p>Uma descrição de velocidade para corpos rígidos tem que conter as informações necessárias para
-                        descrever a velocidade
-                        de todas as partículas que formam um corpo rígido.</p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Velocidade de
-                Corpos Rígidos</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Considere um corpo rígido com um referencial \(\mathcal{F}_{obj}\) grudado nele.</p>
-                    <p><b class="itext">Fato importante:</b> toda partícula \(P\) que forma esse corpo rígido tem suas
-                        coordenadas descritas
-                        <b class="itext">no referencial \(\mathcal{F}_{obj}\)</b> por um vetor tridimensional <b
-                                class="itext">constante \(p^{P}_{obj}\)</b>.</p>
-                    <p>Esse vetor é, de certa forma, uma "carteira de identidade" da partícula, pois é único para cada
-                        partícula e, independente do movimento do corpo rígido, esse
-                        vetor será constante ao longo do tempo para cada partícula.</p>
-
-                </div>
-
-                <div style="display:table-cell;vertical-align: middle; align-items: center">
-                    <div style="position:absolute;top:50px;right:50px"
-                         class="vim_indicator current-visible fragment"
-                         data-fragment-index="0">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/ilustidentidade1.svg"
-                             style="width:400px;height:auto;">
-                    </div>
-                    <div style="position:absolute;top:50px;right:50px"
-                         class="vim_indicator current-visible fragment"
-                         data-fragment-index="1">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/ilustidentidade2.svg"
-                             style="width:400px;height:auto;">
-                    </div>
-                    <div style="position:absolute;top:50px;right:50px"
-                         class="vim_indicator current-visible fragment"
-                         data-fragment-index="2">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/ilustidentidade3.svg"
-                             style="width:400px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Velocidade de
-                Corpos Rígidos</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Seja \(H_{0}^{obj}(t)\) a MTH que representa a pose do objeto com relação a um referencial
-                        \(\mathcal{F}_0\) no tempo \(t\).</p>
-                    <p>Podemos extrair dela as matrizes de rotação \(Q(t)\) e vetor de deslocamento \(s(t)\).</p>
-                    <p>Então, a posição da partícula \(P\) <b class="itext">no referencial \(\mathcal{F}_{0}\),
-                        \(p^{P}_0(t)\),</b> é variável no tempo, e é dada por: </p>
-                    <p><b class="itext">$$p^{P}_0(t) = Q(t)p^{P}_{obj} + s(t)$$</b></p>
-                    <p>Só aplicamos a transformação rígida respectiva à MTH \(H_{0}^{obj}(t)\) na sua descrição
-                        local.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Velocidade de
-                Corpos Rígidos</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Vamos derivar os dois lados dessa equação no tempo:</p>
-                    <p>$$\dot{p}^{P}_0(t) = \dot{Q}(t)p^{P}_{obj} + \dot{s}(t).$$</p>
-                    <p>Usando o teorema que relaciona a derivada da matriz de rotação à matriz \(S\):</p>
-                    <p>$$\dot{p}^{P}_0(t) = S\big(\omega(t)\big)Q(t)p^{P}_{obj} + \dot{s}(t).$$</p>
-                    <p>Mas \(Q(t)p^{P}_{obj} = p^{P}_0(t)-s(t)\), então: </p>
-                    <p>$$\dot{p}^{P}_0(t) = S\big(\omega(t)\big)\big(p^{P}_0(t)-s(t)\big) + \dot{s}(t).$$</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Velocidade de
-                Corpos Rígidos</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Usando a <b class="itext">Propriedade 2</b> da matriz \(S\), chegamos em um resultado muito
-                        importante:</p>
-                    <p><b class="itext">$$\dot{p}^{P}_0(t) = \omega(t) \times \big(p^{P}_0(t)-s(t)\big) +
-                        \dot{s}(t).$$</b></p>
-                    <p>Você provavelmente já viu uma versão simplificada dessa fórmula no ensino médio...</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Um problema do
-                ensino médio</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Um disco de raio \(R\) roda no sentido horário com <b class="itext">velocidade angular constante</b> \(\Omega\)
-                        enquanto se desloca para
-                        direita com <b class="itext">velocidade linear constante</b> \(V\). Calcule o módulo do vetor velocidade instantânea da partícula \(P\)
-                        no instante de tempo mostrado ao lado.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/probemed.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Um problema do
-                ensino médio</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>O vetor velocidade da partícula é resultante da soma de duas componentes (vetores): uma devido à
-                        velocidade do disco transladando,
-                        um vetor para direita, e outra devido à rotação do disco, que, no instante mostrado ao lado, na
-                        partícula em questão, tem a mesma direção
-                        e sentido do vetor velocidade devido à translação.</p>
-                    <p>O módulo do vetor velocidade devido à translação é <b class="itext">V</b>.</p>
-                    <p>O módulo do vetor velocidade devido à rotação é <b class="itext">\(\Omega R\)</b>.</p>
-                    <p>Como os dois vetores estão na mesma direção e sentido, o módulo do vetor velocidade resultante é:
-                        <b class="itext">$$\Omega R + V$$</b></p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/probemed.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Um problema do
-                ensino médio</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 65%; float:left; font-size:25px; text-align:left">
-                    <p>Compare as duas fórmulas:</p>
-                    <p><b class="itext">$$\Omega R + V$$</b></p>
-                    <p><b class="itext">$$ \omega \times \big(p^{P}_0-s\big) +
-                        \dot{s}$$</b></p>
-                    <p>A segunda é uma <b class="itext">generalização da primeira!</b></p>
-                    <p>
+                    <p>Estamos interessados em fazer o  <b class="itext">controle</b> de manipuladores robóticos.</p>
+                    <p>Para falar de controle temos que definir qual é o <b class="itext">sistema</b> a ser controlado, ou seja, precisamos
+                        especificar:</p>
                     <ul>
-                        <li>O vetor \(\omega\) faz o papel do escalar \(\Omega\), e é chamado de <b class="itext">vetor
-                            velocidade angular</b>;</li>
-                        <li>O vetor \(\dot{s}\) faz o papel do escalar \(V\), e é chamado de <b class="itext">vetor
-                            velocidade linear</b>, usaremos a notação \(v\);</li>
-                        <li>O vetor \(p^{P}_0-s\) faz o papel do escalar \(R\), e é o <b class="itext">vetor
-                            distância</b> entre a posição da partícula e o centro do referencial do objeto.</li>
+                        <li>... as <b class="itext">variáveis manipuladas</b> (entradas),</li>
+                        <li>... as <b class="itext">variáveis de processo</b> (saída),</li>
+                        <li>... o <b class="itext">modelo matemático</b> que as relaciona.</li>
                     </ul>
-                    </p>
-                    <p><b class="itext">Todas essas quantias estão medidas com relação ao referencial \(\mathcal{F}_0\)!</b></p>
-
-                </div>
-
-                <div style="width: 35%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/probemed.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Um problema do
-                ensino médio</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Assim, a fórmula para o <b class="itext">vetor velocidade da partícula \(P\), medida em \(\mathcal{F}_0\)</b>:</p>
-                    <p><b class="itext">$$v^P_0 =  \omega \times \big(p^{P}_0-s\big) +
-                        v$$</b></p>
-                    <p>pode ser usado em situações genéricas, com inclusive os três elementos variantes no tempo.</p>
+                    <p>Há várias maneiras diferentes de se fazer controle de robôs, com níveis de complexidade diferentes e respectivos
+                    sistemas diferentes. Vamos ver um pouco sobre isso antes de prosseguir.</p>
 
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/probemed.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -576,174 +60,35 @@
         </section>
 
         <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>A fórmula:</p>
-                    <p><b class="itext">$$v^P_0 =  \omega \times \big(p^{P}_0-s\big) +
-                        v$$</b></p>
-                    <p>deixa claro que para caracterizarmos a velocidade de qualquer partícula, precisamos da
-                    <b class="itext">velocidade linear \(v(t)\)</b> e <b class="itext">velocidade angular \(w(t)\)</b> do corpo rígido
-                        no instante de tempo \(t\).</p>
-                    <p><b class="itext">Importante:</b> note que esses dois vetores são propriedades do corpo rígido como um todo, e não de
-                    partículas separadas. Assim, não faz sentido falar "velocidade linear da partícula" ou "velocidade angular da partícula" .
-                    A partícula tem o seu vetor velocidade, calculado a partir de \(v\), \(\omega\) e o vetor distância usando a fórmula acima.</p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-       <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Como calcular os vetores</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Como calcular os vetores \(v(t)\) e \(\omega(t)\) de um corpo rígido?</p>
-                    <p>Simples, em posse da sua descrição do movimento como uma MTH, \(H_{0}^{obj}(t)\), extraímos
-                    as respectivas rotação \(Q(t)\) e translação \(s(t)\).</p>
-                    <p>A velocidade linear é \(v(t) = \dot{s}(t)\).</p>
-                    <p>A velocidade linear é encontrada pela equação \(S(\omega(t)) = \dot{Q}(t)Q(t)^T\).</p>
-                    <p>Repito que os dois vetores estarão medidos no referencial \(\mathcal{F}_0\).</p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 50%; float:left; font-size:25px; text-align:left">
-                            <iframe scrolling="no"
-                            src="/aulas_manipuladores/presentation/images/aula4/anim1.html"
-                            style="width:500px;height:550px"></iframe>
-                </div>
-
-                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
-                            <iframe scrolling="no"
-                            src="/aulas_manipuladores/presentation/images/aula4/anim2.html"
-                            style="width:500px;height:550px"></iframe>
-                </div>
-            </div>
-
-        </section>
-
-       <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Dependência do Referencial do Objeto</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>O vetor velocidade angular <b class="itext">independe</b>  de como o referencial do objeto, \(\mathcal{F}_{obj}\), está grudado nele.</p>
-                    <p>Já a velocidade linear <b class="itext">depende</b> de como isso é feito.</p>
-                    <p>Nas duas animações a seguir temos um corpo rígido com um mesmo movimento, mas com referenciais do objeto grudados de maneira diferentes.
-                       Você pode observar que a velocidade angular é a mesma, mas a linear muda...</p>
-                    <p>De toda forma, a fórmula para velocidade de uma partícula no corpo <b class="itext">dará o mesmo resultado</b>, independente de como o referencial está grudado.</p>
-                    <p>Exemplo: o ponto no centro do paralelepípedo tem velocidade zero nos dois casos...</p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Dependência do Referencial do Objeto</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 50%; float:left; font-size:25px; text-align:left">
-                            <iframe scrolling="no"
-                            src="/aulas_manipuladores/presentation/images/aula4/anim3.html"
-                            style="width:500px;height:550px"></iframe>
-                </div>
-
-                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
-                            <iframe scrolling="no"
-                            src="/aulas_manipuladores/presentation/images/aula4/anim4.html"
-                            style="width:500px;height:550px"></iframe>
-                </div>
-            </div>
-
-        </section>
-
-       <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Velocidade Linear e Angular</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Interpretando a Velocidade Angular</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Interpretar o vetor velocidade linear \(v\) não é muito difícil.</p>
-                    <p>Entretanto, o vetor velocidade angular \(\omega\) é um pouco mais complexo.</p>
-                    <p>Podemos pensar nele da seguinte maneira:</p>
-                    <p>
-                        <ul>
-                            <li>Sua direção e sentido formam um "eixo de rotação" instantâneo em torno do centro do referencial do objeto.</li>
-                            <li>Seu módulo dá a velocidade de rotação (em rad/s, por exemplo) instantânea naquele momento.</li>
-                        </ul>
-                    </p>
-                    <p>Então, se um corpo rígido gira em um único eixo o tempo todo com uma velocidade constante \(\Omega\) (ver o Exemplo anterior, à direita),
-                    seu vetor velocidade angular é um vetor constante com a direção e sentido do eixo de rotação e intensidade \(\Omega\).</p>
-
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section>
-            <h3 style="font-size:40px">Cinemática Diferencial</h3>
+            <h3 style="font-size:40px">Visão Geral</h3>
             <p>
-                <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg">
+                <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png" style="width:500px;height:auto;">
                 <br>
             </p>
         </section>
 
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Calculando as velocidades</b></h3>
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Tipos de controle</b>
+            </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Finalmente, podemos resolver nosso problema de <b class="itext">cinemática diferencial</b>.</p>
-                    <p>O objetivo é calcular o \(v\) e \(\omega\)  (escritos no referencial \(\mathcal{F}_0\)) do efetuador em um determinado
-                    instante de tempo.</p>
-                    <p>Como dito na cinemática direta, como todo movimento do manipulador é fruto de um respectivo movimento em suas juntas, ou seja,
-                    em sua configuração \(q\), deve ser possível relacionar a <b class="itext">velocidade de configuração \(\dot{q}=\frac{d}{dt}q\)</b>
-                    com \(v\) e \(\omega\).</p>
+                    <p>Do ponto de vista da variável manipulada (ou seja, a que podemos comandar para atingir o objetivo de controle),
+                    os robôs podem ter interface para os seguintes comandos, do mais baixo nível para o mais alto nível:</p>
 
+                    <ul>
+                        <li>O <b class="itext">torque no motor das juntas, \(\tau\)</b>,</li>
+                        <li>A <b class="itext">velocidade de configuração desejada \(\dot{q}_d\)</b>,</li>
+                        <li>A <b class="itext">configuração deejada \(q_d\)</b>,</li>
+                        <li>A <b class="itext">pose do efetuador desejada \(\hat{H}_d\)</b>.</li>
+                    </ul>
 
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -751,24 +96,197 @@
 
         </section>
 
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Calculando as velocidades</b></h3>
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle por torque</b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Nesse caso, enviamos diretamente qual é o torque do motor em cada junta a cada instante de tempo, \(\tau_i(t)\).</p>
+                    <p>Para controlar dessa forma, temos normalmente como variáveis de processo a configuração e a velocidade de configuração atual,
+                    \(q(t), \dot{q}(t)\).</p>
+                    <p>O modelo matemático entrada/saída é dado por um (complicado) sistema de equações diferencias de segunda ordem, não linear,
+                        <b class="itext">\(\ddot{q} = f(q,\dot{q},\tau)\)</b>, dependente dos parâmetros inerciais (massas e momentos de inércia) dos robôs. Aprenderemos a calcular esse modelo na <b class="itext">Aula 6</b>.</p>
+                    <p>É (bem) raro robôs industriais terem uma interface de controle para torque, devido à elevada complexidade de se controlar
+                    e a possibilidade de causar danos no robô.</p>
+                    <p>Por outro lado, é o que permite a maior liberdade de controle. É especialmente importante se quisermos controlar a força
+                    que o robô faz no ambiente (<b class="itext">controle de força</b>).</p>
+                    <p>É essencialmente usado por pesquisadores ou pelos fabricantes dos robôs.</p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle por torque</b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Diagrama de blocos:</p>
+
+                    <div style="vertical-align: middle; text-align: center; align-items: center">
+                        <img src="/aulas_manipuladores/presentation/images/aula5/bloco1.svg"
+                             style="width:700px;height:auto;">
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle por velocidade de configuração </b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Nesse caso, assumimos que há um controlador de mais baixo nível que me permite enviar a velocidade de configuração
+                    desejada para cada junta, \(\dot{q}_{i,d}(t)\).</p>
+                    <p>Assumindo que o controlador é bom é que o sinal de velocidade desejada é "razoável", podemos assumir que a velocidade
+                    real é igual a desejada, e portanto o modelo matemático é <b class="itext">\(\dot{q} = \dot{q}_d\)</b>.</p>
+                    <p>Nesse tipo de controle temos como variável de processo a configuração \(q\) (não é necessário medir a velocidade de configuração,
+                    a não ser se quisermos verificar que o controlador de baixo nível está seguindo o valor desejado).</p>
+                    <p>É relativamente comum em robôs industriais, nem que seja a partir da modificação de outras interfaces. Em especial, podemos
+                    "adaptar" o próximo controle (por configuração) para se tornar este.</p>
+                    <p>Nos permite uma boa flexibilidade para controlar o robô.</p>
+                    <p>É o tema desta aula.</p>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle por velocidade de configuração</b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Diagrama de blocos:</p>
+
+                    <div style="vertical-align: middle; text-align: center; align-items: center">
+                        <img src="/aulas_manipuladores/presentation/images/aula5/bloco2.svg"
+                             style="width:700px;height:auto;">
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle por  configuração</b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Nesse caso, assumimos que há um controlador de mais baixo nível que me permite enviar a configuração
+                    desejada para cada junta, \(q_{i,d}(t)\).</p>
+                    <p>Assumindo que o controlador é bom é que o sinal de configuração desejada é "razoável", podemos assumir que a configuração
+                    real é igual a desejada, e portanto o modelo matemático é <b class="itext">\(q = q_d\)</b>.</p>
+                    <p>Nessa interface costumamos a fazer <b class="itext">controle em malha aberta</b> (do ponto de vista desse sistema), pois
+                    calculamos externamente a configuração desejada \(\dot{q}_d(t)\) para realizar a tarefa, enviamos para o robô, e não precisamos medir nada.
+                    Portanto, não há variável de processo. </p>
+                    <p>O <a href="/aulas_manipuladores/presentation/aula3.html#/61"><b
+                            class="hlink">controle da Aula 3</b></a> é um exemplo de utilização dessa interface: pré-calculamos uma trajetória \(\dot{q}_d(t)\)
+                    e "mandamos" para o robô (usando o <b class="itext">.add_ani_frame</b> para simular a interface de controle de junta).</p>
+                    <p>É bem comum em robôs industriais.</p>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle por configuração</b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Diagrama de blocos:</p>
+
+                    <div style="vertical-align: middle; text-align: center; align-items: center">
+                        <img src="/aulas_manipuladores/presentation/images/aula5/bloco3.svg"
+                             style="width:700px;height:auto;">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle por pose</b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>No nível mais alto, enviamos a pose desejada para o efetuador, \(\hat{H}_d(t)\), escrita como uma MTH
+                        ou de outra forma (geralmente 3 números de posição + 3 ângulos de Euler), com relação a um referencial fixo \(\mathcal{F}_0\).</p>
+                    <p>Uma maneira (simplificada) de pensar nesse controlador é pensar que ele faz a cinemática inversa para a pose desejada, obtando a respectiva
+                        configuração desejada, \(q_d(t) = \texttt{IK}(\hat{H}_d(t))\), e depois usa a interface anterior.
+                    </p>
+                    <p>Na verdade, cada fabricante implementa essa interface de um modo diferente.</p>
+                    <p>Todos os robôs têm, de alguma forma, uma interface desse tipo.</p>
+                    <p>Bem fácil e prático de utilizar. É, de longe, a interface mais utilizada pelos engenheiros/técnicos na indústria. </p>
+                    <p>Por outro lado, te dá um controle menor no robô. Há várias maneiras de fazer o controle, mas a interface te força a usar
+                    a que foi implementada pelo fabricante. Pode ser que essa interface não seja aplicável para o problema (ex: há colisão
+                    do robô com ele mesmo).</p>
+                </div>
+
+
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle por pose</b>
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Diagrama de blocos:</p>
+
+                    <div style="vertical-align: middle; text-align: center; align-items: center">
+                        <img src="/aulas_manipuladores/presentation/images/aula5/bloco4.svg"
+                             style="width:700px;height:auto;">
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle cinemático</b>
+            </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Nesta aula, focaremos na interface de controle de <b class="itext">velocidade de configuração</b>.</p>
+                    <p>O controle nessa interface é bem mais simples que o controle por torque, e, por outro lado, fornece
+                    uma flexibilidade muito boa para fazer controle.</p>
+                    <p>Chamamos o controle nessa interface de <b class="itext">controle cinemático</b> pois
+                    o controlador não dependerá dos parâmetros inerciais (massas, momentos de inércia) do robô. Ele
+                    dependerá apenas das características geométricas da tarefa.</p>
 
-                    <p>Na verdade, embora possa parecer um pouco contra-intuitivo, precisamos também saber qual é a <b class="itext">configuração atual \(q\)</b>
-                    para esse calculo. Ou seja, no geral, fornecer apenas qual é a velocidade instantânea de configuração em um momento não é suficiente
-                    para calcular \(v\) e \(\omega\).</p>
-                    <p>Procuramos então funções \(g_v\) e \(g_{\omega}\) tal que</p>
-                    <p><b class="itext">$$v = g_v(q,\dot{q}),$$</b></p>
-                    <p><b class="itext">$$\omega = g_\omega(q,\dot{q}).$$</b></p>
-                    <p>Vamos ter um sentimento/intuição de como isso é possível com um exemplo.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -776,23 +294,27 @@
 
         </section>
 
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 1</b></h3>
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Controle cinemático</b>
+            </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Doravante, chamaremos \(u = \dot{q}_d\), e portanto o sistema que queremos controlar é:</p>
+                    <b class="itext">$$\dot{q} = u.$$</b>
+                    <p>É um integrador simples desacoplado (independente) da configuração.</p>
+                    <p>Parece simples de controlar! Mas veremos que frequentemente usaremos
+                    <b class="itext">controladores não lineares</b>.</p>
+                    <p>Como nossa variável de processo nesse caso é apenas a configuração \(q\), nosso controlador
+                    dependerá dessa variável e (algumas vezes) explicitamente do tempo atual:</p>
+                    <b class="itext">$$u = h(q,t).$$</b>
 
-                    <p>Na aula de cinemática direta, calculamos a cinemática direta para o robô ao lado.</p>
-                    <p>Concluímos que o vetor \(s\), a posição do centro do referencial do efetuador com relação ao referencial,
-                    \(\mathcal{F}_0\), é:</p>
-                    <p>$$s(q) = \Large{\Bigg(}\normalsize{}\begin{array}{c}
-                            0,5\cos(q_1)+0,5\cos(q_1+q_2) \\ 0 \\ 0,5\sin(q_1)+0,5\sin(q_1+q_2)
-                            \end{array}\Large{\Bigg)}\normalsize{}.$$</b></p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadir.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -800,23 +322,92 @@
 
         </section>
 
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 1</b></h3>
+
+
+
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Visão Geral</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Um comentário importante</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Interfaces de configuração são mais comuns do que de velocidade.</b>
+                    <p>Mas é possível utilizar a estratégia de controle cinemático com essa interface também.
+                Seja \(u(t) = \dot{q}_d(t) = h(q(t),t)\) o controlador de cinemática direta. Então:</p>
+                    $$q_d(t) = q_0 + \int_0^t h(q(s),s)ds$$
+                    <p>em que \(q_0\) é a configuração inicial do robô.</p>
+                    <p>Basta calcular esse \(q_d\) e mandar para a interface de configuração!</b>
+                    <p>Essa ideia é inclusive utilizada na implementação de controles cinemáticos no UAIBot, como veremos.</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px">A simulação do controle no UAIBot</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png" style="width:500px;height:auto;">
+                <br>
+            </p>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">A simulação do controle no UAIBot</h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Durante esta aula, implementaremos muitos controladores cinemáticos usando o UAIBot.</p>
+                    <p>Vamos definir agora uma estrutura de simulação que será utilizada em todos os exemplos. O objetivo é separar claramente a parte do código
+                    que simula o robô real e a parte do código que é o controlador.</p>
+                    <p>Assim, fica bem claro como o código seria portado para o robô real (onde não haveria "simulação" do robô).</p>
+
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">A simulação do controle no UAIBot</h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Vamos assumir duas interfaces, que existiriam no robô real:</p>
+                    <ul>
+                        <li><b class="itext">get_configuration</b> que retorna a configuração (posição das juntas) medida do robô.
+                        Assumimos uma medição perfeita.</li>
+                        <li><b class="itext">set_configuration_speed</b> que seta a velocidade de configuração. Assumimos que
+                        o controlador de baixo nível é perfeito e a velocidade de configuração do robô real será exatamente a
+                        desejada.</li>
+                    </ul>
+                    <p>As duas funções serão chamadas uma vez por <b class="itext">ciclo de controle</b>. Assumimos
+                    que cada ciclo de controle tem a mesma duração, \(dt\), e que entre um ciclo e outro a velocidade de
+                        configuração do robô é constante.</p>
+                    <p>Escolheremos \(dt\) em nossas simulações de acordo
+                    com nossa conveniência, mas no robô real isso é limitado pela velocidade de comunicação das interfaces.</p>
+                    <p>Ainda, obviamente, o tempo do cálculo do controlador no robô real deve ser menor que \(dt\). Em nossas
+                    simulações isso não será um problema.</p>
 
-                    <p>Conforme vimos, para calcular a velocidade linear \(v\) basta derivar \(s\) no tempo.</p>
-                    <p>Temos que usar a <b class="itext">regra da cadeia</b>, pois vamos derivar em \(t\), \(s=s(q)\) depende de \(q\) e a configuração
-                    \(q\) depende de \(t\), \(q=q(t)\):</p>
-                    <p>$$v = \frac{d}{dt} s(q) = \Large{\Bigg(}\normalsize{}\begin{array}{c}
-                            -0,5\sin(q_1)\dot{q}_1-0,5\sin(q_1+q_2)(\dot{q}_1+\dot{q}_2) \\ 0 \\ 0,5\cos(q_1)\dot{q}_1+0,5\cos(q_1+q_2)(\dot{q}_1+\dot{q}_2)
-                            \end{array}\Large{\Bigg)}\normalsize{}.$$</b></p>
                 </div>
 
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadir.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -824,375 +415,60 @@
 
         </section>
 
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 1</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Usando a notação \(c_1,s_1,c_{12},s_{12}\) já usada anteriormente, podemos escrever a última equação de uma maneira matricial:</p>
-                    <p>$$v =\Large{\Bigg(}\normalsize{}\begin{array}{cc} -0,5s_1-0,5s_{12} & -0,5s_{12} \\ 0 & 0 \\ 0,5c_1+0,5c_{12} & 0,5c_{12} \end{array}\Large{\Bigg)}\normalsize{}
-                        \Large{\Big(}\normalsize{}\begin{array}{c} \dot{q}_1 \\ \dot{q}_2 \end{array}\Large{\Big)}\normalsize{}.$$</b></p>
-                    <p>Vamos chamar essa matriz \(3 \times 2\) de <b class="itext">\(J_v(q)\)</b>. Note que ela depende <b class="itext">apenas de \(q\) (não de \(\dot{q}\))</b>
-                    e que é uma função <b class="itext">não linear</b> de \(q\).</p>
-                    <p>Com essa notação:</p>
-                    <p><b class="itext">$$v = J_v(q)\dot{q}.$$</b></p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadir.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 1</b></h3>
+         <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">A simulação do controle no UAIBot</h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 70%; float:left; font-size:25px; text-align:left">
-
-                    <p>Vamos agora para a velocidade angular. Lembramos que a matriz de rotação respectiva à MTH da cinemática direta é:</p>
-                    <p>$$ Q(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{ccc}
-                        \cos(q_1+q_2) & 0 & -\sin(q_1+q_2) \\
-                        0 & 1 & 0 \\
-                        \sin(q_1+q_2) & 0 & \cos(q_1+q_2)
-                        \end{array}\LARGE{\Bigg)}\normalsize{}$$</b></p>
-                    <p>Então:</p>
-                    <p>$$ \frac{d}{dt} Q(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{ccc}
-                        -\sin(q_1{+}q_2)(\dot{q}_1{+}\dot{q}_2) & 0 & -\cos(q_1{+}q_2)(\dot{q}_1{+}\dot{q}_2). \\
-                        0 & 0 & 0 \\
-                        \cos(q_1{+}q_2)(\dot{q}_1{+}\dot{q}_2) & 0 & \sin(q_1{+}q_2)(\dot{q}_1{+}\dot{q}_2)
-                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$</b></p>
-
-                </div>
-
-                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadir.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 1</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Usamos a relação \(S(\omega)  = (\frac{d}{dt} Q(q))Q(q)^T\). Com um pouco de trigonometria, temos que:</p>
-                    <p>$$ S(\omega) = \LARGE{\Bigg(}\normalsize{}\begin{array}{ccc}
-                        0 & 0 & -(\dot{q}_1+\dot{q}_2) \\
-                        0 & 0 & 0 \\
-                        (\dot{q}_1+\dot{q}_2) & 0 & 0
-                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$</b></p>
-                    <p>E portanto:</p>
-                    <p>$$\omega = \Large{\Bigg(}\normalsize{}\begin{array}{c} 0 \\ -(\dot{q}_1+\dot{q}_2) \\ 0 \end{array}\Large{\Bigg)}\normalsize{}.$$</b></p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadir.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 1</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Podemos reescrever a última equação como:</p>
-                    <p>$$\omega =\Large{\Bigg(}\normalsize{}\begin{array}{cc} 0 & 0 \\ -1 & -1 \\ 0 & 0 \end{array}\Large{\Bigg)}\normalsize{}
-                        \Large{\Big(}\normalsize{}\begin{array}{c} \dot{q}_1 \\ \dot{q}_2 \end{array}\Large{\Big)}\normalsize{}.$$</b></p>
-                    <p>Vamos chamar essa matriz \(3 \times 2\) de <b class="itext">\(J_\omega(q)\)</b>. Note que ela não depende de \(\dot{q}\) e nem de \(q\), mas não há erro matemático
-                        em dizer que ela é uma função (constante) de \(q\)...</p>
-                    <p>Com essa notação:</p>
-                    <p><b class="itext">$$\omega = J_\omega(q)\dot{q}.$$</b></p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadir.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 1</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 70%; float:left; font-size:25px; text-align:left">
-
-                    <p>Suponha que em um determinado instante de tempo tenhamos \(q_1=\frac{\pi}{4}\), \(q_2=0\) e \(\dot{q}_1=\dot{q}_2=1 rad/s\).</b></p>
-                    <p>Usando as duas fórmulas:</p>
-                    <p>$$ v = \Large{\Bigg(}\normalsize{}\begin{array}{c} -\sqrt{2} \\ 0 \\ \sqrt{2} \end{array}\Large{\Bigg)}\normalsize{} m/s \ , \
-                        \omega = \Large{\Bigg(}\normalsize{}\begin{array}{c} 0 \\ -2 \\ 0 \end{array}\Large{\Bigg)}\normalsize{} rad/s.$$</p>
-                    <p>Ambos os vetores estão escritos no referencial \(\mathcal{F}_0\).</p>
-                    <p>Veja o vetor velocidade linear ao lado, em amarelo, e observe que está coerente com o que esperaríamos em termos de velocidade linear
-                        instantânea para o efetuador nesta situação.</p>
-                    <p>E o efetuador vai girar 2rad/s no eixo \(y\) no sentido anti-horário (sentido negativo de \(y\), neste caso).</p>
-
-                </div>
-
-                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocalccd.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 2</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Vamos calcular a mesma relação para o segundo exemplo da aula anterior...</p>
-                    <p>O procedimento é o mesmo. Começamos derivando \(s\) no tempo para obter:</b></p>
-                     <p>$$v = \frac{d}{dt} s(q) = \Large{\Bigg(}\normalsize{}\begin{array}{c}
-                            -0,5s_1\dot{q}_1{-}(0,25{+}q_3)s_{12}(\dot{q}_1{+}\dot{q}_2)+c_{12}\dot{q}_3 \\
-                             0 \\
-                             0,5c_1\dot{q}_1{-}(0,25{+}q_3)c_{12}(\dot{q}_1{+}\dot{q}_2)+s_{12}\dot{q}_3
-                            \end{array}\Large{\Bigg)}\normalsize{}.$$</b></p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadirb.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 2</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Assim como no exemplo anterior, podemos reescrever de maneira matricial:</p>
-                    <p>$$v =\Large{\Bigg(}\normalsize{}\begin{array}{ccc} -0,5s_1{-}(0,25{+}q_3)s_{12} & -(0,25{+}q_3)s_{12} & c_{12} \\ 0 & 0 & 0 \\ 0,5c_1{+}(0,25{+}q_3)c_{12} & (0,25{+}q_3)c_{12} & s_{12} \end{array}\Large{\Bigg)}\normalsize{}
-                        \Large{\Bigg(}\normalsize{}\begin{array}{c} \dot{q}_1 \\ \dot{q}_2 \\ \dot{q}_3 \end{array}\Large{\Bigg)}\normalsize{}.$$</b></p>
-                    <p>Vamos chamar essa matriz \(3 \times 3\) de <b class="itext">\(J_v(q)\)</b>. Note que ela depende <b class="itext">apenas de \(q\) (não de \(\dot{q}\))</b>
-                    e que é uma função <b class="itext">não linear</b> de \(q\).</p>
-                    <p>Com essa notação:</p>
-                    <p><b class="itext">$$v = J_v(q)\dot{q}.$$</b></p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadirb.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo 2</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>A velocidade angular é a mesma do exemplo anterior, sendo independente da terceira configuração:</p>
-                    <p>$$\omega =\Large{\Bigg(}\normalsize{}\begin{array}{ccc} 0 & 0 & 0 \\ -1 & -1 & 0\\ 0 & 0 & 0\end{array}\Large{\Bigg)}\normalsize{}
-                        \Large{\Bigg(}\normalsize{}\begin{array}{c} \dot{q}_1 \\ \dot{q}_2 \\ \dot{q}_3 \end{array}\Large{\Bigg)}\normalsize{}.$$</b></p>
-                    <p>Vamos chamar essa matriz \(3 \times 3\) de <b class="itext">\(J_\omega(q)\)</b>. Note que ela não depende de \(\dot{q}\) e nem de \(q\), mas não há erro matemático
-                        em dizer que ela é uma função (constante) de \(q\)...</p>
-                    <p>Com essa notação:</p>
-                    <p><b class="itext">$$\omega = J_\omega(q)\dot{q}.$$</b></p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadir.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conclusão dos Exemplos</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Então, para ambos exemplos, existem matrizes \(3 \times n\) \(J_v(q)\) e \(J_{\omega}(q)\) (em que \(n\) é o número de juntas do respectivo exemplo) tal que:</p>
-                    <p><b class="itext">$$v = J_v(q)\dot{q},$$</b></p>
-                    <p><b class="itext">$$\omega = J_\omega(q)\dot{q}.$$</b></p>
-                    <p>Será que algo similar ocorre para um manipulador geral?</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/exemplocinematicadir.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-      <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Jacobiana Geométrica</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p><b class="itext">Sim!</b> no caso geral para um manipulador de \(n\) juntas, podemos mostrar que existem matrizes \(3 \times n\) \(J_v(q)\), \(J_{\omega}(q)\), funções
-                    no geral <b class="itext">não lineares de \(q\)</b>, tal que:</p>
-                    <p><b class="itext">$$v = J_v(q)\dot{q},$$</b></p>
-                    <p><b class="itext">$$\omega = J_\omega(q)\dot{q}.$$</b></p>
-                    <p>Quando "empilhamos" as duas matrizes em uma única matrix \(6 \times n\) temos a (importantíssima) <b class="itext">Jacobiana Geométrica</b>:</p>
-                    <p><b class="itext">$$J_{geo}(q) = \left(\begin{array}{c} J_v(q) \\ J_{\omega}(q) \end{array}\right).$$</b></p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Jacobiana Geométrica</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Das equações:</p>
-                    <p><b class="itext">$$v = g_v(q,\dot{q}) = J_v(q)\dot{q},$$</b></p>
-                    <p><b class="itext">$$\omega = g_\omega(q,\dot{q}) = J_\omega(q)\dot{q}.$$</b></p>
-                    <p>podemos concluir que as duas velocidades são (no geral) funções não lineares da configuração atual, \(q\), mas
-                    <b class="itext">sempre lineares em \(\dot{q}\).</b></p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Jacobiana Geométrica para manipuladores gerais</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Há uma "receita de bolo" para construir a Jacobiana geométrica do referencial do efetuador usando a <b class="itext">convenção de Denavit-Hartenberg</b>.</p>
-                    <p>Para isso, usamos as matrizes <b class="itext">\(H_0^e(q)\)</b> (MTH do referencial \(\mathcal{F}_0\) para \(\mathcal{F}_e\)) e
-                    <b class="itext">\(H_0^{DHi}(q) = H_0^{DH0} H_{DH0}^{DHi}(q)\)</b> (MTH do referencial \(\mathcal{F}_0\) para \(\mathcal{F}_{DHi}\)). </p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Jacobiana Geométrica para manipuladores gerais</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="font-size:25px; text-align:left">
-                    <p>Sejam <b class="itext">\(s_{DHi}(q)\)</b> e <b class="itext">\(z_{DHi}(q)\)</b> a translação e eixo \(z\) da MTH <b class="itext">\(H_0^{DHi}(q)\)</b>,
-                        respectivemente (última e penúltima coluna das matrizes, respectivamente, sem o último elemento). </p>
-                     <p>Seja <b class="itext">\(s_{e}(q)\)</b>a translação  da MTH <b class="itext">\(H_0^{e}(q)\)</b>.</p>
-                    <p>Montaremos as duas matrizes coluna-a-coluna, para \(j=1,2,...,n\):</p>
-                    <div style="background-color: #282828">
-                        <ul>
-                            <li>j-ésima coluna de \(J_v(q) = \left\{
-	\begin{array}{ll}
-		z_{DH(j-1)}(q) \times (s_e(q)-s_{DH(j-1)}(q))  & \mbox{se a j-ésima junta é rotativa }\\
-		z_{DH(j-1)}(q) & \mbox{se a j-ésima junta é linear }
-	\end{array}
-\right.\)</b>
-                            </li>
-                            <br>
-                            <li>j-ésima coluna de \(J_\omega(q) = \left\{
-	\begin{array}{ll}
-		z_{DH(j-1)}(q)  & \mbox{se a j-ésima junta é rotativa }\\
-		0_{3 \times 1} & \mbox{se a j-ésima junta é linear }
-	\end{array}
-\right.\)</b>
-                            </li>
-
-                        </ul>
-                    </div>
-
-
-                </div>
-            </div>
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">No UAIBot</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>No <b class="itext">UAIBot</b> usamos a função <b class="itext">.jac_geo</b> para calcular a Jacobiana geométrica.</p>
+                    <p>Esboço da estrutura:</p>
                     <pre><code class="language-python" style="text-align:left">
-import numpy as np
 import uaibot as ub
+import numpy as np
 
-robot = ub.Robot.create_kuka_kr5()
-#Calcula a Jacobiana geométrica para um dada configuração
-#A MTH da cinemática direta (cd) vem como sub-produto
-jg, cd = robot.jac_geo(q=[0,1,-1,2,3,4])
-#Se não especificarmos a configuração, ele assume a atual (robot.q)
-jg, cd = robot.jac_geo()
-#Assumindo que o robô tem na configuração atual uma velocidade instantânea
-#de 1 rad/s para cada junta, vamos calcular os vetores velocidade linear
-#e angular
-qdot = np.array([1,1,1,1,1,1]).reshape((6,1)) #Ele tem que ser um vetor coluna
-v = jg[0:3,:] @ qdot
-w = jg[3:6,:] @ qdot
+#O tempo entre um ciclo de controle e o outro. No mundo real
+#ele não é constante, mas assumiremos aqui que ele é. Está
+#medido em segundos
+#0.01 s = controle a 100Hz
+dt = 0.01
+#O tempo, uma variável global
+t = 0
+#Tempo máximo de simulação
+tmax = 10
+
+def get_configuration(robot):
+  #Essa função representa o ato de medir a configuração do robô
+  #no tempo atual. Assumimos que medimos a configuração perfeitamente.
+  #Devido à qualidade dos sensores, isso é razoavelmente realista.
+  return robot.q
+
+def set_configuration_speed(robot, qdot_des):
+  #Essa função simula a interface de velocidade de um robô real.
+  #A interface assume que entre um ciclo de controle e outro, a velocidade
+  #de configuração real do robô vai ser a última enviada.
+  #Assumindo um controlador perfeito, a velocidade de configuração real
+  #é a desejada.
+  #Portanto, a configuração no final do ciclo vai ser:
+  q_next = robot.q + qdot_des*dt
+  #Atualizamos a simulação para avisar que a configuração do robô mudou.
+  robot.add_ani_frame(time = t+dt, q = q_next)
+
+
+#As inicializações (ex: parâmetros do controlador) virão aqui
+
+
+#Colocaremos aqui nosso "main" do controlador, que ficará em um laço
+#durante um tempo tmax
+for i in range(round(tmax/dt)):
+  #Colocaremos aqui a lógica de controle
+
+  #O tempo sempre vai passar no final do ciclo
+  t+=dt
                         </code></pre>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1201,115 +477,35 @@ w = jg[3:6,:] @ qdot
         </section>
 
         <section>
-            <h3 style="font-size:40px">Análises com a Jacobiana Geométrica</h3>
+            <h3 style="font-size:40px">O conceito de tarefa</h3>
             <p>
-                <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg">
+                <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png" style="width:500px;height:auto;">
                 <br>
             </p>
         </section>
 
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>A matriz Jacobiana geométrica em uma configuração \(q\) nos permite fazer uma série de análises interessantes acerca
-                    da <b class="itext">manipulabilidade</b> do manipulador nessa configuração.</p>
-                    <p>Essencialmente, ela pode nos dizer o quão difícil (ou se é impossível) fazer um dado movimento naquela configuração
-                    \(q\).</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Alcançabilidade de Velocidades</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>A primeira pergunta é a seguinte: <b class="itext">dado que estamos em uma configuração \(q\), é possível fazer
-                    (simultanemente) qualquer velocidade linear \(v_{d}\) e angular \(\omega_d\) desejada manipulando a velocidade de junta \(\dot{q}\)?</b></p>
-                    <p>Do ponto de vista matemático, queremos saber se o <b class="itext">sistema linear</b> de equações:</p>
-                    $$J_{geo}(q)\dot{q} = \left(\begin{array}{c} J_v(q) \\ J_{\omega}(q) \end{array}\right)\dot{q} = \left(\begin{array}{c} v_d \\ \omega_d \end{array}\right) = h_d$$
-                    <p>tem uma solução \(\dot{q}\) para qualquer vetor \(h_d \in \mathbb{R}^6\).</p>
-                    <p>Um vetor com a velocidade linear e angular "empilhada", como \(h_d\), recebe o nome de <b class="itext">torção (twist)</b>.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Posto de uma Matriz</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Vamos relembrar um pouco de Álgebra Linear:</p>
-                    <p>Seja \(A\) uma matriz com \(m\) linhas e \(n\) colunas. Queremos saber se para todo \(b \in \mathbb{R}^m\) a equação
-                    \(Au=b\) tem uma solução \(u \in \mathbb{R}^n\).</p>
-                    <p>Para responder essa pergunta, temos que lembrar o conceito de <b class="itext">posto (rank)</b> de uma matriz:</p>
-                                        <div style="background-color: #282828">
-                        <p><b class="itext">Definição:</b> O <b class="itext">posto</b> de uma matriz \(A \in \mathbb{R}^{m \times n}\), posto(\(A\)), é o número
-                        de <b class="itext">colunas linearmente independentes</b> de \(A\).</p>
-                    </div>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Posto de uma Matriz</b></h3>
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">O conceito de tarefa</h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Definido o sistema que vamos trabalhar, as premissas e as interfaces, vamos falar
+                    dos porquê de fazermos controle: <b class="itext">a tarefa</b>.</p>
+                    <p>A tarefa nada mais é do que uma especificação do que queremos fazer com o robô.</p>
+                    <p>É um conceito da robótica no geral, não só de manipuladores. No caso de manipuladores de base fixa (nosso caso), podemos ter:</p>
+                    <ul>
+                        <li>Fazer com que o efetuador alcance uma determinada pose completa constante ou variante no tempo.</li>
+                        <li>Fazer com que o efetuador alcance uma pose parcial (ex: rotação no eixo \(z\) do efetuador está livre) constante ou variante no tempo.</li>
+                        <li>Fazer com que o centro de massa do robô fique em uma região (diminui o torque nas juntas).</li>
+                        <li>Fazer com que o centro de massa do robô fique em uma região (diminui o torque nas juntas).</li>
+                    </ul>
 
-                    <p>Alguns resultados:</p>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Teorema 1:</b> O <b class="itext">posto</b> de uma matriz também é igual ao número de
-                            <b class="itext">linhas</b> linearmente independentes.</p>
-                    </div>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Teorema 2:</b> O posto de uma matriz com \(n\) colunas e \(m\) linhas nunca é maior que
-                        o mínimo entre \(n\) e \(m\). Quando o posto é esse valor (\(\min(n,m)\)) dizemos que a matriz tem
-                        <b class="itext">posto completo</b>.</p>
-                    </div>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Teorema 3:</b> O posto de uma matriz é o número de <b class="itext">valores singulares não nulos</b>
-                        da matriz \(A\), sendo os valores singulares de uma matriz \(A\) os autovalores da matriz \(A^TA\).</p>
-                    </div>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Teorema 4:</b> O conjunto de de vetores \(h_d\) tal que a equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma solução \(u\)
-                        é um conjunto de dimensão posto(\(A\)).</p>
-                    </div>
+
                 </div>
 
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1317,257 +513,25 @@ w = jg[3:6,:] @ qdot
 
         </section>
 
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Espaço Vetorial</b></h3>
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">O conceito de tarefa</h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Outra definição importante:</p>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Definição:</b> Um <b class="itext">espaço vetorial</b> em \(\mathbb{R}^{d}\) é um conjunto de vetores \(\mathcal{V}\) que são
-                        d-dimensionais tal que se \(v_1, v_2 \in \mathcal{V}\) e \(\alpha_1, \alpha_2\) são escalares, então
-                        \(\alpha v_1 + \alpha v_2 \in \mathcal{X}\).</p>
-                    </div>
-
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Imagem e Espaço Nulo de Uma Matriz</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Outras definições importante:</p>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Definição:</b> O conjunto de \(b\)'s tal que existe ao menos um \(u\) tal que \(Au=b\) é chamado de <b class="itext">imagem de \(A\)</b>,
-                    \(\texttt{Im}(A)\), e é um espaço vetorial.</p>
-                    </div>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Teorema 6:</b> A dimensão de \(\texttt{Im}(A)\) é posto(\(A\)).</p>
-                    </div>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Definição:</b> Seja \(A \in \mathbb{R}^{m \times n}\). O conjunto de \(u\)'s tal que \(Au=0_{m \times 1}\) é chamado de <b class="itext">espaço nulo de \(A\)</b>,
-                    \(\texttt{Ker}(A)\), e é um espaço vetorial.</p>
-                    </div>
-                    <p>Obs: ele se chama "\(\texttt{Ker}\)" pois em inglês damos o nome "Kernel" (núcleo).</p>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Teorema 7:</b> A dimensão de \(\texttt{Ker}(A)\) é  n-posto(\(A\)).</p>
-                    </div>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Alcançabilidade de Velocidades</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Temos então um resultado importante:</p>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Teorema 8:</b> A equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma
-                            solução \(u\) para qualquer \(b\) se e somente se
-                            \(n \geq m\) e \(A\) tem posto completo.</p>
-                    </div>
-
-                    <p>Portanto, a equação \(J_{geo}(q)\dot{q} = h_d\) tem solução para qualquer torção \(h_d \in \mathbb{R}^6\) se e somente se
-                        \(n \geq 6\) (o robô tem no mínimo 6 juntas) e \(J_{geo}(q)\) tem posto completo (no caso, 6).</b></p>
-                    <p>Além disso, o Teorema 4 nos diz que quanto menor o posto de \(J_{geo}(q)\), menor a dimensão de torções \(h_d\)
-                    "realizáveis" na configuração \(q\), ou seja, em que é possível escolher \(\dot{q}\) que nos dê essa torção  \(h_d\).</p>
-                    <p>Portanto, o <b class="itext">espaço de torções alcancáveis</b> na configuração \(q\) é \(\texttt{Im}(J_{geo}(q))\).</p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Configurações singulares</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Considerando um robô com no mínimo 6 juntas, dizemos que uma configuração \(q\) é
-                    <b class="itext">singular</b> se o posto de \(J_{geo}(q)\) não é completo.</p>
-                    <p>Em uma configuração singular não é possível executar qualquer torção \(v_d, \omega_d\), o que limita a movimentação do robô.</p>
-                    <p>São configurações difíceis de se trabalhar, e os engenheiros de controle devem evitá-las sempre que possível. O porquê
-                    ficará mais claro quando discutirmos melhor o controle de manipuladores.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Torções inexequíveis</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Se um manipulador não puder executar qualquer torção \(h_d\) em uma configuração \(q\), quais
-                    ele não pode executar nessa configuração?</p>
-                    <div style="background-color: #282828">
-                        <p><b class="itext">Teorema 9:</b> A equação \(Au=b\) não tem solução \(u\) se \(b\) é não nulo e
-                        \(A^Tb = 0_{n \times 1}\).</p>
-                    </div>
-                    <p>Para encontrar algumas torções não executáveis, podemos encontramos vetores \(h_d\) tal que \(J_{geo}(q)^Th_d = 0_{n \times 1}\). </p>
-                    <p>O Teorema 9 fornece maneiras de encontrar algumas torções que não são executáveis, mas há torções não executáveis que
-                    não satisfazem \(J_{geo}(q)^Th_d = 0_{n \times 1}\).</p>
-                    <p>O espaço de torções não executáveis <b class="itext">não é</b> um espaço vetorial!</p>
-
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Configurações quase singulares</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Considerar apenas as configurações singulares como problemáticas não é prático.</p>
-                    <p>Na prática, há configurações \(q\) que não são  <b class="itext">exatamente</b> singulares, mas são praticamente
-                    singulares, pois para executar uma torção \(h_d\) precisamos de uma velocidade de configuração \(\dot{q}\) muitíssimo alta
-                    (e portanto inexequível, na prática).</p>
-                    <p>São aquelas configurações em que a matriz \(J_{geo}(q)\) tem valores singulares muito próximos de zero, mas não
-                    exatamente zero.</p>
-                    <p>Devido à continuidade da matriz \(J_{geo}(q)\) na configuração \(q\), as configurações quase singulares são configurações
-                    próximas das configurações singulares.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Exemplo de não-alcançabilidade</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Considere o robô Kuka KR5 ao lado. A configuração ao lado (que é a inicial dele) é singular.</p>
-                    <p>Ele não consegue executar os vetores (em cyan e em amarelo, respectivamente) \(v_d = (1,78 \ 0 \ 0)^T\) e \(\omega_d = (0 \ 0 \ 1)^T\) simultaneamente, por exemplo.</p>
-                    <p>Há muitas outras que ele não consegue executar...</p>
-                    <p>De fato, se \(h_{ne}\) é uma torção não executável e \(h_{e}\) é executável, então \(h_{ne}+h_{e}\) não é executável.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                    <iframe scrolling="no"
-                            src="/aulas_manipuladores/presentation/images/aula4/anim5.html"
-                            style="width:500px;height:550px"></iframe>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Movimento no Espaço Nulo</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Vamos fazer agora uma análise que é, de certa forma, complementar à análise de alcançabilidade.</p>
-                    <p>Suponha que em uma configuração \(q\) exista um vetor não-nulo \(\dot{q}\) tal que \(J_{geo}(q)\dot{q} = 0_{6 \times 1}\).</p>
-                    <p>Isso significa que existe um "movimento instantâneo" (relativo à velocidade de junta instantânea \(\dot{q}\)) que, embora mexa
-                    partes do robô, <b class="itext">mantém o efetuador exatamente como ele está</b>!</p>
-                    <p>Portanto, o <b class="itext">espaço de velocidades de configuração inócuas ao efetuador</b> na configuração \(q\) é \(\texttt{Ker}(J_{geo}(q))\).</p>
-
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Movimento no Espaço Nulo</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Se o robô tem mais de 6 juntas, para toda configuração \(q\) existem vetores não-nulo \(\dot{q}\) tal que \(J_{geo}(q)\dot{q} = 0_{6 \times 1}\).</p>
-                    <p>Veja o KUKA LBR IIWA ao lado, que tem 7 juntas. Ele sempre consegue fazer movimentos que não mudam a pose do efetuador...</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                    <iframe scrolling="no"
-                            src="/aulas_manipuladores/presentation/images/aula4/anim6.html"
-                            style="width:500px;height:550px"></iframe>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-    <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Análises com a Jacobiana Geométrica</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Resumo:</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Em resumo, para um robô com \(n\) juntas:</p>
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Em robôs mais complexos, como <b class="itext">humanoides</b>, há muito mais diversidade de tarefas.
+                    Além de fazer com que seus braços e pernas (essencialmente manipuladores do ponto de vista matemático) alcancem
+                    determinadas poses, temos:</p>
                     <ul>
-                        <li>O <b class="itext">espaço de torções alcancáveis</b> na configuração \(q\) é \(\texttt{Im}(J_{geo}(q))\), e tem
-                        dimensão posto(\(A\))...</li>
-                        <li>O <b class="itext">espaço de velocidades de configuração inócuas ao efetuador</b> na configuração \(q\) é \(\texttt{Ker}(J_{geo}(q))\), e tem
-                        dimensão \(n\)-posto(\(A\))...</li>
+
+                        <li>Fazer com que o efetuador alcance uma pose parcial (ex: rotação no eixo \(z\) do efetuador está livre) constante ou variante no tempo.</li>
                     </ul>
-                    <p> Há também intepretações para \(\texttt{Im}(J_{geo}(q)^T)\) e \(\texttt{Ker}(J_{geo}(q)^T)\), mas serão vistas
-                    em outra oportunidade.</p>
+
+
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1576,29 +540,33 @@ w = jg[3:6,:] @ qdot
         </section>
 
         <section>
-            <h3 style="font-size:40px">Cinemática Diferencial Inversa</h3>
+            <h3 style="font-size:40px">Um controlador simples</h3>
             <p>
-                <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg">
+                <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png" style="width:500px;height:auto;">
                 <br>
             </p>
         </section>
 
-    <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Definição:</b></h3>
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Um controlador simples</h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Estamos interessados agora em, efetivamente, resolver a equação</p>
-                    <b class="itext">$$J_{geo}(q)\dot{q} = h_d$$</b>
-                    <p>dado uma configuração \(q\) e uma torção desejada \(h_d\).</p>
-                    <p>Esse é o problema da <b class="itext">Cinemática Diferencial Inversa</b>!</p>
-                    <p>Esse problema, e problemas similares, é uma peça fundamental para grande parte das estratégias de controle
-                    de manipuladores.</p>
+                    <p>Vamos supor que queremos que o efetuador vá para uma <b class="itext">pose constante</b>
+                        \(\hat{H}_d\) para o efetuador.</p>
+                    <p>A ideia mais simples é calcular a configuração que dá essa pose pela cinemática inversa (assumindo que o problema tem solução),
+                    \(q_{ik} = \texttt{IK}(\hat{H}_d)\).</p>
+                    <p>Podemos usar um <b class="itext">controlador proporcional</b> para ir da configuração inicial (qualquer uma)
+                    para essa configuração:</b>
+                    <p class="itext">$$u = -K(q-q_{ik})$$</p>
+                    <p>para uma constante escalar \(K>0\).</p>
+                    <p>É um controlador bem simples e linear. </p>
+
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1606,23 +574,23 @@ w = jg[3:6,:] @ qdot
 
         </section>
 
-    <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Mais Álgebra Linear</b></h3>
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Um controlador simples</h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Só pode acontecer uma das três possibilidades com um sistema linear \(Au=b\) da forma:</p>
-                    <ul>
-                        <li>...ele tem <b class="itext">uma solução única</b>...</li>
-                        <li>...ele tem <b class="itext">infinitas soluções</b>...</li>
-                        <li>...ele <b class="itext">não tem solução</b>.</li>
-                    </ul>
-                    <p>Não pode ocorrer dele ter, por exemplo, exatamente 4 soluções (e não mais)!</p>
+                    <p>Da equação \(\dot{q} = -K(q - q_{ik})\) temos (como \(q_{ik}, K\) são constantes):</p>
+                    $$ q(t) = q_{ik} + e^{-Kt}(q(0)-q_{ik}).$$
+                    <p>Portanto, convergimos <b class="itext">exponencialmente</b> para a configuração desejada \(q_{ik}\), para
+                    qualquer configuração inicial \(q(0)\).</p>
+                    <p>Quanto maior a constante \(K\), mais rápida a convergência.</p>
+                    <p>Entretanto, maior torque é exigido dos motores, isso pode não ser executável.</p>
+
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1630,336 +598,766 @@ w = jg[3:6,:] @ qdot
 
         </section>
 
-    <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Um controlador simples</h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>É razoável pensar o seguinte:</p>
-                    <ul>
-                        <li>Se \(Au=b\) só tem uma solução, queremos encontrá-la.</li>
-                        <li>Se \(Au=b\) tem infinitas soluções, queremos encontrar aquela que seja a <b class="itext">melhor</b> de acordo com
-                        algum critério.</li>
-                        <li>Se \(Au=b\) não tem solução, queremos encontrar o vetor \(u\) <b class="itext">que mais se aproxima de resolver a equação</b>.</li>
-                    </ul>
-                    <p>Vamos formalizar o conceito de "melhor" no segundo e terceira situação.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-    <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Há várias maneiras de formalizar o conceito de "melhor", mas a maneira a seguir é
-                    <b class="itext">muito conveniente</b> matematicamente:</p>
-                    <ul>
-                        <li>Se \(Au=b\) só tem uma solução, queremos encontrá-la.</li>
-                        <li>Se \(Au=b\) tem infinitas soluções, queremos encontrar a que <b class="itext">minimiza \(\|u\|^2\)</b> (solução de menor norma).</li>
-                        <li>Se \(Au=b\) não tem solução, queremos encontrar a que  <b class="itext">minimiza \(\|Au-b\|^2\)</b> (melhor solução em termos de mínimos quadrados).</li>
-                    </ul>
-                    <p>O que procuramos é um algoritmo que considere os três casos e obtenha a respectiva solução.</p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Há uma maneira elegante de implementar essa solução. Considere o seguinte <b class="itext">problema de otimização</b>:</p>
-                    <b class="itext">$$\min_{u} \|Au-b\|^2 + \epsilon \|u\|^2$$</b>
-                    <p>Iremos nos convencer agora  que resolver esse problema para um \(\epsilon\) muito pequeno, mas positivo (\(\lim_{\epsilon \rightarrow +0}\)) é equivalente a implementar
-                    a solução de três partes que queríamos...</p>
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>O "truque" consiste em observar que a função objetivo \(\|Au-b\|^2 + \epsilon \|u\|^2\) pondera
-                    dois objetivos, que podem ser conflitantes: o de minimizar \(\|Au-b\|^2\) e o de minimizar \(\|u\|^2\).</p>
-                    <p>Considerando \(\epsilon\) muito pequeno, minimizar \(\|Au-b\|^2\) tem muito mais prioridade do que minimizar
-                    \(\|u\|^2\), e a segunda parcela só será considerada se conseguirmos minimizar totalmente \(\|Au-b\|^2\) , ou seja, se
-                    \(Au=b\)..</p>
-
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <ul>
-                        <li>Se Au=b só tiver uma solução, minimizaremos \(\|Au-b\|^2\) completamente, sem se preocupar com minimizar \(\|u\|^2\).
-                    O resultado será o único \(u\) que resolve \(Au=b\).</li>
-                        <li>Se tivermos infinitas soluções, minimizaremos \(\|Au-b\|^2\) completamente. Dentre aqueles \(u\) em que \(Au=b\), o problema
-                    escolherá o que minimiza a função objetivo de menor prioridade, \(\|u\|^2\), justamente como queríamos.</li>
-                        <li>Se não tivermos nenhuma, o problema só minimizará \(\|Au-b\|^2\) da melhor maneira possível, sem se preocupar com
-                    minimizar \(\|u\|^2\).</li>
-                    </ul>
-                    <p>Sendo bem preciso, o terceiro caso tem uma análise um pouco mais complicada, pois podem existir infinitos \(u\) que
-                    minimizam \(\|Au-b\|^2\) sem ter \(Au=b\). Nesse caso, a segunda função objetivo atua novamente.</p>
-
-
-
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Achando uma Solução</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>O problema de otimização:</p>
-                    <b class="itext">$$\min_{u} \|Au-b\|^2 + \epsilon \|u\|^2$$</b>
-                    <p>pode ser resolvido analíticamente, tirando o gradiente da função objetivo com relação a variavél \(u\) e igualando a zero.</p>
-                    <p>A solução é:</p>
-                    <b class="itext">$$u = (A^TA + \epsilon I_{n \times n})^{-1}A^Tb.$$</b>
-                    <p>Podemos mostrar que, para \(\epsilon > 0\), a matriz \(A^TA + \epsilon I_{n \times n}\) é sempre invertível.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">As pseudoinversas</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Vamos introduzir a notação:</p>
-                    <b class="itext">$$A^{\dagger(\epsilon)} = (A^TA + \epsilon I_{n \times n})^{-1}A^T.$$</b>
-                    <p>Então, nossa solução, com \(\epsilon \rightarrow +0\), é:</p>
-                    <p><b class="itext">$$u = \lim_{\epsilon \rightarrow +0}  A^{\dagger(\epsilon)} b = \left(\lim_{\epsilon \rightarrow +0}  A^{\dagger(\epsilon)}\right)b.$$</b></p>
-                    <p>A matriz \(A^{\dagger} = \left(\lim_{\epsilon \rightarrow +0}  A^{\dagger(\epsilon)}\right)\) recebe o nome
-                    <b class="itext">pseudoinversa</b> da matriz \(A\), enquanto \(A^{\dagger(\epsilon)}\) o nome <b class="itext">pseudoinversa amortecida</b> da matriz \(A\).</p>
-                    <p>Finalmente, temos a nossa solução:</p>
-                    <b class="itext">$$u = A^{\dagger}b.$$</b>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Problemas com as pseudoinversas</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Infelizmente, essa solução não é muito boa.</p>
-                    <p>Quando \(A\) está próxima de ser singular, \(A^{\dagger}\), e portanto \(u\), tende a "explodir" (ter valores muito grandes).</p>
-                    <p>Não é prático quando nosso \(u\) representa a velocidade de junta, por exemplo.</p>
-                    <p>Por esse motivo, <b class="itext">trabalhamos com a pseudoinversa amortecida</b>, \(u = A^{\dagger(\epsilon)}b\), com
-                    \(\epsilon\) pequeno, mas não nulo.</p>
-                    <p>Temos uma troca (trade-off) entre nosso desejo original para \(u\) e termos uma solução mais razoável (com valores pequenos) para o problema.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Introdução ao Controle de Robôs</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Dado uma torção alvo na configuração \(q\) e no tempo \(t\), \(h_d(q,t)\), e um fator de amortecimento \(\epsilon\), podemos calcular a respectiva
-                    velocidade de junta:</p>
-                    <b class="itext">$$\dot{q} = J_{geo}(q)^{\dagger(\epsilon)}h_d(q,t).$$</b>
-                    <p>Se o robô tiver uma interface para enviar a velocidade de configuração, podemos usar essa equação para fazer
-                    <b class="itext">controle!</b></p>
-                    <p>O desafio é justamente escolher \(h_d\) que vai nos permitir realizar a tarefa desejada.</p>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">No UAIBot</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>No <b class="itext">UAIBot</b> usamos a função <b class="itext">Utils.dp_inv</b> para calcular a pseudoinversa amortecida</p>
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
+                    <p>O código:</p>
                     <pre><code class="language-python" style="text-align:left">
-import numpy as np
 import uaibot as ub
-
-robot = ub.Robot.create_kuka_kr5()
-#Calcula a Jacobiana geométrica para a configuração atual
-jg, cd = robot.jac_geo()
-#Define a torção desejada
-h_des = np.array([1,0,0,0,0,0]).reshape((6,1))
-#Calcula a velocidade
-eps=0.001
-qdot = ub.Utils.dp_inv(jg,eps) @ h_des
-                        </code></pre>
-                </div>
-
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                    <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
-                             style="width:350px;height:auto;">
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-     <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Um controle simples</b></h3>
-            <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
-
-                    <p>Vamos fazer o efetuador ficar indo para cima e para baixo, sem mudar sua orientação.
-                    Para isso, basta escolher algo como \(v_d(t) = (0 \ 0 \ 0{,}2\cos(t))^T\) e \(\omega_d(t) = (0 \ 0 \ 0)^T\).</p>
-                    <pre><code class="language-python" style="text-align:left">
 import numpy as np
-import uaibot as ub
 
-robot = ub.Robot.create_kuka_kr5()
+
+dt = 0.01
+t = 0
+tmax = 10
+
+def get_configuration(robot):
+  return robot.q
+
+def set_configuration_speed(robot, qdot_des):
+  q_next = robot.q + qdot_des*dt
+  robot.add_ani_frame(time = t+dt, q = q_next)
+
+#Inicializações
+robot = ub.Robot.create_staubli_tx60()
 sim = ub.Simulation([robot])
-#Parâmetros
-dt=0.01
-eps=0.001
+htm_des = ub.Utils.trn([0,-0.2,-0.5]) * robot.fkm()
+q_ik = robot.ikm(htm_des)
+K = 1
 
-for i in range(2000): #Simula por 20 segundos
-    #Calcula o tempo discreto a partir do tempo contínuo
-    t = i*dt
-    #Calcula a torção desejada
-    hd = np.array([0,0,0.2*np.cos(t),0,0,0]).reshape((6,1))
-    #Calcula a Jacobiana geométrica (na configuração atual)
-    jg, cd = robot.jac_geo()
-    #Calcula qual deve ser a velocidade de junta
-    qdot = ub.Utils.dp_inv(jg, eps) @ hd
-    #Aqui, simulamos o movimento do robô de acordo com essa velocidade de junta
-    #instantânea.
-    #Usamos uma integração de Euler de primeira ordem:
-    #próxima configuração = configuração atual + velocidade de configuração *dt
-    qprox = robot.q + qdot*dt
-    robot.add_ani_frame(t, q = qprox)
+#Vamos colocar uma configuração inicial aleatória para o
+#robô, para testar a capacidade dele de convergir para
+#diferentes configurações
+q0 = robot.q0+np.random.uniform(-0.3,0.3,size=(6,1))
+
+for i in range(round(tmax/dt)):
+  #Lógica de controle
+
+  q = get_configuration(robot)
+  u = -K*(q-q_ik)
+  set_configuration_speed(robot, u)
+
+  #O tempo sempre vai passar no final do ciclo
+  t+=dt
 
 sim.run()
-
-
-
-
                         </code></pre>
+
+
+
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
-                     <iframe scrolling="no"
-                            src="/aulas_manipuladores/presentation/images/aula4/anim7.html"
-                            style="width:500px;height:550px"></iframe>
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/anim1.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
                 </div>
             </div>
 
         </section>
 
-<section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="itext">Conclusão</b></h3>
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Um controlador simples</h3>
+            </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
-                    <p>Em posse da Jacobiana geométrica, podemos mapear torções em velocidades de junta.</p>
+                    <p>O principal problema dessa estratégia é justamente calcular a cinemática inversa.</p>
+                    <p>Como vimos na Aula 2, não é um problema simples, principalmente para robôs genéricos.</p>
+                    <p>O que a função <b class="itext">.ikm</b> do UAIBot faz? Ela usa um método númerico. Vamos voltar na função <b class="itext">.ikm</b> depois. </p>
+                    <p>O fato é que, sem uma função de cinemática inversa, o
+                    que não está facilmente disponível sempre, não há como usar essa abordagem simples.</p>
+                    <p>Vamos ver uma outra técnica. Mas antes, precisamos falar sobre <b class="itext">funções de tarefa</b>.</p>
 
-                    <p>Isso é muito útil pois frequentemente é mais fácil planejar o controle na torção, mas o robô recebe o comando em velocidade
-                    de junta. Esse mapeamento resolve o problema.</p>
-                    <p>Na próxima aula veremos que a Jacobiana geométrica será utilizada como ingrediente principal para o cálculo
-                    de <b class="itext">outras Jacobianas</b>, relativas a um espaço onde planejar as velocidades é ainda mais simples
-                    do que no espaço de torções.</p>
-                    <p>Nesse espaço, planejaremos nosso <b class="itext">controlador</b>.</p>
                 </div>
 
                 <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/aulas_manipuladores/presentation/images/aula4/titulo.svg"
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
             </div>
 
         </section>
+
+        <section>
+            <h3 style="font-size:40px">Funções de Tarefa</h3>
+            <p>
+                <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png" style="width:500px;height:auto;">
+                <br>
+            </p>
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Definição</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Considere uma tarefa <b class="itext">invariante no tempo</b> (ex: alcançar uma pose constante).</p>
+                    <p>Como visto, do ponto de vista da configuração, isso significa que queremos convergir para qualquer configuração \(q\) em uma
+                    região \(\mathcal{T}\) do espaço de configurações.</p>
+
+                    <div style="background-color: #282828">
+                        <p><b class="ttext">Definição:</b> Para um robô/sistema com espaço de configuração \(q \in
+                            \mathbb{R}^{n \times 1}\), a <b class="itext">função de tarefa</b> para uma tarefa constante
+                            \(\mathcal{T}\)
+                            é uma função \(r: \mathbb{R}^{n \times 1} \mapsto \mathbb{R}^{g \times 1}\) que codifica matematicamente a tarefa
+                            em uma função diferenciável. Mais precisamente,
+                            ela deve ter duas propriedades:</p>
+                        <ul>
+                            <li>\(r(q) = 0_{g \times 1} \) <b class="itext">se e somente se</b> \(q \in \mathcal{T}\),</li>
+                            <li>\(r(q)\) é uma função diferenciável (ao menos uma vez) em \(q\).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Análise</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Portanto, devido às propriedades da função de tarefa, encontrar um \(q \in \mathcal{T}\) é <b class="itext">equivalente</b> a
+                    resolver a equação \(r(q)=0_{g \times 1}\).
+                    </p>
+                    <p>Note que a primeira propriedade proibe o seguinte:</p>
+                        <ul>
+                            <li>Que haja uma configuração que satisfaça a tarefa em que \(r(q)\) não se anule. Isso faz
+                            com que tenhamos a certeza que <b class="itext">todas</b> as configurações
+                            estejam contempladas em \(r(q)=0\).</li>
+                            <li>Que haja uma configuração que não satisfaça a tarefa em que \(r(q)\) se anule. Isso faz
+                            com que ao resolver \(r(q)=0\) tenhamos a certeza que nenhuma solução encontrada será "ruim" (não resolverá
+                            nossa tarefa).</li>
+                        </ul>
+                    <p>A propriedade da diferenciabilidade vai se mostrar útil em breve.</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Suponha que a tarefa seja fazer a posição do efetuador, \(s_e(q)\), convergir para uma posição constante,
+                        \(s_{d}\) não nula.
+                    </p>
+                    <p>Suponha que haja mais de uma configuração em que isso seja possível. Seja \(q_d\) uma dessas configurações.
+                    Propomos três "candidatas" para a função de tarefa.</p>
+                        <ul>
+                            <li>\(r_1(q) = q - q_{d}\),</li>
+                            <li>\(r_2(q) = s_d \times s_{e}(q)\),</li>
+                            <li>\(r_3(q) = s_e(q)-s_d\).</li>
+                        </ul>
+                    <p>As três são funções de tarefa, de acordo com nossa definição?</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+     <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Podemos notar que as três são funções diferenciáveis em \(q\), já que \(s_e(q)\) vem da cinemática direta
+                        para robôs manipuladores (formada por funções infinitamente diferenciáveis como senos e cossenos).
+                    </p>
+                    <p>Para testar a primeira propriedade, podemos dividí-la em duas implicações (que devem ser mutuamente verdadeiras):</p>
+                    <ul>
+                        <li>(i) \(r(q)=0_{g \times 1} \) implica \(q \in \mathcal{T}\),</li>
+                        <li>(ii) \(q \in \mathcal{T}\) implica \(r(q)=0_{g \times 1}\).</li>
+                    </ul>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>(i) É fácil ver que primeira candidata, \(r_1(q)\) é zero somente se \(q=q_d\). Como \(q_d\) é uma configuração em
+                    que \(s_e(q_d)=s_{d}\), então temos que \(r_1(q) = 0\) implica que \(q \in \mathcal{T}\).</p>
+                    <p>(ii) Mas a recíproca, \(q \in \mathcal{T}\) implica que \(r_1(q) = 0\), não é verdadeira. Pegue outra
+                    configuração \(q_d' \not= q_d\) dentro de \(\mathcal{T}\) (nós fizemos a suposição que o conjunto tem mais de
+                    um elemento). Nesse caso, \(s(q_d') = q_d'-q_d \not=0\). </p>
+                    <p>Portanto ela <b class="itext">não</b>
+                    é uma função de tarefa pois exclui algumas configurações de \(\mathcal{T}\) ((ii) falha).</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>(i) Note que a segunda candidata, \(r_2(q)\), é zero se, por exemplo, \(s_e(q)=2s_d\) (propriedade do produto vetorial).
+                    Como \(s_d\) não é o vetor nulo, \(s_d \not= 2s_d\), e portanto não é verdade que \(r_2(q) = 0\) implica que \(q \in \mathcal{T}\).
+                    </p>
+                    <p>(ii) É fácil ver que se \(s_e(q) = s_d\) então \(r_2(q)\) é zero. Então \(q \in \mathcal{T}\) implica \(r_2(q)=0\).</p>
+                    <p>Portanto ela <b class="itext">não</b>
+                    é uma função de tarefa pois produz falsos membros de \(\mathcal{T}\) ((i) falha).</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>A última é a mais fácil de analisar. É fácil ver que \(r(q)=0\) se e somente se \(s_{e}(q)=s_d\), ou seja,
+                        \(q \in \mathcal{T}\).
+                    </p>
+                    <p>Portanto ela é a única que é uma função de tarefa!</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Múltiplas funções de tarefa</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Existem infinitas funções de tarefa para uma mesma tarefa. Por exemplo, para a tarefa
+                        de alcançar uma posição desejada, todas a seguir são tarefas:
+                    </p>
+                    <ul>
+                        <li>\(r(q) = \alpha (s_e(q)-s_d)\) para \(\alpha \not = 0\),</li>
+                        <li>\(r(q) = \alpha \|s_e(q)-s_d\|^2\) para \(\alpha \not = 0\),</li>
+                        <li>\(r(q) = M(s_e(q)-s_d)\) para uma matriz \(M \in \mathbb{R}^{3 \times 3}\) invertível,</li>
+                        <li>Separando \(s_e\) e \(s_d\) em seus componentes \(x,y,z\): \(r(q) = 3-e^{-(x_e(q)-x_d)^2}-e^{-(y_e(q)-y_d)^2}-e^{-(z_e(q)-z_d)^2}\).</li>
+                    </ul>
+                    <p>Note que o vetor \(r\) não é necessariamente tridimensional. Por exemplo, no segundo e no quarto exemplo, \(g\) (a dimensão do vetor) é 1.</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Função de tarefa para a pose</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Quais seriam exemplos de função de tarefa para o controle completo da pose?
+                    </p>
+                    <p>Seja \(\phi_e(q) \in \mathbb{R}^{3 \times 1}\) um vetor com os ângulos de Euler da orientação do efetuador na configuração \(q\). Seja \(\phi_d \in \mathbb{R}^{3 \times 1}\) um vetor de
+                        ângulos de Euler para orientação desejada do efetuador. Uma "função de tarefa" muito utilizada na literatura, com \(g=6\), é:
+                    </p>
+                    $$r(q) = \left(\begin{array}{c} s_e(q)-s_d \\ \phi_e(q)-\phi_d \end{array}\right).$$
+                    <p>Ela não é uma função de tarefa de acordo com nossa definição pois não é diferenciável para todo \(q\) (devido a não-diferenciabilidade dos ângulos de Euler em algumas situações).</p>
+                    <p>Mesmo assim é frequemente utilizada.</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Função de tarefa para a pose</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Vamos propor uma outra função de tarefa, diferenciável e (bem) mais simples de se calcular. Ela é baseada no seguinte fato: se
+                        \(u, v \in \mathbb{R}^{3 \times 1}\) são vetores unitários (\(\|u\|=\|v\|=1\)):
+                    </p>
+                    $$\frac{1}{2}\|u-v\|^2 = \frac{1}{2}(\|u\|^2+\|v^2\|-2u^Tv) = 1-u^Tv.$$
+                    <p>Dessa igualdade, é fácil concluir que se \(u,v\) são vetores unitários, \(1-u^Tv=0\) se e
+                        somente se \(u=v\).
+                    </p>
+                    <p>Sejam \(x_e(q), y_e(q), z_e(q)\) e \(s_e(q)\) as colunas 1, 2, 3 e 4 da MTH do referencial fixo para o
+                    efetuador, excluindo-se a última linha da MTH. Esses vetores tridimensionais (coluna) representam a posição do centro
+                    do efetuador e os três eixos da orientação, respectivamente.</p>
+                    <p>Faça o mesmo para a MTH que representa a pose desejada, obtendo \(x_d, y_d, z_d\) e \(s_d\).</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Função de tarefa para a pose</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Temos então a seguinte função de tarefa, também com \(g=6\), mas diferenciável:
+                    </p>
+                    <b class="itext">$$r(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} s_e(q)-s_d \\ 1-x_d^Tx_e(q) \\ 1-y_d^T y_e(q) \\ 1-z_d^T z_e(q) \end{array}\LARGE{\Bigg)}\normalsize{}.$$</b>
+                    <p>Note que usamos o fato que os vetores \(x,y\) e \(z\) são unitários.</p>
+                    <p>Podemos usar a mesma ideia para funções de tarefa para poses parciais (ex: se não quisermos controlar a orientação dos eixos \(x\) e \(y\), basta remover as respectivas componentes).</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Jacobiana de tarefa</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Vai ser útil o cálculo da chamada <b class="itext">Jacobiana de tarefa</b>:</p>
+                    <b class="itext">$$J_r(q) = \frac{\partial r}{\partial q}(q).$$</b>
+
+                    <p>Mais precisamente, seja \(r_i(q)\), \(i=1,...,g\), a i-ésima componente da função de tarefa e \(q_j\), \(j=1,...,n\), a
+                    j-ésima configuração. Então \(J_r(q) \in \mathbb{R}^{g \times n}\), e o elemento na linha i e coluna j é
+                    \(\frac{\partial r_i}{\partial q_j}(q)\).</p>
+                    <p>O cálculo da Jacobiana de tarefa é feito caso-a-caso (não há uma "fórmula geral"), entretanto, quase sempre
+                    precisamos da <b class="itext">Jacobiana geométrica</b> do efetuador para calculá-la.</b>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Jacobiana de tarefa</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Um truque útil para calcular a Jacobiana de tarefa é usar a regra da cadeia:</p>
+                    $$\frac{d}{dt}r = \frac{\partial r}{\partial q}(q)\dot{q} = J_r(q)\dot{q}.$$
+                    <p>Frequentemente, é mais simples calcular \(\dot{r}\) do que \(J_r(q)\) diretamente. Nesse calculo aparecem, frequentemente, as velocidades
+                    lineares e angulares do efetuador, de onde surge a Jacobiana geométrica.</p>
+                    <p>Ao terminar o cálculo de \(\dot{r}\) e comparar os dois lados da equação, podemos inferir \(J_r(q)\).</p>
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Jacobiana de tarefa - Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Considere nossa função de tarefa:</p>
+                    $$r(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} s_e(q)-s_d \\ 1-x_d^Tx_e(q) \\ 1-y_d^T y_e(q) \\ 1-z_d^T z_e(q) \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                    <p>Vamos calcular a derivada temporal de cada uma das 4 sub-tarefas e depois "empilhar" os resultados.</p>
+
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Jacobiana de tarefa - Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Começamos por \(s_e(q)-s_d\).</p>
+                    <p>Note que \(\frac{d}{dt}(s_e(q)-s_d) = \frac{d}{dt} s_e(q)\) (já que \(s_d\) é constante). </p>
+                    <p>Mas, por definição, \(\frac{d}{dt} s_e(q)\) é a velocidade linear do efetuador! Portanto, usando as
+                    três primeiras linhas da Jacobiana geométrica:</p>
+                    <b class="itext">$$\frac{d}{dt}(s_e(q)-s_d) = v = J_v(q)\dot{q}.$$</b>
+
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Jacobiana de tarefa - Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Vamos agora trabalhar com \(1-x_d^Tx_e(q)\).</p>
+                    <p>Note que \(\frac{d}{dt}(1-x_d^Tx_e(q)) = -x_d^T \frac{d}{dt}x_e(q)\) (já que \(x_d\) é constante). </p>
+                    <p>Usando o <a href="/aulas_manipuladores/presentation/aula4.html#/5"><b
+                            class="hlink">Teorema da Aula 4</b></a> (ver também <a href="/aulas_manipuladores/presentation/exercicios4.html#/3"><b
+                            class="hlink">Exercício 3 da Aula 4</b></a>) </p>
+                    $$\frac{d}{dt}x_e(q) = \omega \times x_e(q)$$
+                    <p>em que \(\omega\) é a velocidade angular do efetuador.</p>
+                    <p>Agora aplicamos as <a href="/aulas_manipuladores/presentation/aula4.html#/4"><b
+                            class="hlink">Propriedades 2 e 3 da Aula 4</b></a> para concluir que:</p>
+                    $$\frac{d}{dt}x_e(q) = -S(x_e(q))\omega.$$
+
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Jacobiana de tarefa - Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Usando a Jacobiana geométrica, \(\omega = J_{\omega}(q)\dot{q}\). Substituindo:</p>
+                    $$\frac{d}{dt}x_e(q) = -S(x_e(q))J_w(q)\dot{q}.$$
+                    <p>Usando esse fato na fórmula \(\frac{d}{dt}(1-x_d^Tx_e(q)) = -x_d^T \frac{d}{dt}x_e(q)\):</p>
+                    <b class="itext">$$\frac{d}{dt}(1-x_d^Tx_e(q)) = x_d^TS(x_e(q))J_w(q)\dot{q}.$$</b>
+                    <p>Obviamente, usando um raciocínio análogo, podemos achar fórmulas análogas para
+                    \(\frac{d}{dt}(1-y_d^Ty_e(q))\) e \(\frac{d}{dt}(1-z_d^Tz_e(q))\). </p>
+
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Jacobiana de tarefa - Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Portanto:</p>
+                    $$\frac{d}{dt} r(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} J_v(q)\dot{q} \\ x_d^T S(x_e(q))J_w(q)\dot{q} \\ y_d^T S(y_e(q))J_w(q)\dot{q} \\ z_d^T S(z_e(q))J_w(q)\dot{q} \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                    <p>Podemos fatorar para fora o produto por \(\dot{q}\), presente em todos os membros, à direita: </p>
+                    $$\frac{d}{dt} r(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} J_v(q) \\ x_d^T S(x_e(q))J_w(q) \\ y_d^T S(y_e(q))J_w(q) \\ z_d^T S(z_e(q))J_w(q) \end{array}\LARGE{\Bigg)}\normalsize{}\dot{q}.$$
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Jacobiana de tarefa - Exemplo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Como pela regra da cadeia \(\frac{d}{dt} r(q) = J_r(q) \dot{q}\), temos que, comparando os dois lados
+                        e usando o fato que a equação tem que ser verdade para todo \(\dot{q}\):</p>
+                    <b class="itext">$$J_r(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} J_v(q) \\ x_d^T S(x_e(q))J_w(q) \\ y_d^T S(y_e(q))J_w(q) \\ z_d^T S(z_e(q))J_w(q) \end{array}\LARGE{\Bigg)}\normalsize{}.$$</b>
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Jacobiana de tarefa</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Usando esse truque e as propriedades da Jacobiana geométrica  e da matriz \(S\), podemos calcular a Jacobiana de tarefa para qualquer tarefa.</p>
+                    <p>A título de curiosidade, a Jacobiana de tarefa da "função de tarefa":</p>
+                    $$r(q) = \left(\begin{array}{c} s_e(q)-s_d \\ \phi_e(q)-\phi_d \end{array}\right).$$
+                    <p>recebe um nome especial em robótica: <b class="itext">Jacobiana analítica</b>.</p>
+                    <p>Note que (no geral, salvo casos muito partículares) \(\frac{d}{dt} \phi_e \not= \omega\) (ver também <a href="/aulas_manipuladores/presentation/exercicios4.html#/15"><b
+                            class="hlink">Exercício 15 da Aula 4</b></a>)!</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Função de tarefa variante no tempo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Podemos também considerar tarefas variantes no tempo, \(\mathcal{T}(t)\).</p>
+                    <p>A função de tarefa agora também depende de \(t\) explicitamente, \(r(q,t)\).</p>
+                    <p>A definição da função de tarefa é bem similar ao caso de tarefas constantes:</p>
+                    <div style="background-color: #282828">
+                        <p><b class="ttext">Definição:</b> Para um robô/sistema com espaço de configuração \(q \in
+                            \mathbb{R}^{n \times 1}\), a <b class="itext">função de tarefa</b>
+                            para uma tarefa variante no tempo \(\mathcal{T}(t)\) é uma função \(r: \mathbb{R}^{n \times 1} \times \mathbb{R} \mapsto \mathbb{R}^{g \times 1}\) que codifica matematicamente a tarefa
+                            em uma função diferenciável. Mais precisamente,
+                            ela deve ter duas propriedades:</p>
+                        <ul>
+                            <li>Para todo \(t\) fixo: \(r(q,t) = 0_{g \times 1} \) <b class="itext">se e somente se</b> \(q \in \mathcal{T}(t)\),</li>
+                            <li>\(r(q,t)\) é uma função diferenciável (ao menos uma vez) em \(q\) e em \(t\).</li>
+                        </ul>
+                        </div>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Função de tarefa variante no tempo</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Por exemplo, para a tarefa de rastrear uma pose variante no tempo, podemos utilizar:</p>
+                    $$r(q,t) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} s_e(q)-s_d(t) \\ 1-x_d(t)^Tx_e(q) \\ 1-y_d(t)^T y_e(q) \\ 1-z_d(t)^T z_e(q) \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Termo de feedforward da tarefa</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Note que agora, pela regra da cadeia:</p>
+                    $$\frac{d}{dt} r(q,t) = \frac{\partial r}{\partial q}(q,t)\dot{q}+\frac{\partial r}{\partial t}(q,t).$$
+                    <p>Essa equação permite calcular a <b class="itext">Jacobiana de tarefa</b> \(J_r(q,t)=\frac{\partial r}{\partial q}(q,t)\), como no caso constante.</p>
+                    <p>Note que agora a Jacobiana de tarefa depende de \(t\).</p>
+                    <p>O termo que "sobra" (que não está multiplicado por \(\dot{q}\), \(\frac{\partial r}{\partial t}(q,t)\) também vai ser importante, e chamamos de <b class="itext">Feedforward de tarefa</b>.</p>
+                    <p>Só existe (não nulo) para tarefas variantes no tempo.</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Termo de feedforward da tarefa</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>Podemos calcular \(\frac{d}{dt} r(q,t)\) para nossa tarefa de pose variante no tempo.</p>
+                    <p>Grande parte dos cálculos feitos anteriormente para o caso constante se manterão, mas haverá um termo a mais
+                    (o Feedforward de tarefa):</p>
+                    $$\frac{d}{dt} r(q,t) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} J_v(q) \\ x_d(t)^T S(x_e(q))J_w(q) \\ y_d(t)^T S(y_e(q))J_w(q) \\ z_d(t)^T S(z_e(q))J_w(q) \end{array}\LARGE{\Bigg)}\normalsize{}\dot{q} +
+                    \LARGE{\Bigg(}\normalsize{}\begin{array}{c} -\dot{s}_d(t) \\ -\dot{x}_d(t)^T x_e(q) \\-\dot{y}_d(t)^T y_e(q) \\ -\dot{z}_d(t)^T z_e(q) \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                    <p>Podemos facilmente identificar a Jacobiana e o Feedforward dessa equação.</p>
+                    <p>Para que o Feedforward de tarefa existir, os sinais \(x_d(t), y_d(t), z_d(t)\) e \(s_d(t)\) têm que ser (ao menos)
+                    uma vez diferenciáveis no tempo.</p>
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Função de tarefa</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Termo de feedforward da tarefa</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+
+                    <p>O nome <b class="itext">Feedforward de tarefa</b> vem do fato que para um caso muito especial em que
+                    \(r(q,t) = q - q_d(t)\), o termo vira \(\frac{\partial r}{\partial t}(q,t) = -\dot{q}_d(t)\), que é
+                    o (oposto) do termo de feedforward em controle clássico quando a dinâmica do sistema é a de um integrador simples
+                    (o que é, no caso do controle cinemático).</p>
+                    <p>O nome, portanto, é apenas devido a uma analogia.</p>
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
     </div>
 </div>
 <style>
@@ -1980,7 +1378,17 @@ sim.run()
     }
 
     .itext {
+        color: #8af2a2;
+    }
+    .ttext {
         color: #34eb5e;
+    }
+    .hlink {
+        color: #f5bf42;
+    }
+
+    .hlink:hover {
+        text-decoration: underline;
     }
 </style>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

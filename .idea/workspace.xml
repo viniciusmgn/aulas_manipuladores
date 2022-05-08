@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="06/05/2022">
+    <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="07/05/2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/aula1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/aula3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/aula4.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula5.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/exercicios1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/exercicios2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/exercicios3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/exercicios4.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/aula5/control.odg" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/aula5/control.odg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/respostas2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/respostas2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/respostas3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/respostas3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/respostas4.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/respostas4.html" afterDir="false" />
@@ -87,7 +92,7 @@
       <workItem from="1650490662621" duration="1844000" />
       <workItem from="1650979276625" duration="25677000" />
       <workItem from="1651350708841" duration="35268000" />
-      <workItem from="1651888136932" duration="5219000" />
+      <workItem from="1651888136932" duration="31299000" />
     </task>
     <task id="LOCAL-00001" summary="24/03/2022">
       <created>1648119895019</created>
@@ -425,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651806895805</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="07/05/2022">
+      <created>1651930804134</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1651930804134</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -460,7 +472,8 @@
     <MESSAGE value="04/05/2022" />
     <MESSAGE value="05/05/2022" />
     <MESSAGE value="06/05/2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="06/05/2022" />
+    <MESSAGE value="07/05/2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="07/05/2022" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aulas_manipuladores$main.coverage" NAME="main Coverage Results" MODIFIED="1649955703900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
