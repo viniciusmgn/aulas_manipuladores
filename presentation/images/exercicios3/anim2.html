@@ -3,12 +3,12 @@
 .controller:hover{opacity:1 !important;}
 </style>
 <body>
-<div id='canvas_container_16519298019657812' style='width:500px;height:500px;position:relative'>
-<div id='loading_screen_16519298019657812' style='width:500px;height:500px;position:relative; background-color: #191919;text-align:center;align-items:center;display:flex;justify-content:center'> 
+<div id='canvas_container_1652410777931498' style='width:500px;height:500px;position:relative'>
+<div id='loading_screen_1652410777931498' style='width:500px;height:500px;position:relative; background-color: #191919;text-align:center;align-items:center;display:flex;justify-content:center'> 
  <img src='https://raw.githubusercontent.com/viniciusmgn/uaibot_vinicius/master/contents/SVG/logo_uai_bot.svg' style='width:200px;height:114px'/>
  </div>
 <script id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js'></script>
-<canvas id='scene_16519298019657812' width='500px' height='500px'></canvas>
+<canvas id='scene_1652410777931498' width='500px' height='500px'></canvas>
 <!-- USER DIVS GO HERE --><div class = 'controller' style='width:500px;height:30px;'></div>
 </div>
 
@@ -37,7 +37,7 @@ import { RoomEnvironment } from 'https://unpkg.com/three@0.126.1/examples/jsm/en
 const delay = 500; 
  const maxTime = 14.999999999999725; 
  const cameraType= 'perspective'; 
- const sceneID= '16519298019657812'; 
+ const sceneID= '1652410777931498'; 
  const showWorldFrame=true; 
  const showGrid=true; 
  const backgroundColor='white'; 
@@ -88,6 +88,7 @@ class Objsim{
 	}
 	setEnvMap(envMap)
 	{
+		console.log(this.shape)
 		this.shape.material.envMap = envMap;
 		this.shape.material.needsUpdate = true;
 	}
@@ -228,6 +229,26 @@ class RigidObject extends Objsim
 		}
 
 	}
+
+	setEnvMapTemp(variable, envMap)
+	{
+		if(variable instanceof Mesh)
+		{
+			variable.material.envMap = envMap;
+			variable.material.needsUpdate  = true;
+		}
+		else if (variable instanceof Group)
+		{
+			for(let i=0; i < variable.children.length; i++)
+			{
+				this.setEnvMapTemp(variable.children[i]);
+			}
+		}
+	}
+	setEnvMap(envMap) {
+		this.setEnvMapTemp(this.shape, envMap);
+	}
+
 }
 
 class Vector extends Objsim {
@@ -1173,7 +1194,7 @@ transmission: 0,
 });
 
 
-const var_ground = new Box(6,0.01,6,[[0, 1.0, 0.0, -0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 1.0, -0.0, 0.005, 0, 0, 0, 1]], material_ground);
+const var_ground = new Box(6,0.01,6,[[0, 1.0, 0.0, -0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 1.0, -0.0, -0.005, 0, 0, 0, 1]], material_ground);
 sceneElements.push(var_ground);
 
 //BEGIN DECLARATION OF THE POINT LIGHT 'light1'

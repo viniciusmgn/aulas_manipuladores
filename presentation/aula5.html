@@ -7,7 +7,7 @@
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
 
-    <title>Aula 4 - Manipuladores Robóticos</title>
+    <title>Aula 5 - Manipuladores Robóticos</title>
 
     <link rel="stylesheet" href="/aulas_manipuladores/presentation/dist/reset.css">
     <link rel="stylesheet" href="/aulas_manipuladores/presentation/dist/reveal.css">
@@ -443,7 +443,7 @@
        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left">O conceito de tarefa</h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                <div style="width: 65%; float:left; font-size:25px; text-align:left">
                     <p>
                     Para tarefas variantes no tempo a ideia é similar. Essencialmente para cada
                     \(t\) fixo temos um conjunto \(\mathcal{T}(t)\).</p>
@@ -454,7 +454,7 @@
                     <p>Nosso objetivo é então que a configuração \(q\) esteja no tempo \(t\) no conjunto \(\mathcal{T}(t)\).</p>
                 </div>
 
-                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 35%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <br><br>
                         <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
@@ -520,9 +520,9 @@
                         <ul>
                             <li>Que haja uma configuração que satisfaça a tarefa em que \(r(q)\) não se anule. Isso faz
                             com que tenhamos a certeza que <b class="itext">todas</b> as configurações
-                            estejam contempladas em \(r(q)=0\).</li>
+                            estejam contempladas em \(r(q)=0_{g \times 1}\).</li>
                             <li>Que haja uma configuração que não satisfaça a tarefa em que \(r(q)\) se anule. Isso faz
-                            com que ao resolver \(r(q)=0\) tenhamos a certeza que nenhuma solução encontrada será "ruim" (não resolverá
+                            com que ao resolver \(r(q)=0_{g \times 1}\) tenhamos a certeza que nenhuma solução encontrada será "ruim" (não resolverá
                             nossa tarefa).</li>
                         </ul>
                     <p>A propriedade da diferenciabilidade vai se mostrar útil em breve.</p>
@@ -1097,8 +1097,8 @@
                     <p>Podemos calcular \(\frac{d}{dt} r(q,t)\) para nossa tarefa de pose variante no tempo.</p>
                     <p>Grande parte dos cálculos feitos anteriormente para o caso constante se manterão, mas haverá um termo a mais
                     (o Feedforward de tarefa):</p>
-                    $$\frac{d}{dt} r(q,t) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} J_v(q) \\ x_d(t)^T S(x_e(q))J_w(q) \\ y_d(t)^T S(y_e(q))J_w(q) \\ z_d(t)^T S(z_e(q))J_w(q) \end{array}\LARGE{\Bigg)}\normalsize{}\dot{q} +
-                    \LARGE{\Bigg(}\normalsize{}\begin{array}{c} -\dot{s}_d(t) \\ -\dot{x}_d(t)^T x_e(q) \\-\dot{y}_d(t)^T y_e(q) \\ -\dot{z}_d(t)^T z_e(q) \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                    <b class="itext">$$\frac{d}{dt} r(q,t) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} J_v(q) \\ x_d(t)^T S(x_e(q))J_w(q) \\ y_d(t)^T S(y_e(q))J_w(q) \\ z_d(t)^T S(z_e(q))J_w(q) \end{array}\LARGE{\Bigg)}\normalsize{}\dot{q} +
+                    \LARGE{\Bigg(}\normalsize{}\begin{array}{c} -\dot{s}_d(t) \\ -\dot{x}_d(t)^T x_e(q) \\-\dot{y}_d(t)^T y_e(q) \\ -\dot{z}_d(t)^T z_e(q) \end{array}\LARGE{\Bigg)}\normalsize{}.$$</b>
                     <p>Podemos facilmente identificar a Jacobiana e o Feedforward dessa equação.</p>
                     <p>Para que o Feedforward de tarefa existir, os sinais \(x_d(t), y_d(t), z_d(t)\) e \(s_d(t)\) têm que ser (ao menos)
                     uma vez diferenciáveis no tempo.</p>
@@ -1125,7 +1125,7 @@
                     \(r(q,t) = q - q_d(t)\), o termo vira \(\frac{\partial r}{\partial t}(q,t) = -\dot{q}_d(t)\), que é
                     o (oposto) do termo de feedforward em controle clássico quando a dinâmica do sistema é a de um integrador simples
                     (o que é, no caso do controle cinemático).</p>
-                    <p>O nome, portanto, é apenas devido a uma analogia.</p>
+                    <p>O nome, portanto, é primariamente devido a uma analogia.</p>
                     <div style="vertical-align: middle; text-align: center; align-items: center">
                         <img src="/aulas_manipuladores/presentation/images/aula5/feedforward.svg"
                              style="width:700px;height:auto;">
@@ -1429,9 +1429,9 @@
             <div style="width:1200px;height:800px">
                 <div style="width: 70%; float:left; font-size:25px; text-align:left">
                     <p>Obtivemos nossa técnica a partir da relação \(\dot{r} = -Kr\), que força que
-                        \(r \rightarrow 0\).</b>
+                        \(r \rightarrow 0_{g \times 1}\).</b>
                     <p>Há outras alternativas. Podemos escolher outras funções \(F: \mathbb{R}^{g \times 1} \mapsto \mathbb{R}^{g \times 1}\)
-                    tal que \(\dot{r} = F(r)\) também garante \(r \rightarrow 0\).</p>
+                    tal que \(\dot{r} = F(r)\) também garante \(r \rightarrow 0_{g \times 1}\).</p>
                     <p>Nesse caso, o controlador será:</p>
                     <b class="itext">$$u= \dot{q} = -J_r(q,t)^{\dagger(\epsilon)}\Big( F(r(q,t)) - \frac{\partial r}{\partial t}(q,t)\Big).$$</b>
                     <p>Isso pode induzir comportamentos interessantes de convergência para o controlador.</p>
@@ -1518,7 +1518,7 @@
             <div style="width:1200px;height:800px">
                 <div style="width: 70%; float:left; font-size:25px; text-align:left">
                     <p>O ideal seria especificar uma velocidade de queda para a função de tarefa  que fosse
-                    constante (digamos, \(A\)) para todo \(w\):</p>
+                    constante (digamos, \(A>0\)) para todo \(w\):</p>
                                         $$f(w) =
                     \left\{
                     \begin{array}{ll}
@@ -1710,7 +1710,16 @@ def set_configuration_speed(robot, qdot_des):
 #Colocaremos aqui nosso "main" do controlador, que ficará em um laço
 #durante um tempo tmax
 for i in range(round(tmax/dt)):
+
+  #################################
+  # Início da lógica de controle  #
+  #################################
+
   #Colocaremos aqui a lógica de controle
+
+  #################################
+  # Fim da lógica de controle     #
+  #################################
 
   #O tempo sempre vai passar no final do ciclo
   t+=dt
@@ -1820,7 +1829,9 @@ hist_t = []
 #Colocaremos aqui nosso "main" do controlador, que ficará em um laço
 #durante um tempo tmax
 for i in range(round(tmax/dt)):
-  #Lógica de controle
+  #################################
+  # Início da lógica de controle  #
+  #################################
 
   #Mede a configuração dos sensores
   q = get_configuration(robot)
@@ -1841,8 +1852,6 @@ for i in range(round(tmax/dt)):
   r[4] = 1- y_d.T * y_e
   r[5] = 1- z_d.T * z_e
 
-
-
   #Monta a Jacobiana de tarefa
   Jr = np.matrix(np.zeros((6,n)))
 
@@ -1861,6 +1870,10 @@ for i in range(round(tmax/dt)):
 
   #Manda a ação de controle para o robô
   set_configuration_speed(robot, u)
+
+  #################################
+  # Fim da lógica de controle     #
+  #################################
 
   #O tempo sempre vai passar no final do ciclo
   t+=dt
@@ -1999,16 +2012,16 @@ n = np.shape(robot.q)[0]
 
 #Cria a função F:
 def fun_F(r):
-    A = 0.25
+    A = [0.25, 0.25, 0.25, 0.25, 0.25, 0.25]
     w_tol = [0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
     F = np.matrix(np.zeros((6, 1)))
     for i in range(6):
         if abs(r[i, 0]) < w_tol[i]:
-            F[i, 0] = -A * (r[i, 0] / w_tol[i])
+            F[i, 0] = -A[i] * (r[i, 0] / w_tol[i])
         elif r[i, 0] >= w_tol[i]:
-            F[i, 0] = -A
+            F[i, 0] = -A[i]
         else:
-            F[i, 0] = A
+            F[i, 0] = A[i]
     return F
 
 #Cria uma matriz para o histórico de função de tarefa, da ação de controle
@@ -2020,7 +2033,9 @@ hist_t = []
 #Colocaremos aqui nosso "main" do controlador, que ficará em um laço
 #durante um tempo tmax
 for i in range(round(tmax/dt)):
-  #Lógica de controle
+  #################################
+  # Início da lógica de controle  #
+  #################################
 
   #Mede a configuração dos sensores
   q = get_configuration(robot)
@@ -2041,8 +2056,6 @@ for i in range(round(tmax/dt)):
   r[4] = 1- y_d.T * y_e
   r[5] = 1- z_d.T * z_e
 
-
-
   #Monta a Jacobiana de tarefa
   Jr = np.matrix(np.zeros((6,n)))
 
@@ -2061,6 +2074,10 @@ for i in range(round(tmax/dt)):
 
   #Manda a ação de controle para o robô
   set_configuration_speed(robot, u)
+
+  #################################
+  # Fim da lógica de controle     #
+  #################################
 
   #O tempo sempre vai passar no final do ciclo
   t+=dt
@@ -2125,6 +2142,414 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                                 style="width:500px;height:550px"></iframe>
                     </div>
                 </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Faremos agora o <b class="itext">Kuka KR5</b> rastrear uma trajetória circular, cujo caminho está
+                        colocado ao lado.</p>
+                    <p>A posição desejada para o efetuador é:</p>
+                    $$s_d(t) = \LARGE{\bigg(}\normalsize{}\begin{array}{c} R\cos(\omega_d t) \\ y_c \\ z_c + R \sin(\omega_d t) \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                    <p>em que \(R=0{,}2m\), \(y_c=0{,}6m\), \(z_c=0{,}6m\) e \(\omega_d = \frac{\pi}{2} rad/s\).</p>
+                    <p>Queremos que o eixo \(z\) do efetuador esteja alinhado com o eixo \(y\) do mundo (portanto, constante).</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/anim5.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Vamos usar a função de tarefa apresentada <a href="/aulas_manipuladores/presentation/aula5.html#/42"><b
+                            class="hlink">aqui</b></a>, mas retirando as componentes de orientação para \(x\) e \(y\), pois
+                        não há restrição.</p>
+                    <p>Vamos usar primeiro \(F(r) = -Kr\) com \(K=2 s^{-1}\). Usamos \(\epsilon = 10^{-3}\) na pseudoinversa
+                    amortecida.</p>
+                    <p>Note que precisamos do termo de feedforward, conforme mostrado <a href="/aulas_manipuladores/presentation/aula5.html#/44"><b
+                            class="hlink">aqui</b></a>, mas retirando as componentes de orientação para \(x\) e \(y\), pois
+                        não há restrição.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/anim5.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>O código e o resultado:</p>
+                    <pre><code class="language-python" style="text-align:left">
+import uaibot as ub
+import numpy as np
+
+dt = 0.01
+t = 0
+tmax = 12
+
+
+def get_configuration(robot):
+  return robot.q
+
+
+def set_configuration_speed(robot, qdot_des):
+  q_next = robot.q + qdot_des * dt
+  robot.add_ani_frame(time=t + dt, q=q_next)
+
+
+# As inicializações (ex: parâmetros do controlador) virão aqui
+robot = ub.Robot.create_kuka_kr5()
+
+# Especifica a posição desejada para o efetuador
+#como uma função de t
+#Também fornece a derivada, que vai ser utilizada no feedforward
+R = 0.2
+y_c = 0.6
+z_c = 0.6
+omega_d = np.pi/2
+s_d = lambda tt: np.matrix([R * np.cos(omega_d * tt), y_c, z_c + R * np.sin(omega_d * tt)]).reshape((3, 1))
+s_d_dot = lambda tt: np.matrix([-R * omega_d * np.sin(omega_d * tt), 0, R * omega_d * np.cos(omega_d * tt)]).reshape((3, 1))
+
+
+# Especifica a orientação desejada para o eixo z do efetuador
+z_d = np.matrix([0,1,0]).reshape((3,1))
+
+# Cria uma nuvem de pontos para visualizarmos a parte de posição da referência
+pc = np.matrix(np.zeros((3,0)))
+for i in range(200):
+  pc = np.block([pc, s_d(2*np.pi*i/199)])
+
+target_pos_pc = ub.PointCloud(points=pc, size=0.03, color="purple")
+
+#Cria uma esfera para mostrar que o robô está rastreando a trajetória
+ball_tr = ub.Ball(htm = np.identity(4), radius=0.02, color="cyan")
+
+# Cria a simulação
+sim = ub.Simulation([robot, target_pos_pc, ball_tr])
+
+# Captura o número de juntas do robô
+n = np.shape(robot.q)[0]
+
+# Cria a função F:
+def fun_F(r):
+  K = 2
+  return -K * r
+
+# Cria uma matriz para o histórico de função de tarefa, da ação de controle
+# e do tempo
+hist_r = np.matrix(np.zeros((4, 0)))
+hist_u = np.matrix(np.zeros((n, 0)))
+hist_t = []
+
+# Colocaremos aqui nosso "main" do controlador, que ficará em um laço
+# durante um tempo tmax
+for i in range(round(tmax / dt)):
+  #################################
+  # Início da lógica de controle  #
+  #################################
+
+  # Mede a configuração dos sensores
+  q = get_configuration(robot)
+
+  # Calcula a cinemática direta e Jacobiana para o efetuador nessa
+  # configuração
+  Jg, fk = robot.jac_geo(q)
+  # Faz a extração de z_e e s_e
+  z_e = fk[0:3, 2]
+  s_e = fk[0:3, 3]
+
+  # Monta o vetor de tarefa
+  r = np.matrix(np.zeros((4, 1)))
+  r[0:3] = s_e - s_d(t)
+  r[3] = 1 - z_d.T * z_e
+
+  # Monta a Jacobiana de tarefa
+  Jr = np.matrix(np.zeros((4, n)))
+
+  # Monta o termo de feedforward
+  ff = np.block([[-s_d_dot(t)],[0]])
+
+  Jr[0:3, :] = Jg[0:3, :]
+  Jr[3, :] = z_d.T * ub.Utils.S(z_e) * Jg[3:6, :]
+
+
+  # Calcula a ação de controle
+  u = ub.Utils.dp_inv(Jr, 0.001) * (fun_F(r)-ff)
+
+  # Guarda informações no histórico
+  hist_r = np.block([hist_r, r])
+  hist_u = np.block([hist_u, u])
+  hist_t.append(t)
+
+  # Manda a ação de controle para o robô
+  set_configuration_speed(robot, u)
+
+  #################################
+  # Fim da lógica de controle     #
+  #################################
+
+  # O tempo sempre vai passar no final do ciclo
+  t += dt
+
+  #Atualiza a posição da bola (apenas para visualização)
+  ball_tr.add_ani_frame(time = t, htm = ub.Utils.trn(s_d(t)))
+
+# Roda a simulação
+sim.run()
+#plota os gráficos
+ub.Utils.plot(hist_t, hist_r, "", "Tempo (s)", "Função de tarefa", "r")
+ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
+                        </code></pre>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/anim6.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Gráficos para a função de tarefa e ação de controle:</p>
+                     <div style="width: 50%; float:left; display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/graph7.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                     <div style="width: 50%; float:right; display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/graph8.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Novamente (veja ao lado) o controle de orientação fica "preguiçoso" durante todo o rastreamento de trajetória.
+                        </p>
+                    <p>Vamos, novamente, tentar a função \(F(r)\) obtida aplicando a função \(f(w)\) vista <a href="/aulas_manipuladores/presentation/aula5.html#/61"><b
+                            class="hlink">aqui</b></a> em cada componente. Vamos usar os mesmos parâmetros de antes.</p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/anim6.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>O código e o resultado:</p>
+                    <pre><code class="language-python" style="text-align:left">
+import uaibot as ub
+import numpy as np
+
+dt = 0.01
+t = 0
+tmax = 12
+
+
+def get_configuration(robot):
+  return robot.q
+
+
+def set_configuration_speed(robot, qdot_des):
+  q_next = robot.q + qdot_des * dt
+  robot.add_ani_frame(time=t + dt, q=q_next)
+
+
+# As inicializações (ex: parâmetros do controlador) virão aqui
+robot = ub.Robot.create_kuka_kr5()
+
+# Especifica a posição desejada para o efetuador
+#como uma função de t
+#Também fornece a derivada, que vai ser utilizada no feedforward
+R = 0.2
+y_c = 0.6
+z_c = 0.6
+omega_d = np.pi/2
+s_d = lambda tt: np.matrix([R * np.cos(omega_d * tt), y_c, z_c + R * np.sin(omega_d * tt)]).reshape((3, 1))
+s_d_dot = lambda tt: np.matrix([-R * omega_d * np.sin(omega_d * tt), 0, R * omega_d * np.cos(omega_d * tt)]).reshape((3, 1))
+
+
+# Especifica a orientação desejada para o eixo z do efetuador
+z_d = np.matrix([0,1,0]).reshape((3,1))
+
+# Cria uma nuvem de pontos para visualizarmos a parte de posição da referência
+pc = np.matrix(np.zeros((3,0)))
+for i in range(200):
+  pc = np.block([pc, s_d(2*np.pi*i/199)])
+
+target_pos_pc = ub.PointCloud(points=pc, size=0.03, color="purple")
+
+#Cria uma esfera para mostrar que o robô está rastreando a trajetória
+ball_tr = ub.Ball(htm = np.identity(4), radius=0.02, color="cyan")
+
+# Cria a simulação
+sim = ub.Simulation([robot, target_pos_pc, ball_tr])
+
+# Captura o número de juntas do robô
+n = np.shape(robot.q)[0]
+
+# Cria a função F:
+def fun_F(r):
+    A = 0.25
+    w_tol = [0.01, 0.01, 0.01, 0.01, 0.01, 0.01]
+    F = np.matrix(np.zeros((4, 1)))
+    for i in range(4):
+        if abs(r[i, 0]) < w_tol[i]:
+            F[i, 0] = -A * (r[i, 0] / w_tol[i])
+        elif r[i, 0] >= w_tol[i]:
+            F[i, 0] = -A
+        else:
+            F[i, 0] = A
+    return F
+
+# Cria uma matriz para o histórico de função de tarefa, da ação de controle
+# e do tempo
+hist_r = np.matrix(np.zeros((4, 0)))
+hist_u = np.matrix(np.zeros((n, 0)))
+hist_t = []
+
+# Colocaremos aqui nosso "main" do controlador, que ficará em um laço
+# durante um tempo tmax
+for i in range(round(tmax / dt)):
+  #################################
+  # Início da lógica de controle  #
+  #################################
+
+  # Mede a configuração dos sensores
+  q = get_configuration(robot)
+
+  # Calcula a cinemática direta e Jacobiana para o efetuador nessa
+  # configuração
+  Jg, fk = robot.jac_geo(q)
+  # Faz a extração de z_e e s_e
+  z_e = fk[0:3, 2]
+  s_e = fk[0:3, 3]
+
+  # Monta o vetor de tarefa
+  r = np.matrix(np.zeros((4, 1)))
+  r[0:3] = s_e - s_d(t)
+  r[3] = 1 - z_d.T * z_e
+
+  # Monta a Jacobiana de tarefa
+  Jr = np.matrix(np.zeros((4, n)))
+
+  # Monta o termo de feedforward
+  ff = np.block([[-s_d_dot(t)],[0]])
+
+  Jr[0:3, :] = Jg[0:3, :]
+  Jr[3, :] = z_d.T * ub.Utils.S(z_e) * Jg[3:6, :]
+
+
+  # Calcula a ação de controle
+  u = ub.Utils.dp_inv(Jr, 0.001) * (fun_F(r)-ff)
+
+  # Guarda informações no histórico
+  hist_r = np.block([hist_r, r])
+  hist_u = np.block([hist_u, u])
+  hist_t.append(t)
+
+  # Manda a ação de controle para o robô
+  set_configuration_speed(robot, u)
+
+  #################################
+  # Fim da lógica de controle     #
+  #################################
+
+  # O tempo sempre vai passar no final do ciclo
+  t += dt
+
+  #Atualiza a posição da bola (apenas para visualização)
+  ball_tr.add_ani_frame(time = t, htm = ub.Utils.trn(s_d(t)))
+
+# Roda a simulação
+sim.run()
+#plota os gráficos
+ub.Utils.plot(hist_t, hist_r, "", "Tempo (s)", "Função de tarefa", "r")
+ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
+                        </code></pre>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/anim7.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Gráficos para a função de tarefa e ação de controle:</p>
+                     <div style="width: 50%; float:left; display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/graph9.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                     <div style="width: 50%; float:right; display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/graph10.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+
+
             </div>
 
         </section>
