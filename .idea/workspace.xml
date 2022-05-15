@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="08/05/2022">
+    <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="13/05/2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/aula4.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula4.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/aula5.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/exercicios2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/exercicios3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/exercicios3/anim1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/exercicios3/anim1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/exercicios3/anim2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/exercicios3/anim2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,14 +84,8 @@
       <workItem from="1651350708841" duration="35268000" />
       <workItem from="1651888136932" duration="58858000" />
       <workItem from="1652188862934" duration="12000" />
-      <workItem from="1652297480297" duration="2376000" />
-    </task>
-    <task id="LOCAL-00003" summary="24/03/2022">
-      <created>1648120838191</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1648120838191</updated>
+      <workItem from="1652297480297" duration="3187000" />
+      <workItem from="1652459620367" duration="2421000" />
     </task>
     <task id="LOCAL-00004" summary="24/03/2022">
       <created>1648120932807</created>
@@ -429,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652061985659</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="13/05/2022">
+      <created>1652410871604</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1652410871604</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +467,8 @@
     <MESSAGE value="06/05/2022" />
     <MESSAGE value="07/05/2022" />
     <MESSAGE value="08/05/2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="08/05/2022" />
+    <MESSAGE value="13/05/2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="13/05/2022" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/aulas_manipuladores$main.coverage" NAME="main Coverage Results" MODIFIED="1649955703900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
