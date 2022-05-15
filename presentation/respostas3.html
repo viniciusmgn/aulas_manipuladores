@@ -31,6 +31,137 @@
             </p>
         </section>
 
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 1 - Resposta</b>
+            </h3>
+            <div style="width:1200px;height:800px;font-size:25px;text-align:left">
+
+                <p>Vamos começar com a posição, \(s(q)\). Para isso, somamos os três vetores a seguir, todos escritos no
+                referencial \(\mathcal{F}_0\):</p>
+
+                <div style="vertical-align: middle; text-align: center; align-items: center">
+                    <img src="/aulas_manipuladores/presentation/images/exercicios3/robo_4_tr.png"
+                         style="width:600px;height:auto;text-align: center">
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 1 - Resposta</b>
+            </h3>
+            <div style="width:1200px;height:800px;font-size:25px;text-align:left">
+
+                <p>Temos então:</p>
+                $$s(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c}
+                (1+q_3)\cos(q_1)-\sin(q_1) \\
+                (1+q_3)\sin(q_1)+\cos(q_1) \\
+                0
+                \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                <p>Para a parte de rotação, observamos que partindo do referencial \(\mathcal{F}_0\), fazemos uma rotação
+                no eixo \(z_0\) de \(q_1\), depois uma transformação constante no referencial atual (\(R_z(-90^o)R_x(-90^o)\)) para alinhar com o referencial do efetuador.
+                Temos então a matriz de rotação \(Q(q)\):</p>
+                $$Q(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        \sin(q_1) & 0 & \cos(q_1)  \\
+                        -\cos(q_1) & 0 & \sin(q_1)  \\
+                        0 &  -1 & 0  \\
+                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                    <p><a href="/aulas_manipuladores/presentation/exercicios3.html#/1"><b
+                            class="hlink">Voltar</b></a></p>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 2 - Resposta</b>
+            </h3>
+            <div style="width:1200px;height:800px;font-size:25px;text-align:left">
+
+                <p>Referenciais e parâmetros. Note que escolhemos a última linha de uma maneira conveniente, mas nem
+                o primeiro referencial de DH, \(\mathcal{F}_{DH0}\), é o referencial \(\mathcal{F}_0\), e nem o último
+                referencial, \(\mathcal{F}_{DH3}\), é o referencial do efetuador...</p>
+
+                <div style="vertical-align: middle; text-align: center; align-items: center">
+                    <img src="/aulas_manipuladores/presentation/images/exercicios3/robo_3_tr.png"
+                         style="width:600px;height:auto;text-align: center">
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 2 - Resposta</b>
+            </h3>
+            <div style="width:1200px;height:800px;font-size:25px;text-align:left">
+
+                <p>As transformações constantes entre os referenciais iniciais e finais são:</p>
+                $$H_{0}^{DH0} = R_z(90^o)R_x(90^o)D_y(10cm) \ , \ H_{DH3}^{e} = R_z(90^o)R_x(90^o).$$
+
+                <p>Vamos calcular as matrizes \(H_{0}^{DHi}(q)\) para \(i=1,2,3\) e \(H_0^{e}(q)\):</p>
+                $$H_{0}^{DH1}(q) = H_0^{DH0}R_z(q_1)D_z(0)R_x(0)D_x(30cm). $$
+                $$H_{0}^{DH2}(q) = H_{0}^{DH1}(q)R_z(q_2)D_z(0)R_x(-90^o)D_x(25cm). $$
+                $$H_{0}^{DH3}(q) = H_{0}^{DH2}(q)R_z(q_3)D_z(0)R_x(0)D_x(20cm). $$
+                $$H_{0}^{e}(q) = H_{0}^{DH3}(q)H_{DH3}^{e}. $$
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 2 - Resposta</b>
+            </h3>
+            <div style="width:1200px;height:800px;font-size:25px;text-align:left">
+
+                <p>Fazendo as contas, temos:</p>
+                $$H_{0}^{DH1}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cccc}
+                        0 & 0 & 1 & 0 \\
+                        c_1 & -s_1 & 0 & 0{,}3c_1 \\
+                        s_1 &  c_1 & 0 & 0{,}3s_1 \\
+                        0 & 0 & 0 & 1
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ , \
+                H_{0}^{DH2}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cccc}
+                        0 & -1 & 0 & 0 \\
+                        c_{12} & 0 & -s_{12} & 0{,}3c_1{+}0{,}25c_{12}\\
+                        s_{12} & 0 & c_{12} & 0{,}3s_1{+}0{,}25s_{12}\\
+                        0 & 0 & 0 & 1
+                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                $$H_{0}^{DH3}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cccc}
+                        -s_3 & -c_3 & 0 & -0{,}2s_3 \\
+                        \ c_{12}c_3 & -c_{12}s_3 & -s_{12} & 0{,}2c_{12}c_3 {+} 0{,}3c_1{+}0{,}25c_{12} \\
+                        \ s_{12}c_3 &  -s_{12}s_3 & \ c_{12} & 0{,}2s_{12}c_3 {+}0{,}3s_1{+}0{,}25s_{12} \\
+                        0 & 0 & 0 & 1
+                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 2 - Resposta</b>
+            </h3>
+            <div style="width:1200px;height:800px;font-size:25px;text-align:left">
+
+                <p>E portanto, finalmente:</p>
+                $$H_{0}^{e}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cccc}
+                        -c_3 & 0 & -s_3 & -0{,}2s_3 \\
+                        -c_{12}s_3 & -s_{12} & \ c_{12}c_3 & 0{,}2c_{12}c_3 {+} 0{,}3c_1{+}0{,}25c_{12} \\
+                        -s_{12}s_3 & \ c_{12} & \ s_{12}c_3 & 0{,}2s_{12}c_3 {+}0{,}3s_1{+}0{,}25s_{12} \\
+                        0 & 0 & 0 & 1
+                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                    <p><a href="/aulas_manipuladores/presentation/exercicios3.html#/2"><b
+                            class="hlink">Voltar</b></a></p>
+            </div>
+
+        </section>
          <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 3 -
