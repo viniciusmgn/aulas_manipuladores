@@ -3,8 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="15/05/2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula4.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula5.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/exercicios1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/exercicios2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/exercicios3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/exercicios4.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/exercicios5.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/exercicios3/robo_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/exercicios3/robo_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/images/exercicios3/robo_4_tr.png" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/exercicios3/robo_4_tr.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/respostas2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/respostas2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/respostas3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/respostas3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/respostas4.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/respostas4.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,14 +97,7 @@
       <workItem from="1652188862934" duration="12000" />
       <workItem from="1652297480297" duration="3187000" />
       <workItem from="1652459620367" duration="2421000" />
-      <workItem from="1652623764115" duration="7441000" />
-    </task>
-    <task id="LOCAL-00005" summary="24/03/2022">
-      <created>1648121143986</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1648121143986</updated>
+      <workItem from="1652623764115" duration="17147000" />
     </task>
     <task id="LOCAL-00006" summary="24/03/2022">
       <created>1648121296604</created>
@@ -429,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652623794852</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="15/05/2022">
+      <created>1652633207257</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1652633207257</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

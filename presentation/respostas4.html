@@ -223,6 +223,211 @@
 
         <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 7 -
+                Resposta</b>
+
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>(a) Seja \(c_A = \cos(\omega_At), s_A = \sin(\omega_At)\), \(c_{AD} = \cos((\omega_A+\omega_D)t)\) e
+                        \(s_{AD} = \sin((\omega_A+\omega_D)t)\). Usando a expressão de \(R_0^T(t)\) encontrada na solução do problema, podemos extrair:</p>
+                    $$s = \LARGE{\Bigg(}\normalsize{}\begin{array}{c}
+                        d_T c_A \\
+                        d_T s_A \\
+                            0
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ , \ Q = \LARGE{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        c_{AD} & -s_{AD} & 0 \\
+                        s_{AD} & \ c_{AD} & 0 \\
+                            0  &       0 & 1
+                        \end{array}\LARGE{\Bigg)}.$$
+                    <p>Então, usando a fórmula \(v = \dot{s}\) e \(S(\omega) = \dot{Q}Q^T\):</p>
+                    $$v = \LARGE{\Bigg(}\normalsize{}\begin{array}{c}
+                        -\omega_A d_T s_A \\
+                        \ \omega_A d_T c_A \\
+                            0
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ , \ \omega = \LARGE{\Bigg(}\normalsize{}\begin{array}{c}
+                        0 \\
+                        0 \\
+                        \omega_D
+                        \end{array}\LARGE{\Bigg)}.$$
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 7 -
+                Resposta</b>
+
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>(b) Seja \(c_0 = \cos(\omega_0t), s_0 = \sin(\omega_0t)\), \(c_{1} = \cos(\omega_1t)\) e
+                        \(s_{1} = \sin(\omega_1t)\). Usando a expressão da MTH encontrada na solução do problema, podemos extrair:</p>
+                    $$s = \LARGE{\Bigg(}\normalsize{}\begin{array}{c}
+                        (d_0+d_1c_1)c_0 \\
+                        (d_0+d_1c_1)s_0 \\
+                            -d_1s_1
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ , \ Q = \LARGE{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        c_0c_1 & -s_0 & c_0s_1 \\
+                        s_0c_1 & \ c_0 & s_0s_1 \\
+                            -s_1  &       0 & c_1
+                        \end{array}\LARGE{\Bigg)}.$$
+                    <p>Então, usando a fórmula \(v = \dot{s}\) e \(S(\omega) = \dot{Q}Q^T\):</p>
+                    $$v = \LARGE{\Bigg(}\normalsize{}\begin{array}{c}
+                        -d_1 \omega_1s_1c_0{-}(d_0{+}d_1c_1)\omega_0s_0 \\
+                        -d_1 \omega_1s_1s_0{+}(d_0{+}d_1c_1)\omega_0c_0 \\
+                            -d_1\omega_1c_1
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ , \ \omega = \LARGE{\Bigg(}\normalsize{}\begin{array}{c}
+                        -\omega_1 s_0 \\
+                        \ \omega_1c_0 \\
+                        \ \omega_0
+                        \end{array}\LARGE{\Bigg)}.$$
+                                        <p><a href="/aulas_manipuladores/presentation/exercicios4.html#/7"><b
+                            class="hlink">Voltar</b></a></p>
+                </div>
+
+
+                </div>
+
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 8 -
+                Resposta</b>
+
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+
+                    <p>Da relação \(\frac{d}{dt} s(q) = J_v(q)\dot{q}\), temos:</p>
+                    $$J_v(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cc}
+                        -(1{+}q_2)s_1{-}c_1 & c_1 \\
+                        \ \ (1{+}q_2)c_1{-}s_1 & s_1 \\
+                            0 & 0
+                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                    <p>Da relação \(S(\omega) = \dot{Q}(t)Q(t)^T\) e \(\omega = J_\omega(q)\dot{q}\), temos:</p>
+                    $$J_\omega(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cc}
+                            0 & 0 \\
+                            0 & 0 \\
+                            1 & 0
+                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                    <p><a href="/aulas_manipuladores/presentation/exercicios4.html#/8"><b
+                            class="hlink">Voltar</b></a></p>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 9 -
+                Resposta</b>
+
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+
+                    <p>Começamos extraindo os seguintes elementos:</p>
+                    $$z_{DH0}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cc}
+                        1 \\
+                        0 \\
+                        0
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ , \ s_{DH0}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cc}
+                        0 \\
+                        0 \\
+                        0
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ (\mbox{de} \ H_{0}^{DH0})$$
+                    $$z_{DH1}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cc}
+                        1 \\
+                        0 \\
+                        0
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ , \ s_{DH1}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cc}
+                        0 \\
+                        0{,}3c_1 \\
+                        0{,}3s_1
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ (\mbox{de} \ H_{0}^{DH1}(q))$$
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 9 -
+                Resposta</b>
+
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+
+                    <p>E também:</p>
+                    $$z_{DH2}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cc}
+                        0 \\
+                        -s_{12} \\
+                        \ c_{12}
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ , \ s_{DH2}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cc}
+                        0 \\
+                        0{,}3c_1{+}0{,}25c_{12}\\
+                        0{,}3s_1{+}0{,}25s{12}
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ (\mbox{de} \ H_{0}^{DH2}(q))$$
+                    $$s_e(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cc}
+                        -0{,}2s_3 \\
+                        (0{,}2c_3+0{,}25)c_{12} {+} 0{,}3c_1 \\
+                        (0{,}2c_3+0{,}25)s_{12} {+} 0{,}3s_1
+                        \end{array}\LARGE{\Bigg)}\normalsize{} \ (\mbox{de} \ H_{0}^{e}(q))$$
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 9 -
+                Resposta</b>
+
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+
+                    <p>Como todas as juntas são rotativas:</p>
+                    $$J_{geo}(q) = \large{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        z_{DH0}{\times}(s_e{-}s_0) & z_{DH1}{\times}(s_e{-}s_1) & z_{DH2}{\times}(s_e{-}s_2)\\
+                        z_{DH0} & z_{DH1} & z_{DH2}
+                        \end{array}\large{\Bigg)}\normalsize{}.$$
+                    <p>Fazendo as substituições:</p>
+                    $$J_{geo}(q) = \Huge{\Bigg(}\normalsize{}\begin{array}{ccc}
+                        0                                        & 0                               & -0{,}2c_3 \\
+                        -(0{,}2c_3+0{,}25)s_{12} {+} 0{,}3s_1    & -(0{,}2c_3+0{,}25)s_{12}        &  \ 0{,}2s_3c_{12} \\
+                        \ (0{,}2c_3+0{,}25)c_{12} {+} 0{,}3c_1   & \ (0{,}2c_3+0{,}25)c_{12}       & -0{,}2s_3s_{12} \\
+                        1                                        &         1                       & 0 \\
+                        0                                        &         0                       & -s_{12}\\
+                        0                                        &         0                       & \ c_{12}
+                        \end{array}\Huge{\Bigg)}\normalsize{}.$$
+                    <p><a href="/aulas_manipuladores/presentation/exercicios4.html#/9"><b
+                            class="hlink">Voltar</b></a></p>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 10 -
                 Resposta</b>
 
@@ -515,7 +720,31 @@ sim.run()
     .hlink:hover {
         text-decoration: underline;
     }
+    /* width */
+    ::-webkit-scrollbar {
+        width: 20px;
+    }
 
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #34eb5e;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #01b82b;
+    }
+
+    ::-webkit-scrollbar-corner {
+        background: rgba(0, 0, 0, 0);
+    }
 </style>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async
