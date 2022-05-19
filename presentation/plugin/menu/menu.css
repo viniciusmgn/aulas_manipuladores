@@ -306,15 +306,13 @@
  */
 .reveal .slide-menu-button {
   position: fixed;
-  left: 1350px;
+  left: 1380px;
   bottom: 30px;
   z-index: 30;
   font-size: 24px;
 }
 
-.reveal .slide-menu-button .fas fa-bars{
-  color: #848484
-}
+
 
 /*
  * Menu overlay

@@ -2784,7 +2784,7 @@ right_arm = robot.list_of_objects[0]
 left_arm = robot.list_of_objects[1]
 
 #Coloca as configurações iniciais do cenário
-right_arm.add_ani_frame(0,q=[ 0.50289982, -0.12686379, -0.0784082])
+right_arm.add_ani_frame(0, q=[ 0.50289982, -0.12686379, -0.0784082])
 left_arm.add_ani_frame(0, q=[ 2.63894549, -0.12686379, -0.0784082])
 
 #Parâmetros da trajetória
@@ -2907,6 +2907,37 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                 </div>
 
 
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Controle Cinemático</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Conclusão</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>O <b class="itext">controle cinemático</b> é uma maneira prática de controlar o robô
+                    assumindo que há uma interface de baixo nível que garante uma velocidade de configuração desejada.</p>
+                    <p>É aplicável em situações em que não há altas velocidades nem a necessidade de se controlar
+                    precisamente a força que é feita no ambiente.</p>
+                    <p>Há muitas outros aspectos interessantes do controle cinemático que não são abordados neste
+                    curso, como:</p>
+                    <ul>
+                        <li>Controle com restrições (ex: obstáculos);</li>
+                        <li>Priorização de tarefas;</li>
+                        <li>Controle de caminho em vez de controle de trajetória (campo vetorial).</li>
+                    </ul>
+
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
             </div>
 
         </section>
