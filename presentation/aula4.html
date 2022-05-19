@@ -1325,10 +1325,7 @@ w = Jg[3:6,:] * qdot
                         <p><b class="ttext">Teorema 3:</b> O posto de uma matriz é o número de <b class="itext">valores singulares não nulos</b>
                         da matriz \(A\), sendo os valores singulares de uma matriz \(A\) a raiz quadrada dos autovalores da matriz \(A^TA\).</p>
                     </div>
-                    <div style="background-color: #282828">
-                        <p><b class="ttext">Teorema 4:</b> O conjunto de de vetores \(b\) tal que a equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma solução \(u\)
-                        é um conjunto de dimensão posto(\(A\)).</p>
-                    </div>
+
                 </div>
 
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
@@ -1375,18 +1372,18 @@ w = Jg[3:6,:] * qdot
                     <p>Outras definições importante:</p>
                     <div style="background-color: #282828">
                         <p><b class="ttext">Definição:</b> O conjunto de \(b\)'s tal que existe ao menos um \(u\) tal que \(Au=b\) é chamado de <b class="itext">imagem de \(A\)</b>,
-                    \(\texttt{Im}(A)\), e é um espaço vetorial.</p>
+                    \(\texttt{Im}(A)\).</p>
                     </div>
                     <div style="background-color: #282828">
-                        <p><b class="ttext">Teorema 6:</b> A dimensão de \(\texttt{Im}(A)\) é posto(\(A\)).</p>
+                        <p><b class="ttext">Teorema 4:</b> \(\texttt{Im}(A)\) é um espaço vetorial com dimensão posto(\(A\)).</p>
                     </div>
                     <div style="background-color: #282828">
                         <p><b class="ttext">Definição:</b> Seja \(A \in \mathbb{R}^{m \times n}\). O conjunto de \(u\)'s tal que \(Au=0_{m \times 1}\) é chamado de <b class="itext">espaço nulo de \(A\)</b>,
-                    \(\texttt{Ker}(A)\), e é um espaço vetorial.</p>
+                    \(\texttt{Ker}(A)\).</p>
                     </div>
                     <p>Obs: ele se chama "\(\texttt{Ker}\)" pois em inglês damos o nome "Kernel" (núcleo).</p>
                     <div style="background-color: #282828">
-                        <p><b class="ttext">Teorema 7:</b> A dimensão de \(\texttt{Ker}(A)\) é  n-posto(\(A\)).</p>
+                        <p><b class="ttext">Teorema 5:</b> \(\texttt{Ker}(A)\) é um espaço vetorial com dimensão  n-posto(\(A\)).</p>
                     </div>
                 </div>
 
@@ -1407,7 +1404,7 @@ w = Jg[3:6,:] * qdot
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Temos então um resultado importante:</p>
                     <div style="background-color: #282828">
-                        <p><b class="ttext">Teorema 8:</b> A equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma
+                        <p><b class="ttext">Teorema 6:</b> A equação \(Au=b\), \(A \in \mathbb{R}^{m \times n}\) tem uma
                             solução \(u\) para qualquer \(b\) se e somente se
                             \(n \geq m\) e \(A\) tem posto completo.</p>
                     </div>
@@ -1461,11 +1458,11 @@ w = Jg[3:6,:] * qdot
                     <p>Se um manipulador não puder executar qualquer velocidade \(\xi_d\) em uma configuração \(q\), quais
                     ele não pode executar nessa configuração?</p>
                     <div style="background-color: #282828">
-                        <p><b class="ttext">Teorema 9:</b> A equação \(Au=b\) não tem solução \(u\) se \(b\) é não nulo e
+                        <p><b class="ttext">Teorema 7:</b> A equação \(Au=b\) não tem solução \(u\) se \(b\) é não nulo e
                         \(A^Tb = 0_{n \times 1}\).</p>
                     </div>
                     <p>Para encontrar algumas velocidades não executáveis, podemos encontramos vetores \(\xi_d\) tal que \(J_{geo}(q)^T\xi_d = 0_{n \times 1}\). </p>
-                    <p>O Teorema 9 fornece maneiras de encontrar algumas velocidades que não são executáveis, mas há velocidades não executáveis que
+                    <p>O Teorema 7 fornece maneiras de encontrar algumas velocidades que não são executáveis, mas há velocidades não executáveis que
                     não satisfazem \(J_{geo}(q)^T\xi_d = 0_{n \times 1}\).</p>
                     <p>O espaço de velocidades não executáveis <b class="itext">não é</b> um espaço vetorial!</p>
 
@@ -1581,9 +1578,9 @@ w = Jg[3:6,:] * qdot
                     <p>Em resumo, para um robô com \(n\) juntas:</p>
                     <ul>
                         <li>O <b class="itext">espaço de velocidades alcancáveis</b> na configuração \(q\) é \(\texttt{Im}(J_{geo}(q))\), e tem
-                        dimensão posto(\(A\))...</li>
+                        dimensão posto(\(J_{geo}(q)\))...</li>
                         <li>O <b class="itext">espaço de velocidades de configuração inócuas ao efetuador</b> na configuração \(q\) é \(\texttt{Ker}(J_{geo}(q))\), e tem
-                        dimensão \(n\)-posto(\(A\))...</li>
+                        dimensão \(n\)-posto(\(J_{geo}(q)\))...</li>
                     </ul>
                     <p> Há também intepretações para \(\texttt{Im}(J_{geo}(q)^T)\) e \(\texttt{Ker}(J_{geo}(q)^T)\), mas serão vistas
                     em outra oportunidade.</p>
@@ -1736,7 +1733,7 @@ w = Jg[3:6,:] * qdot
                     dois objetivos, que podem ser conflitantes: o de minimizar \(\|Au-b\|^2\) e o de minimizar \(\|u\|^2\).</p>
                     <p>Considerando \(\epsilon\) muito pequeno, minimizar \(\|Au-b\|^2\) tem muito mais prioridade do que minimizar
                     \(\|u\|^2\), e a segunda parcela só será considerada se conseguirmos minimizar totalmente \(\|Au-b\|^2\) , ou seja, se
-                    \(Au=b\)..</p>
+                    \(Au=b\).</p>
 
 
                 </div>
@@ -1962,8 +1959,7 @@ sim.run()
         </section>
 
 <section>
-            <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Diferencial Inversa</h3>
-            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Conclusão</b></h3>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Conclusão</h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:left">
                     <p>Em posse da Jacobiana geométrica, podemos mapear velocidades em velocidades de junta.</p>
@@ -2044,6 +2040,7 @@ sim.run()
 <script src="/aulas_manipuladores/presentation/plugin/notes/notes.js"></script>
 <script src="/aulas_manipuladores/presentation/plugin/markdown/markdown.js"></script>
 <script src="/aulas_manipuladores/presentation/plugin/highlight/highlight.js"></script>
+<script src="/aulas_manipuladores/presentation/plugin/menu/menu.js"></script>
 <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -2055,7 +2052,7 @@ sim.run()
         margin: 0,
         minScale: 0.2,
         maxScale: 2.0,
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMenu]
     });
     var frames = document.getElementsByTagName("iframe");
 

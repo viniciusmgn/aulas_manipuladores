@@ -31,9 +31,9 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-heading3-size: 1.3em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #42affa;
-  --r-link-color-dark: #068de9;
-  --r-link-color-hover: #8dcffc;
+  --r-link-color: #34eb5e;
+  --r-link-color-dark: #01b82b;
+  --r-link-color-hover: #8af2a2;
   --r-selection-background-color: #bee4fd;
   --r-selection-color: #fff;
 }

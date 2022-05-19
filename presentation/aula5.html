@@ -2553,6 +2553,364 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
 
         </section>
 
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                    <p>Vamos agora ver um exemplo de controle com dois manipuladores.
+                        Para isso, vamos usar o robô <b class="itext">Darwin Mini</b>.</p>
+                    <p>Vamos considerar que o torso e as pernas estão fixas. Então cada um dos dois braços é um
+                    manipulador fixo com <b class="itext">3 graus de liberdade</b> cada.</p>
+                    <p>Os dois braços estão segurando uma bola. Temos que fazer movimentos <b class="itext">sincronizados</b>
+                    com os dois braços para mover a bola.</p>
+                    <p>Queremos mover os dois braços de modo que o centro da bola faça a trajetória:</p>
+                    $$s_{db}(t) = (x_c \ \ R\cos(\omega_Bt) \ \ z_c {+} R\sin(\omega_Bt))^T$$
+                    <p>para \(x_c = 0{,}35m\), \(z_c=0{,}6m\), \(R=0{,}05m\) e \(\omega_B = \frac{2\pi}{3} rad/s\). </p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/anim8.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Sejam \(q_{E}, q_{D}\) a configuração dos braços da esquerda e direita, respectivamente.
+                    Seja \(q = (q_E^T \ q_D^T)^T\) a configuração total do sistema.</p>
+                    <p>Sejam \(s_E(q_E)\) e \(s_D(q_D)\) a posição do referencial grudado nas mãos esquerda e direita, respectivamente,
+                    com relação ao referencial \(\mathcal{F}_0\).</p>
+                    <p>A primeira subtarefa (A) é que o vetor distância entre os pontos \(s_E\) e \(s_D\) deve
+                    se manter constante, mantendo o valor inicial \(s_{ED0}\).   </p>
+                    <p>Com isso, garantimos que os braços não se separarão (a bola irá cair) e não se aproximarão mais
+                    (pode pressionar a bola e ela estourar).</p>
+                    <p>A função de tarefa para essa subtarefa é</p>
+                    <b class="itext">$$r_A(q) = s_E(q_E)-s_D(q_D)-s_{ED0}.$$</b>
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Agora vamos escrever a função de tarefa para garantir a segunda subtarefa (B): que o centro da bola faça a trajetória
+                    desejada \(s_{bd}(t)\).</p>
+                    <p>Como a subtarefa (A) garante que o vetor distância ficará constante, o que queremos é que:</p>
+                    $$\frac{1}{2}(s_E(q_E) + s_D(q_D)) = s_{db}(t).$$
+                    <p>Então podemos usar a função de tarefa para essa subtarefa:</p>
+                    <b class="itext">$$r_B(q,t) = \frac{1}{2}(s_E(q_E)+s_D(q_D))-s_{db}(t).$$</b>
+
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>A função de tarefa (variante no tempo) é:</p>
+                    <b class="itext">$$r(q,t) = \large{\Bigg(}\normalsize{}\begin{array}{c} r_A(q) \\ r_B(q,t) \end{array}\large{\Bigg)}\normalsize{}.$$</b>
+                    <p>Precisamos agora calcular a Jacobiana de tarefa e o termo de feedforward.</p>
+                    <p>Vamos usar o truque de <b class="itext">derivar no tempo</b> a função de tarefa.</p>
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Sejam \(J_{vE}(q_E)\) e \(J_{vD}(q_D)\) as Jacobianas de velocidade linear para os braços da esquerda e
+                    direita, respectivamente.</p>
+                    <p>Então:</p>
+                    $$\frac{d}{dt}r_A = \frac{d}{dt}(s_E-s_D-s_{ED0}) = J_{vE}\dot{q}_E - J_{vD}\dot{q}_D$$
+                    <p>já que \(s_{ED0}\) é constante.</p>
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Com relação a segunda subtarefa:</p>
+                    <p>Então:</p>
+                    $$\frac{d}{dt}r_B = \frac{d}{dt}\left(\frac{1}{2}(s_E+s_D)-s_{bd}\right) = \frac{1}{2}J_{vE}\dot{q}_E + \frac{1}{2}J_{vD}\dot{q}_D - \dot{s}_{bd}$$
+                    <p>já que \(s_{bd}(t)\) não é constante.</p>
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Portanto, podemos escrever, matricialmente:</p>
+                    $$\frac{d}{dt}r =  \large{\Bigg(}\normalsize{}\begin{array}{cc} J_{vE} & -J_{vD} \\ \frac{1}{2}J_{vE} & \frac{1}{2}J_{vD} \end{array}\large{\Bigg)}\normalsize{}
+                    \large{\Bigg(}\normalsize{}\begin{array}{cc} \dot{q}_E \\ \dot{q}_D \end{array}\large{\Bigg)}\normalsize{} + \large{\Bigg(}\normalsize{}\begin{array}{cc} 0_{3 \times 1} \\ -\dot{s}_{bd} \end{array}\large{\Bigg)}\normalsize{}.$$
+                    <p>Portanto, podemos extrair pela regra da cadeia (ver <a href="/aulas_manipuladores/presentation/aula5.html#/43"><b
+                            class="hlink">este slide</b></a>):</p>
+                    <b class="itext">$$J_r = \large{\Bigg(}\normalsize{}\begin{array}{cc} J_{vE} & -J_{vD} \\ \frac{1}{2}J_{vE} & \frac{1}{2}J_{vD} \end{array}\large{\Bigg)}\normalsize{} \ , \ \frac{\partial r}{\partial t} = \large{\Bigg(}\normalsize{}\begin{array}{cc} 0_{3 \times 1} \\ -\dot{s}_{bd} \end{array}\large{\Bigg)}\normalsize{}.$$</b>
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 70%; float:left; font-size:25px; text-align:left">
+                    <p>Vamos usar \(F(r)=-Kr\) com \(K = 5s^{-1}\).</p>
+                    <p>Vamos usar \(\epsilon = 10^{-3}\).</p>
+
+
+                </div>
+
+                <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <br><br>
+                        <img src="/aulas_manipuladores/presentation/images/aula5/titulo.png"
+                             style="width:350px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 55%; float:left; font-size:25px; text-align:left">
+                    <p>O código e o resultado:</p>
+                    <pre><code class="language-python" style="text-align:left">
+import uaibot as ub
+import numpy as np
+
+dt = 0.01
+t = 0
+tmax = 12
+
+
+def get_configuration(robot):
+  return robot.q
+
+
+def set_configuration_speed(robot, qdot_des):
+  q_next = robot.q + qdot_des * dt
+  robot.add_ani_frame(time=t + dt, q=q_next)
+
+#Inicializações
+robot = ub.Robot.create_darwin_mini()
+ball = ub.Ball(htm=ub.Utils.trn([0.4,0,0.6]), radius=0.15, color="yellow")
+
+#Pega as variáveis referentes aos dois braços
+right_arm = robot.list_of_objects[0]
+left_arm = robot.list_of_objects[1]
+
+#Coloca as configurações iniciais do cenário
+right_arm.add_ani_frame(0,q=[ 0.50289982, -0.12686379, -0.0784082])
+left_arm.add_ani_frame(0, q=[ 2.63894549, -0.12686379, -0.0784082])
+
+#Parâmetros da trajetória
+radius_mov = 0.05
+omega_mov = 2*np.pi/3
+s_bd = lambda tt: np.matrix(
+    [0.35, radius_mov * np.cos(omega_mov * tt), 0.6 + radius_mov * np.sin(omega_mov * tt)]).reshape((3, 1))
+dot_s_bd = lambda tt: np.matrix(
+    [0, -omega_mov * radius_mov * np.sin(omega_mov * tt), omega_mov * radius_mov * np.cos(omega_mov * tt)]).reshape(
+    (3, 1))
+
+s_ED0 = left_arm.fkm()[0:3, 3] - right_arm.fkm()[0:3, 3]
+
+#Cria a simulação
+sim = ub.Simulation.create_sim_factory([robot, ball])
+
+# Cria a função F:
+def fun_F(r):
+  K = 5
+  return -K*r
+
+# Cria uma matriz para o histórico de função de tarefa, da ação de controle
+# e do tempo
+hist_r = np.matrix(np.zeros((4, 0)))
+hist_u = np.matrix(np.zeros((n, 0)))
+hist_t = []
+
+# Colocaremos aqui nosso "main" do controlador, que ficará em um laço
+# durante um tempo tmax
+for i in range(round(tmax / dt)):
+  #################################
+  # Início da lógica de controle  #
+  #################################
+
+# Mede as configurações dos sensores
+  q_E = get_configuration(left_arm)
+  q_D = get_configuration(right_arm)
+
+  #Calcula as Jacobianas geométricas
+  Jg_E, fk_E = left_arm.jac_geo(q_E)
+  Jg_D, fk_D = right_arm.jac_geo(q_D)
+
+  s_E = fk_E[0:3, 3]
+  s_D = fk_D[0:3, 3]
+
+  #Monta as funções de tarefa e Jacobianas
+  r = np.matrix(np.zeros((6, 1)))
+  r[0:3, 0] = s_E - s_D - s_ED0
+  r[3:6, 0] = (s_E + s_D) / 2 - s_bd(t)
+
+  Jr = np.matrix(np.zeros((6, 6)))
+  Jr[0:3, 0:3] = Jg_E[0:3, :]
+  Jr[0:3, 3:6] = -Jg_D[0:3, :]
+  Jr[3:6, 0:3] = Jg_E[0:3, :] / 2
+  Jr[3:6, 3:6] = Jg_D[0:3, :] / 2
+
+  ff = np.matrix(np.zeros((6, 1)))
+  ff[3:6, 0] = -dot_s_bd(t)
+
+  #Calcula a velocidade de configuração
+  u = ub.Utils.dp_inv(Jr,0.001) * (fun_F(r) - ff)
+
+  u_E = u[0:3, 0]
+  u_D = u[3:6, 0]
+
+  # Guarda informações no histórico
+  hist_r = np.block([hist_r, r])
+  hist_u = np.block([hist_u, u])
+  hist_t.append(t)
+
+  # Manda a ação de controle para o robô
+  set_configuration_speed(left_arm, u_E)
+  set_configuration_speed(right_arm, u_D)
+
+  #################################
+  # Fim da lógica de controle     #
+  #################################
+
+  # O tempo sempre vai passar no final do ciclo
+  t += dt
+
+  #Atualiza a posição da bola
+  ball.add_ani_frame(t, htm=ub.Utils.trn((s_E + s_D) / 2))
+
+# Roda a simulação
+sim.run()
+#plota os gráficos
+ub.Utils.plot(hist_t, hist_r, "", "Tempo (s)", "Função de tarefa", "r")
+ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
+                        </code></pre>
+                </div>
+
+                <div style="width: 45%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/anim9.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+       <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:left">
+                    <p>Gráficos para a função de tarefa e ação de controle:</p>
+                     <div style="width: 50%; float:left; display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/graph11.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                     <div style="width: 50%; float:right; display:table-cell;vertical-align: middle">
+                        <iframe scrolling="no"
+                                src="/aulas_manipuladores/presentation/images/aula5/graph12.html"
+                                style="width:500px;height:550px"></iframe>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
     </div>
 </div>
 <style>
@@ -2619,6 +2977,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
 <script src="/aulas_manipuladores/presentation/plugin/notes/notes.js"></script>
 <script src="/aulas_manipuladores/presentation/plugin/markdown/markdown.js"></script>
 <script src="/aulas_manipuladores/presentation/plugin/highlight/highlight.js"></script>
+<script src="/aulas_manipuladores/presentation/plugin/menu/menu.js"></script>
 <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
@@ -2630,7 +2989,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
         margin: 0,
         minScale: 0.2,
         maxScale: 2.0,
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMenu]
     });
     var frames = document.getElementsByTagName("iframe");
 
