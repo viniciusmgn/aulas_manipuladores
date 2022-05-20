@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="19/05/2022">
+      <change beforePath="$PROJECT_DIR$/presentation/aula1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/plugin/menu/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/plugin/menu/menu.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,21 +85,7 @@
       <workItem from="1652459620367" duration="2421000" />
       <workItem from="1652623764115" duration="17147000" />
       <workItem from="1652838446655" duration="7365000" />
-      <workItem from="1652909756982" duration="13393000" />
-    </task>
-    <task id="LOCAL-00012" summary="24/03/2022">
-      <created>1648122232027</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1648122232027</updated>
-    </task>
-    <task id="LOCAL-00013" summary="24/03/2022">
-      <created>1648122486900</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1648122486900</updated>
+      <workItem from="1652909756982" duration="13674000" />
     </task>
     <task id="LOCAL-00014" summary="24/03/2022">
       <created>1648122835243</created>
@@ -429,7 +416,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653009349609</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="19/05/2022">
+      <created>1653009589031</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1653009589031</updated>
+    </task>
+    <task id="LOCAL-00062" summary="19/05/2022">
+      <created>1653009752573</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1653009752573</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
