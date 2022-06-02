@@ -4,9 +4,12 @@
     <list default="true" id="03c82ccc-cdba-4eda-aa23-079e64ec236b" name="Changes" comment="26/05/2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presentation/aula1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/aula1/democontrole1.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/aula1/democontrole1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/aula1/democontrole2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/aula1/democontrole2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/presentation/images/aula1/democontrole3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/images/aula1/democontrole3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/aula3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/aula3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/exercicios2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/exercicios3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/exercicios3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/respostas2.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/respostas2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presentation/respostas3.html" beforeDir="false" afterPath="$PROJECT_DIR$/presentation/respostas3.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,14 +92,8 @@
       <workItem from="1652623764115" duration="17147000" />
       <workItem from="1652838446655" duration="7365000" />
       <workItem from="1652909756982" duration="16411000" />
-      <workItem from="1653610559488" duration="3625000" />
-    </task>
-    <task id="LOCAL-00019" summary="24/03/2022">
-      <created>1648123436451</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1648123436451</updated>
+      <workItem from="1653610559488" duration="12759000" />
+      <workItem from="1654182275800" duration="3970000" />
     </task>
     <task id="LOCAL-00020" summary="24/03/2022">
       <created>1648128358380</created>
@@ -434,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653610960294</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="26/05/2022">
+      <created>1653614332203</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1653614332203</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
