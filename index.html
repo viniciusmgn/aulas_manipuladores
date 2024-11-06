@@ -32,8 +32,16 @@
 <div class="reveal">
     <div class="slides">
 
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="presentation/images/aula1/g1.mp4" type="video/mp4">
+            <!-- Add more source tags if you have multiple video formats -->
+            Your browser does not support the video tag.
+        </video>
+
+        <img src="presentation/images/aula1/logo_ufmg.svg" class="logo">
+
         <section>
-            <h3>Manipuladores Robóticos (V1)</h3>
+            <h3>Manipuladores Robóticos</h3>
             <h3 style="font-size: 20pt">Vinicius Mariano Gonçalves</h3>
             <ul>
                 <li><a href="presentation/aula1.html"><b class="hlink">1: Introdução ao curso</b></a>
@@ -62,13 +70,13 @@
         color: #34eb5e;
     }
 
-    body {
+    /* body {
         background-image: url(presentation/images/aula1/logo_ufmg.svg) !important;
         background-color: black;
         background-size: 8% !important;
         background-repeat: no-repeat !important;
         background-position: 96% 3% !important;
-    }
+    } */
 
     .itext {
         color: #34eb5e;
@@ -79,6 +87,51 @@
     .hlink:hover {
         text-decoration: underline;
     }
+
+    .reveal {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    }
+
+    .slides {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .logo {
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    width: 8%; /* Adjust size as needed */
+    z-index: 10; /* Ensures it appears above the video and overlay */
+}
+
+    .background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Keeps the video behind the content */
+    filter: brightness(50%) blur(2px); /* Adjust as needed */
+}
+
+    section {
+        position: relative;
+        z-index: 1; /* Ensures text stays above the video */
+        color: white; /* Adjust text color for readability */
+        padding: 20px;
+    }
+
+
 </style>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async

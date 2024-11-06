@@ -15,7 +15,7 @@
             document.write('<base href="/">');  // Local development base
         }
     </script>
-    
+
     <title>Aula 5 - Manipuladores Robóticos</title>
 
     <link rel="stylesheet" href="presentation/dist/reset.css">
@@ -1762,7 +1762,7 @@ for i in range(round(tmax/dt)):
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 1</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>Vamos implementar o controle de pose completa constante para o robô <b class="itext">Kuka KR5</b>.</p>
                     <p>A pose desejada é:</p>
                     $$\hat{H}_e = D_x(-0{,}3m)D_y(0{,}2m)D_z(-0{,}3m)H_e$$
@@ -1773,7 +1773,7 @@ for i in range(round(tmax/dt)):
                     amortecida.</p>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim4.html"
@@ -1788,7 +1788,7 @@ for i in range(round(tmax/dt)):
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 1</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>O código e o resultado:</p>
                     <pre><code class="language-python" style="text-align:left">
 import uaibot as ub
@@ -1899,7 +1899,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                         </code></pre>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim2.html"
@@ -1937,7 +1937,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 1</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>Note que algumas componentes da função de tarefa, como \(r_6\), não seguiram a especificação
                     de decaimento exponencial.</p>
                     <p>Note também (veja ao lado) que o controle de orientação fica meio "preguiçoso" no final. Isso
@@ -1947,7 +1947,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                             class="hlink">aqui</b></a> em cada componente.</p>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim2.html"
@@ -1962,13 +1962,13 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 1</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>Agora, usamos \(f(w)\) igual para todos os componentes para formar \(F(r)\).</p>
                     <p>Os parâmetros são \(w_{tol} = 0{,}01\) e \(A=0{,}25 s^{-1}\).</p>
                     <p>Vamos ver o que vai acontecer...</p>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim4.html"
@@ -1983,7 +1983,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 1</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>O código e o resultado:</p>
                     <pre><code class="language-python" style="text-align:left">
 import uaibot as ub
@@ -2103,7 +2103,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                         </code></pre>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim3.html"
@@ -2141,14 +2141,14 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 1</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>Note que o resultado ficou visivelmente melhor, principalmente para o controle de orientação.</p>
                     <p>Compare o gráfico da ação de controle para os dois casos: o controlador exigiu velocidades
                         comparáveis com a do outro caso, mas conseguiu um resultado melhor.</p>
 
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim3.html"
@@ -2163,7 +2163,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>Faremos agora o <b class="itext">Kuka KR5</b> rastrear uma trajetória circular, cujo caminho está
                         colocado ao lado.</p>
                     <p>A posição desejada para o efetuador é:</p>
@@ -2172,7 +2172,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                     <p>Queremos que o eixo \(z\) do efetuador esteja alinhado com o eixo \(y\) do mundo (portanto, constante).</p>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim5.html"
@@ -2187,7 +2187,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>Vamos usar a função de tarefa apresentada <a href="presentation/aula5.html#/42"><b
                             class="hlink">aqui</b></a>, mas retirando as componentes de orientação para \(x\) e \(y\), pois
                         não há restrição.</p>
@@ -2198,7 +2198,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                         não há restrição.</p>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim5.html"
@@ -2213,7 +2213,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>O código e o resultado:</p>
                     <pre><code class="language-python" style="text-align:left">
 import uaibot as ub
@@ -2338,7 +2338,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                         </code></pre>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim6.html"
@@ -2376,14 +2376,14 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>Novamente (veja ao lado) o controle de orientação fica "preguiçoso" durante todo o rastreamento de trajetória.
                         </p>
                     <p>Vamos, novamente, tentar a função \(F(r)\) obtida aplicando a função \(f(w)\) vista <a href="presentation/aula5.html#/61"><b
                             class="hlink">aqui</b></a> em cada componente. Vamos usar os mesmos parâmetros de antes.</p>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim6.html"
@@ -2399,7 +2399,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 2</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>O código e o resultado:</p>
                     <pre><code class="language-python" style="text-align:left">
 import uaibot as ub
@@ -2533,7 +2533,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                         </code></pre>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim7.html"
@@ -2571,7 +2571,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>Vamos agora ver um exemplo de controle com dois manipuladores.
                         Para isso, vamos usar o robô <b class="itext">Darwin Mini</b>.</p>
                     <p>Vamos considerar que o torso e as pernas estão fixas. Então cada um dos dois braços é um
@@ -2583,7 +2583,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                     <p>para \(x_c = 0{,}35m\), \(z_c=0{,}6m\), \(R=0{,}05m\) e \(\omega_B = \frac{2\pi}{3} rad/s\). </p>
                 </div>
 
-                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim8.html"
@@ -2770,7 +2770,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Simulações</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exemplo 3</b></h3>
             <div style="width:1200px;height:800px">
-                <div style="width: 55%; float:left; font-size:25px; text-align:left">
+                <div style="width: 50%; float:left; font-size:25px; text-align:left">
                     <p>O código e o resultado:</p>
                     <pre><code class="language-python" style="text-align:left">
 import uaibot as ub
@@ -2891,7 +2891,7 @@ ub.Utils.plot(hist_t, hist_u, "", "Tempo (s)", "Ação (rad/s ou m/s)", "u")
                         </code></pre>
                 </div>
 
-                <div style="width: 45%; float:right; text-align:left; vertical-align: middle; display:table">
+                <div style="width: 50%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <iframe scrolling="no"
                                 src="presentation/images/aula5/anim9.html"
