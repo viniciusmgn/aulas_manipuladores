@@ -7,14 +7,23 @@
     <meta http-equiv='expires' content='0'>
     <meta http-equiv='pragma' content='no-cache'>
 
+    <script>
+        // Check if the site is being served from GitHub Pages
+        if (window.location.hostname === "viniciusmgn.github.io") {
+            document.write('<base href="/aulas_manipuladores/">');
+        } else {
+            document.write('<base href="/">');  // Local development base
+        }
+    </script>
+    
     <title>Aula 3 - Manipuladores Robóticos</title>
 
-    <link rel="stylesheet" href="/presentation/dist/reset.css">
-    <link rel="stylesheet" href="/presentation/dist/reveal.css">
-    <link rel="stylesheet" href="/presentation/dist/theme/black.css">
+    <link rel="stylesheet" href="presentation/dist/reset.css">
+    <link rel="stylesheet" href="presentation/dist/reveal.css">
+    <link rel="stylesheet" href="presentation/dist/theme/black.css">
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="/presentation/plugin/highlight/monokai.css">
+    <link rel="stylesheet" href="presentation/plugin/highlight/monokai.css">
     <style>
         .reveal .slides section {
             padding: 20px; /* Adjust the value as needed */
@@ -30,7 +39,7 @@
             <h3>Manipuladores Robóticos</h3>
             <h3 style="font-size:40px">Aula 3: Cinemática Direta e Inversa</h3>
             <p>
-                <img src="/presentation/images/aula3/titulo.svg" style="width:400px;height:auto;">
+                <img src="presentation/images/aula3/titulo.svg" style="width:400px;height:auto;">
                 <br><small>Vinicius Mariano Gonçalves</small>
             </p>
         </section>
@@ -50,7 +59,7 @@
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <br><br>
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -61,7 +70,7 @@
         <section>
             <h3 style="font-size:40px">Configuração</h3>
             <p>
-                <img src="/presentation/images/aula3/titulo.svg">
+                <img src="presentation/images/aula3/titulo.svg">
                 <br>
             </p>
         </section>
@@ -87,7 +96,7 @@
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <br>
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -121,25 +130,25 @@
                         <div style="position:absolute;top:50px;right:50px"
                              class="vim_indicator current-visible fragment"
                              data-fragment-index="0">
-                            <img src="/presentation/images/aula3/configmostra1.svg"
+                            <img src="presentation/images/aula3/configmostra1.svg"
                                  style="width:400px;height:auto;">
                         </div>
                         <div style="position:absolute;top:50px;right:50px"
                              class="vim_indicator current-visible fragment"
                              data-fragment-index="1">
-                            <img src="/presentation/images/aula3/configmostra2.svg"
+                            <img src="presentation/images/aula3/configmostra2.svg"
                                  style="width:400px;height:auto;">
                         </div>
                         <div style="position:absolute;top:50px;right:50px"
                              class="vim_indicator current-visible fragment"
                              data-fragment-index="2">
-                            <img src="/presentation/images/aula3/configmostra3.svg"
+                            <img src="presentation/images/aula3/configmostra3.svg"
                                  style="width:400px;height:auto;">
                         </div>
                         <div style="position:absolute;top:50px;right:50px"
                              class="vim_indicator current-visible fragment"
                              data-fragment-index="3">
-                            <img src="/presentation/images/aula3/configmostra4.svg"
+                            <img src="presentation/images/aula3/configmostra4.svg"
                                  style="width:400px;height:auto;">
                         </div>
 
@@ -168,7 +177,7 @@
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <br>
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -178,7 +187,7 @@
         <section>
             <h3 style="font-size:40px">Exemplos Simples</h3>
             <p>
-                <img src="/presentation/images/aula3/titulo.svg">
+                <img src="presentation/images/aula3/titulo.svg">
                 <br>
             </p>
         </section>
@@ -205,7 +214,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadira1.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadira1.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -228,7 +237,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadira2.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadira2.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -253,7 +262,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadira3.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadira3.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -274,7 +283,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadira4.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadira4.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -299,7 +308,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadira6.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadira6.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -321,7 +330,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadira6.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadira6.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -346,7 +355,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadira7.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadira7.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -370,7 +379,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadira7.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadira7.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -399,7 +408,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadira1.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadira1.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -425,21 +434,21 @@
                              class="vim_indicator current-visible fragment"
                              data-fragment-index="0">
                             <br>
-                            <img src="/presentation/images/aula3/exemplocinematicadirb1.svg"
+                            <img src="presentation/images/aula3/exemplocinematicadirb1.svg"
                                  style="width:400px;height:auto;">
                         </div>
                         <div style="position:absolute;top:50px;right:50px"
                              class="vim_indicator current-visible fragment"
                              data-fragment-index="1">
                             <br>
-                            <img src="/presentation/images/aula3/exemplocinematicadirb2.svg"
+                            <img src="presentation/images/aula3/exemplocinematicadirb2.svg"
                                  style="width:400px;height:auto;">
                         </div>
                         <div style="position:absolute;top:50px;right:50px"
                              class="vim_indicator current-visible fragment"
                              data-fragment-index="2">
                             <br>
-                            <img src="/presentation/images/aula3/exemplocinematicadirb3.svg"
+                            <img src="presentation/images/aula3/exemplocinematicadirb3.svg"
                                  style="width:400px;height:auto;">
                         </div>
                     </div>
@@ -465,7 +474,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadirb1.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadirb1.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -491,7 +500,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicadirb1.svg"
+                        <img src="presentation/images/aula3/exemplocinematicadirb1.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -519,7 +528,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -549,7 +558,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -559,7 +568,7 @@
         <section>
             <h3 style="font-size:40px">A convenção de Denavit-Hartenberg</h3>
             <p>
-                <img src="/presentation/images/aula3/titulo.svg">
+                <img src="presentation/images/aula3/titulo.svg">
                 <br>
             </p>
         </section>
@@ -584,7 +593,7 @@
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <br><br>
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -610,7 +619,7 @@
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <br><br>
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -632,7 +641,7 @@
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
                         <br><br>
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -735,7 +744,7 @@
             <div style="width:1200px;height:800px;">
                 <div style="font-size:25px; text-align:left">
                     <iframe scrolling="no"
-                            src="/presentation/images/aula3/anim1.html"
+                            src="presentation/images/aula3/anim1.html"
                             style="width:800px;height:650px; position:absolute; top:100px; right:150px"></iframe>
                 </div>
             </div>
@@ -751,7 +760,7 @@
 
 
                     <iframe scrolling="no"
-                            src="/presentation/images/aula3/anim2.html"
+                            src="presentation/images/aula3/anim2.html"
                             style="width:800px;height:650px; position:absolute; top:100px; right:150px"></iframe>
                 </div>
             </div>
@@ -765,7 +774,7 @@
             <div style="width:1200px;height:800px">
                 <div style="font-size:25px; text-align:left">
                     <iframe scrolling="no"
-                            src="/presentation/images/aula3/anim3.html"
+                            src="presentation/images/aula3/anim3.html"
                             style="width:800px;height:650px; position:absolute; top:100px; right:150px"></iframe>
                 </div>
             </div>
@@ -796,7 +805,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -844,7 +853,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -881,7 +890,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -897,7 +906,7 @@
             <div style="width:1200px;height:800px">
                 <div style="font-size:25px; text-align:left">
                     <iframe scrolling="no"
-                            src="/presentation/images/aula3/anim4.html"
+                            src="presentation/images/aula3/anim4.html"
                             style="width:800px;height:650px; position:absolute; top:115px; right:150px"></iframe>
                 </div>
             </div>
@@ -912,7 +921,7 @@
             <div style="width:1200px;height:800px">
                 <div style="font-size:25px; text-align:left">
                     <iframe scrolling="no"
-                            src="/presentation/images/aula3/anim5.html"
+                            src="presentation/images/aula3/anim5.html"
                             style="width:800px;height:650px; position:absolute; top:115px; right:150px"></iframe>
                 </div>
             </div>
@@ -938,7 +947,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -954,7 +963,7 @@
             <div style="width:1200px;height:800px">
                 <div style="font-size:25px; text-align:left">
                     <iframe scrolling="no"
-                            src="/presentation/images/aula3/anim6.html"
+                            src="presentation/images/aula3/anim6.html"
                             style="width:800px;height:650px; position:absolute; top:115px; right:150px"></iframe>
                 </div>
             </div>
@@ -980,7 +989,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1008,7 +1017,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1031,7 +1040,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1061,7 +1070,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1087,7 +1096,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1111,7 +1120,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1123,7 +1132,7 @@
         <section>
             <h3 style="font-size:40px">Cinemática Inversa</h3>
             <p>
-                <img src="/presentation/images/aula3/titulo.svg">
+                <img src="presentation/images/aula3/titulo.svg">
                 <br>
             </p>
         </section>
@@ -1144,7 +1153,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1167,7 +1176,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicainv.svg"
+                        <img src="presentation/images/aula3/exemplocinematicainv.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1183,7 +1192,7 @@
                     <p>Usando a notação de \(c_1,s_1,c_{12}\) e \(s_{12}\) definida anteriormente, temos as igualdades:</p>
                     <p><b class="itext">$$L_1c_1 + L_2c_{12} = x_a,$$</b></p>
                     <p><b class="itext">$$L_1s_1 + L_2s_{12} = z_a$$</b></p>
-                    <p>obtidas pela cinemática direta (ver <a href="/presentation/aula3.html#/7"><b
+                    <p>obtidas pela cinemática direta (ver <a href="presentation/aula3.html#/7"><b
                             class="hlink">Exemplo 1</b></a> de Cinemática Direta).</p>
 
 
@@ -1191,7 +1200,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicainv.svg"
+                        <img src="presentation/images/aula3/exemplocinematicainv.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1215,7 +1224,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicainv.svg"
+                        <img src="presentation/images/aula3/exemplocinematicainv.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1238,7 +1247,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicainv.svg"
+                        <img src="presentation/images/aula3/exemplocinematicainv.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1261,7 +1270,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicainv.svg"
+                        <img src="presentation/images/aula3/exemplocinematicainv.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1284,7 +1293,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicainv.svg"
+                        <img src="presentation/images/aula3/exemplocinematicainv.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1307,7 +1316,7 @@
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicainv.svg"
+                        <img src="presentation/images/aula3/exemplocinematicainv.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1359,7 +1368,7 @@ print(q_B)
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicainv.svg"
+                        <img src="presentation/images/aula3/exemplocinematicainv.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1383,13 +1392,13 @@ print(q_B)
                         <div style="position:absolute;top:50px;right:50px"
                              class="vim_indicator current-visible fragment"
                              data-fragment-index="0">
-                            <img src="/presentation/images/aula3/exemplocinematicainv2a.svg"
+                            <img src="presentation/images/aula3/exemplocinematicainv2a.svg"
                                  style="width:400px;height:auto;">
                         </div>
                         <div style="position:absolute;top:50px;right:50px"
                              class="vim_indicator current-visible fragment"
                              data-fragment-index="1">
-                            <img src="/presentation/images/aula3/exemplocinematicainv2b.svg"
+                            <img src="presentation/images/aula3/exemplocinematicainv2b.svg"
                                  style="width:400px;height:auto;">
                         </div>
                     </div>
@@ -1412,7 +1421,7 @@ print(q_B)
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/exemplocinematicainv.svg"
+                        <img src="presentation/images/aula3/exemplocinematicainv.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1422,7 +1431,7 @@ print(q_B)
         <section>
             <h3 style="font-size:40px">Funções no UAIBot</h3>
             <p>
-                <img src="/presentation/images/aula3/titulo.svg">
+                <img src="presentation/images/aula3/titulo.svg">
                 <br>
             </p>
         </section>
@@ -1450,7 +1459,7 @@ print(robot.q0)
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1488,7 +1497,7 @@ sim.run()
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1537,7 +1546,7 @@ for i in range(len(htm_dh)):
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1573,7 +1582,7 @@ for i in range(len(robot.links)):
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1618,7 +1627,7 @@ sim.run()
                 <div style="width: 10%; float:right; text-align:left; vertical-align: middle; display:table"></div>
                 <div style="width: 30%; float:right; text-align:left; vertical-align: middle; display:table">
                     <div style="display:table-cell;vertical-align: middle">
-                        <img src="/presentation/images/aula3/titulo.svg"
+                        <img src="presentation/images/aula3/titulo.svg"
                              style="width:350px;height:auto;">
                     </div>
                 </div>
@@ -1636,7 +1645,7 @@ sim.run()
     }
 
     body {
-        background-image: url(/presentation/images/aula1/logo_ufmg.svg) !important;
+        background-image: url(presentation/images/aula1/logo_ufmg.svg) !important;
         background-color: black;
         background-size: 8% !important;
         background-repeat: no-repeat !important;
@@ -1681,11 +1690,11 @@ sim.run()
 
 <script id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
-<script src="/presentation/dist/reveal.js"></script>
-<script src="/presentation/plugin/notes/notes.js"></script>
-<script src="/presentation/plugin/markdown/markdown.js"></script>
-<script src="/presentation/plugin/highlight/highlight.js"></script>
-<script src="/presentation/plugin/menu/menu.js"></script>
+<script src="presentation/dist/reveal.js"></script>
+<script src="presentation/plugin/notes/notes.js"></script>
+<script src="presentation/plugin/markdown/markdown.js"></script>
+<script src="presentation/plugin/highlight/highlight.js"></script>
+<script src="presentation/plugin/menu/menu.js"></script>
 <script>
     // More info about initialization & config:
     // - https://revealjs.com/initialization/
