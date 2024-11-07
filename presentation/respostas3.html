@@ -15,7 +15,7 @@
             document.write('<base href="/">');  // Local development base
         }
     </script>
-    
+
     <title>Respostas</title>
 
     <link rel="stylesheet" href="presentation/dist/reset.css">
@@ -49,7 +49,7 @@
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 1 - Resposta</b>
             </h3>
-            <div style="width:1200px;height:800px;font-size:25px; text-align:justify; text-justify: inter-word">
+            <div style="width:1150px;height:800px;font-size:25px; text-align:justify; text-justify: inter-word">
 
                 <p>Vamos começar com a posição, \(s(q)\). Para isso, somamos os três vetores a seguir, todos escritos no
                 referencial \(\mathcal{F}_0\):</p>
@@ -68,7 +68,7 @@
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 1 - Resposta</b>
             </h3>
-            <div style="width:1200px;height:800px;font-size:25px; text-align:justify; text-justify: inter-word">
+            <div style="width:1150px;height:800px;font-size:25px; text-align:justify; text-justify: inter-word">
 
                 <p>Temos então:</p>
                 $$s(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c}
@@ -94,7 +94,7 @@
             <h3 style="font-size:40px;vertical-align:top;text-align:left">Cinemática Direta</h3>
             <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 2 - Resposta</b>
             </h3>
-            <div style="width:1200px;height:800px;font-size:25px; text-align:justify; text-justify: inter-word">
+            <div style="width:1150px;height:800px;font-size:25px; text-align:justify; text-justify: inter-word">
 
                 <p>Referenciais e parâmetros. Note que escolhemos a última linha de uma maneira conveniente, mas nem
                 o primeiro referencial de DH, \(\mathcal{F}_{DH0}\), é o referencial \(\mathcal{F}_0\), e nem o último
@@ -135,24 +135,24 @@
             <div style="width:1200px;height:800px;font-size:25px; text-align:justify; text-justify: inter-word">
 
                 <p>Fazendo as contas, temos:</p>
-                $$H_{0}^{DH1}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cccc}
+                $$H_{0}^{DH1}(q) = \LARGE{\Bigg(}\small{}\begin{array}{cccc}
                         0 & 0 & 1 & 0 \\
                         c_1 & -s_1 & 0 & 0{,}3c_1 \\
-                        s_1 &  c_1 & 0 & 0{,}3s_1 \\
+                        s_1 &  c_1 & 0 & 0{,}3s_1{+}0,1 \\
                         0 & 0 & 0 & 1
-                        \end{array}\LARGE{\Bigg)}\normalsize{} \ , \
-                H_{0}^{DH2}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cccc}
+                        \end{array}\LARGE{\Bigg)}\small{} \ , \
+                H_{0}^{DH2}(q) = \LARGE{\Bigg(}\small{}\begin{array}{cccc}
                         0 & -1 & 0 & 0 \\
                         c_{12} & 0 & -s_{12} & 0{,}3c_1{+}0{,}25c_{12}\\
-                        s_{12} & 0 & c_{12} & 0{,}3s_1{+}0{,}25s_{12}\\
+                        s_{12} & 0 & c_{12} & 0{,}3s_1{+}0{,}25s_{12}{+}0,1\\
                         0 & 0 & 0 & 1
-                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$
-                $$H_{0}^{DH3}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cccc}
+                        \end{array}\LARGE{\Bigg)}\small{}.$$
+                $$H_{0}^{DH3}(q) = \LARGE{\Bigg(}\small{}\begin{array}{cccc}
                         -s_3 & -c_3 & 0 & -0{,}2s_3 \\
                         \ c_{12}c_3 & -c_{12}s_3 & -s_{12} &   (0{,}2c_3+0{,}25)c_{12} {+} 0{,}3c_1 \\
-                        \ s_{12}c_3 &  -s_{12}s_3 & \ c_{12} & (0{,}2c_3+0{,}25)s_{12} {+} 0{,}3s_1 \\
+                        \ s_{12}c_3 &  -s_{12}s_3 & \ c_{12} & (0{,}2c_3+0{,}25)s_{12} {+} 0{,}3s_1{+}0,1 \\
                         0 & 0 & 0 & 1
-                        \end{array}\LARGE{\Bigg)}\normalsize{}.$$
+                        \end{array}\LARGE{\Bigg)}\small{}.$$
 
             </div>
 
@@ -168,7 +168,7 @@
                 $$H_{0}^{e}(q) = \LARGE{\Bigg(}\normalsize{}\begin{array}{cccc}
                         -c_3 & 0 & -s_3 & -0{,}2s_3 \\
                         -c_{12}s_3 & -s_{12} & \ c_{12}c_3 & (0{,}2c_3+0{,}25)c_{12} {+} 0{,}3c_1 \\
-                        -s_{12}s_3 & \ c_{12} & \ s_{12}c_3 & (0{,}2c_3+0{,}25)s_{12} {+} 0{,}3s_1 \\
+                        -s_{12}s_3 & \ c_{12} & \ s_{12}c_3 & (0{,}2c_3+0{,}25)s_{12} {+} 0{,}3s_1{+}0,1 \\
                         0 & 0 & 0 & 1
                         \end{array}\LARGE{\Bigg)}\normalsize{}.$$
                     <p><a href="presentation/exercicios3.html#/2"><b
