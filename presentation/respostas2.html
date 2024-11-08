@@ -15,7 +15,7 @@
             document.write('<base href="/">');  // Local development base
         }
     </script>
-    
+
     <title>Respostas</title>
 
     <link rel="stylesheet" href="presentation/dist/reset.css">
@@ -389,6 +389,64 @@
             </h3>
             <div style="width:1200px;height:800px">
                 <div style="width: 60%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
+                    <p> Sejam \(Q_A^B\) e \(s_A^B\) a matriz de rotacao e vetor de deslocamento extraido de \(T_A^B\) </p>
+                    <p> Entao \(p_A = Q_A^B p_B + s_A^B\). Ou seja,   <b class="itext">para fazermos a mudança de coordenada 
+                        de um vetor de um referencial \(\mathcal{F}_B\) para \(\mathcal{F}_A\), aplicamos a transformação rigida 
+                        de \(\mathcal{F}_A\) para  \(\mathcal{F}_B\) ao ponto escrito em \(p_B\)!
+                    </b> </p>
+   
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="presentation/images/exercicios1/titulo_rep_espacial.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section data-menu-title="Exercício 12">
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Representação Espacial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 13 -
+                Resposta</b>
+
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
+                    <p> Este problema é um caso particular do problema de transformação de referenciais explicado <a href="presentation/aula2.html#/60"><b
+                        class="hlink">aqui</b></a>.</p>
+                    <p> A lógica e a seguinte: considere um terceiro referencial  \(\mathcal{F}_C\) cujo centro seja esse ponto \(P\) (a orientação dele é irrelevante aqui).
+                        Seja \(T_B^C\) a matriz de transformação entre \(\mathcal{F}_B\) e \(\mathcal{F}_C\). Entao sabemos, devido as duas 
+                    interpretacões de MTHs, que \(T_B^C\) é o referencial \(\mathcal{F}_C\) escrito em \(\mathcal{F}_B\). Devido a isso, sabemos 
+                que a parte de translação de \(T_B^C\) é precisamente \(p_B\).</p>
+                <p> Por exatamente a mesma logica, seja \(T_A^C\) a transformacao entre \(\mathcal{F}_A\) e \(\mathcal{F}_C\). A parte de translação 
+                    dessa matriz é precisamente \(p_A\).
+                </p>
+                <p> Mas, sabemos que \(T_A^C = T_A^B T_B^C\). Se lermos so a parte de translacão dessa equação, chegamos no resultado desejado.
+                </p>
+                <p><a href="presentation/exercicios2.html#/14"><b
+                    class="hlink">Voltar</b></a></p>
+                </div>
+
+                <div style="width: 40%; float:right; text-align:left; vertical-align: middle; display:table">
+                    <div style="display:table-cell;vertical-align: middle">
+                        <img src="presentation/images/exercicios1/titulo_rep_espacial.svg"
+                             style="width:400px;height:auto;">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section data-menu-title="Exercício 13">
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Representação Espacial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 13 -
+                Resposta</b>
+
+            </h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 60%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
                     <p>Calculando a MTH resultante, podemos extrair a rotação e a translação:</p>
                     $$s(t) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} \cos(2t) \\ \sin(2t) \\ 0 \end{array}\LARGE{\Bigg)}\normalsize{} \ , \ Q(t) = \LARGE{\Bigg(}\normalsize{}\begin{array}{ccc} \cos(2t) & 0 & \sin(2t) \\ \sin(2t) & 0 & -\cos(2t) \\ 0 &
                     1 & 0  \end{array}\LARGE{\Bigg)}\normalsize{}$$
@@ -396,7 +454,7 @@
                     $$p^P_0(t) = Q(t)p^P_{obj}+s(t) = \LARGE{\Bigg(}\normalsize{}\begin{array}{c} \cos(2t) \\ \sin(2t) \\ 1 \end{array}\LARGE{\Bigg)}\normalsize{}.$$
 
 
-                    <p><a href="presentation/exercicios2.html#/14"><b
+                    <p><a href="presentation/exercicios2.html#/15"><b
                             class="hlink">Voltar</b></a></p>
 
                 </div>
@@ -407,6 +465,61 @@
                              style="width:400px;height:auto;">
                     </div>
                 </div>
+            </div>
+
+        </section>
+
+        <section data-menu-title="Exercício 14">
+            <h3 style="font-size:40px;vertical-align:top;text-align:left">Representação Espacial</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Exercício 14 -
+                Resposta</b>
+
+            </h3>
+            <div style="width:1170px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
+                    <p>Sabemos que \(T_0^e = T_0^d T_d^e\). Então \(T_0^d = T_0^e (T_d^e)^{-1}\). 
+                        Usando 
+                        a fórmula da inversa <a href="presentation/exercicios2.html#/5"><b
+                            class="hlink">desta questão</b></a>, obtemos:
+                    </p>
+                    $$T_0^d = \underbrace{\normalsize{\Bigg(}\tiny{}\begin{array}{cccc} 
+                    \frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 & \sqrt{3} \\
+                    \frac{1}{2}        & \frac{\sqrt{3}}{2} & 0 & 1 \\ 
+                    0 & 0 & 1 & 0 \\ 
+                    0 & 0 & 0 & 1 
+                    \end{array}\normalsize{\Bigg)}}_{T_0^e}
+                    \underbrace{\normalsize{\Bigg(}\tiny{}\begin{array}{cccc} 
+                    0 & 0 & -1 & 0 \\
+                    0 & 1 &  0 & 0 \\ 
+                    1 & 0 &  0 & -1 \\ 
+                    0 & 0 & 0 & 1 
+                    \end{array}\normalsize{\Bigg)}\tiny{}}_{(T_d^e)^{-1}} = 
+
+                    \normalsize{\Bigg(}\tiny{}\begin{array}{cccc} 
+                    0 & -\frac{1}{2} & -\frac{\sqrt{3}}{2} & \sqrt{3} \\
+                    0 & \frac{\sqrt{3}}{2} &  -\frac{1}{2} & 1 \\ 
+                    1 & 0 &  0 & -1 \\ 
+                    0 & 0 & 0 & 1 
+                    \end{array}\normalsize{\Bigg)}\tiny{}.
+
+                    $$
+                    <p>Mas queremos \(T_d^0\), não \(T_0^d\). Mas \(T_d^0=(T_0^d)^{-1}\). Então:
+                    </p>
+                    $$T_d^0 = 
+                    \normalsize{\Bigg(}\tiny{}\begin{array}{cccc} 
+                    0 & 0 & 1 & 1 \\
+                    -\frac{1}{2} & \frac{\sqrt{3}}{2} & 0 & 0 \\
+                    -\frac{\sqrt{3}}{2} & -\frac{1}{2} & 0 & 2 \\ 
+                    0 & 0 & 0 & 1 
+                    \end{array}\normalsize{\Bigg)}\tiny{}.
+                    $$
+
+                    <p><a href="presentation/exercicios2.html#/16"><b
+                            class="hlink">Voltar</b></a></p>
+
+                </div>
+
+ 
             </div>
 
         </section>

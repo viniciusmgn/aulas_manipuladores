@@ -15,7 +15,7 @@
             document.write('<base href="/">');  // Local development base
         }
     </script>
-    
+
     <title>Aula 2 - Manipuladores Robóticos</title>
 
     <link rel="stylesheet" href="presentation/dist/reset.css">
@@ -1912,7 +1912,7 @@ D = ub.Utils.trn(s)
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Composição de MTHs</h3>
 
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
+                <div style="width: 55%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
                     <p>Assim, ao fazer uma composição de transformações, podemos multiplicar a matriz à esquerda ou a direita:</p>
                     <ul>
                         <li><b class="itext">À esquerda</b>: fazemos a transformação usando o referencial <b class="itext">inicial</b>, \(\mathcal{F}_0\)!</li>
@@ -1921,7 +1921,7 @@ D = ub.Utils.trn(s)
                     <p>As duas aplicações são úteis. Em robótica, entretanto, é mais comum fazermos aplicações à direita (no referencial atual).</p>
                 </div>
                 <div style="width: 5%; float:left; font-size:25px; text-align:left"></div>
-                <div style="width: 35%; float:left; font-size:25px; text-align:left">
+                <div style="width: 40%; float:left; font-size:25px; text-align:left">
                     <br><br>
                     <iframe scrolling="no"
                             src="presentation/images/aula2/titulo.svg"
@@ -1933,10 +1933,52 @@ D = ub.Utils.trn(s)
         </section>
 
         <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Composição de MTHs</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Cadeia de transformações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
+                
+                    <p>A ideia de multiplicações à direita (escritas no referencial atual) é frequentemente usada para fazer 
+                uma <b class="itext">cadeia de transformações</b>!</p>
+                <p>Considere três referenciais \(\mathcal{F}_A\), \(\mathcal{F}_B\) e \(\mathcal{F}_C\). Considere que temos 
+                    a transformacão rígida \(T_A^B\) entre \(\mathcal{F}_A\) e \(\mathcal{F}_B\), e a transformacão rigida 
+                    \(T_B^C\) entre \(\mathcal{F}_B\) e \(\mathcal{F}_C\). Como obter a transformacão entre \(\mathcal{F}_A\) e \(\mathcal{F}_C\)?
+                </p>
+  
+
+                <div style="vertical-align: middle; text-align: center; align-items: center">
+                    <img src="presentation/images/aula2/sequencia.svg"
+                         style="width:837px;height:auto;text-align: center">
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Composição de MTHs</h3>
+            <h3 style="font-size:25px;vertical-align:top;text-align:left;height:50px"><b class="ttext">Cadeia de transformações</b></h3>
+            <div style="width:1200px;height:800px">
+                <div style="width: 100%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
+
+                    <p>Primeiro transformamos do referêncial \(\mathcal{F}_A\) para \(\mathcal{F}_B\), que é a matriz \(T_A^B\). Depois, como a 
+                    transformação \(T_B^C\) está escrita em \(\mathcal{F}_B\), <b class="itext">multiplicamos à direita</b> 
+                para obter \(T_A^C = T_A^B T_B^C\).</p>
+                <p>A mesma lógica seria válida se tivéssemos, por exemplo, um quarto referencial \(\mathcal{F}_D\) e a transformação 
+                    \(T_C^D\). Teríamos \(T_A^D = T_A^B T_B^C T_C^D\)...
+                </p>
+                <p>Vamos, de agora em diante, usar a notação \(T_A^B\) para representar a transformação <b class="itext">de</b> \(\mathcal{F}_A\) 
+                    <b class="itext">para</b>  \(\mathcal{F}_B\). Pela outra interpretação de MTHs, essa matriz também dá o referencial  \(\mathcal{F}_B\) 
+                    <b class="itext">escrito em</b> em \(\mathcal{F}_A\).
+                </p>
+            </div>
+            </div>
+        </section>
+
+        <section>
             <h3 style="font-size:40px;vertical-align:top;text-align:left;height:50px">Conclusão</h3>
 
             <div style="width:1200px;height:800px">
-                <div style="width: 60%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
+                <div style="width: 55%; float:left; font-size:25px; text-align:justify; text-justify: inter-word">
                     <p>Podemos descrever o movimento de um corpo rígido se (1) escolhermos um referencial base \(\mathcal{F}_0\) e
                         (2) grudarmos um referencial \(\mathcal{F}_{obj}\) nele.</p>
                     <p>A partir disso, basta fornecer a todo instante de tempo \(t\) a MTH que representa a transformação rígida entre o
@@ -1946,7 +1988,7 @@ D = ub.Utils.trn(s)
                     do objeto.</p>
                 </div>
                 <div style="width: 5%; float:left; font-size:25px; text-align:left"></div>
-                <div style="width: 35%; float:left; font-size:25px; text-align:left">
+                <div style="width: 40%; float:left; font-size:25px; text-align:left">
                     <br><br>
                     <iframe scrolling="no"
                             src="presentation/images/aula2/titulo.svg"
