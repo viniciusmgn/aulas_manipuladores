@@ -119,82 +119,82 @@
       <g class="Group">
        <g class="com.sun.star.drawing.LineShape">
         <g id="id9">
-         <rect class="BoundingBox" stroke="none" fill="none" x="8005" y="1709" width="1984" height="3363"/>
-         <path fill="none" stroke="rgb(0,0,255)" stroke-width="53" stroke-linejoin="round" d="M 9961,5044 L 8280,2178"/>
+         <rect class="BoundingBox" stroke="none" fill="none" x="8005" y="1710" width="1984" height="3362"/>
+         <path fill="none" stroke="rgb(0,0,255)" stroke-width="53" stroke-linejoin="round" d="M 9961,5044 L 8280,2179"/>
          <path fill="rgb(0,0,255)" stroke="none" d="M 8005,1710 L 8129,2296 8456,2104 8005,1710 Z"/>
         </g>
        </g>
        <g class="com.sun.star.drawing.LineShape">
         <g id="id10">
          <rect class="BoundingBox" stroke="none" fill="none" x="9942" y="4795" width="3965" height="381"/>
-         <path fill="none" stroke="rgb(255,0,0)" stroke-width="53" stroke-linejoin="round" d="M 9969,5056 L 13362,4984"/>
-         <path fill="rgb(255,0,0)" stroke="none" d="M 13905,4973 L 13333,4795 13341,5174 13905,4973 Z"/>
+         <path fill="none" stroke="rgb(255,0,0)" stroke-width="53" stroke-linejoin="round" d="M 9969,5057 L 13363,4985"/>
+         <path fill="rgb(255,0,0)" stroke="none" d="M 13906,4973 L 13334,4796 13342,5175 13906,4973 Z"/>
         </g>
        </g>
        <g class="com.sun.star.drawing.LineShape">
         <g id="id11">
-         <rect class="BoundingBox" stroke="none" fill="none" x="9924" y="1608" width="2009" height="3472"/>
+         <rect class="BoundingBox" stroke="none" fill="none" x="9924" y="1609" width="2009" height="3471"/>
          <path fill="none" stroke="rgb(52,235,94)" stroke-width="53" stroke-linejoin="round" d="M 9951,5052 L 11661,2080"/>
          <path fill="rgb(52,235,94)" stroke="none" d="M 11932,1609 L 11484,2007 11813,2196 11932,1609 Z"/>
         </g>
        </g>
        <g class="com.sun.star.drawing.TextShape">
         <g id="id12">
-         <rect class="BoundingBox" stroke="none" fill="none" x="7324" y="574" width="1329" height="1327"/>
-         <text class="TextShape" transform="rotate(-30.4 7845 1460)"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="7845" y="1460"><tspan font-size="529px" fill="rgb(0,0,255)" stroke="none">z</tspan></tspan><tspan class="TextPosition" y="1475"><tspan fill="rgb(0,0,255)" stroke="none">B</tspan></tspan></tspan></text>
+         <rect class="BoundingBox" stroke="none" fill="none" x="7501" y="754" width="973" height="967"/>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="7751" y="1357"><tspan font-size="529px" fill="rgb(0,0,255)" stroke="none">z</tspan></tspan><tspan class="TextPosition" y="1532"><tspan fill="rgb(0,0,255)" stroke="none">B</tspan></tspan></tspan></text>
         </g>
        </g>
        <g class="com.sun.star.drawing.TextShape">
         <g id="id13">
-         <rect class="BoundingBox" stroke="none" fill="none" x="13620" y="4069" width="1329" height="1327"/>
-         <text class="TextShape" transform="rotate(-30.4 14141 4955)"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="14141" y="4955"><tspan font-size="529px" fill="rgb(255,0,0)" stroke="none">x</tspan></tspan><tspan class="TextPosition" y="4970"><tspan fill="rgb(255,0,0)" stroke="none">B</tspan></tspan></tspan></text>
+         <rect class="BoundingBox" stroke="none" fill="none" x="13797" y="4249" width="973" height="967"/>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="14047" y="4852"><tspan font-size="529px" fill="rgb(255,0,0)" stroke="none">x</tspan></tspan><tspan class="TextPosition" y="5027"><tspan fill="rgb(255,0,0)" stroke="none">B</tspan></tspan></tspan></text>
         </g>
        </g>
        <g class="com.sun.star.drawing.TextShape">
         <g id="id14">
-         <rect class="BoundingBox" stroke="none" fill="none" x="11544" y="456" width="1329" height="1327"/>
-         <text class="TextShape" transform="rotate(-30.4 12065 1342)"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="12065" y="1342"><tspan font-size="529px" fill="rgb(52,235,94)" stroke="none">y</tspan></tspan><tspan class="TextPosition" y="1357"><tspan fill="rgb(52,235,94)" stroke="none">B</tspan></tspan></tspan></text>
+         <rect class="BoundingBox" stroke="none" fill="none" x="11721" y="636" width="973" height="967"/>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="11971" y="1239"><tspan font-size="529px" fill="rgb(52,235,94)" stroke="none">y</tspan></tspan><tspan class="TextPosition" y="1414"><tspan fill="rgb(52,235,94)" stroke="none">B</tspan></tspan></tspan></text>
         </g>
        </g>
       </g>
       <g class="Group">
        <g class="com.sun.star.drawing.LineShape">
         <g id="id15">
-         <rect class="BoundingBox" stroke="none" fill="none" x="16839" y="1074" width="3011" height="2489"/>
-         <path fill="none" stroke="rgb(0,0,255)" stroke-width="53" stroke-linejoin="round" d="M 16866,3535 L 19430,1421"/>
-         <path fill="rgb(0,0,255)" stroke="none" d="M 19849,1075 L 19290,1290 19531,1583 19849,1075 Z"/>
+         <rect class="BoundingBox" stroke="none" fill="none" x="16839" y="1075" width="3010" height="2488"/>
+         <path fill="none" stroke="rgb(0,0,255)" stroke-width="53" stroke-linejoin="round" d="M 16866,3535 L 19429,1421"/>
+         <path fill="rgb(0,0,255)" stroke="none" d="M 19848,1075 L 19289,1291 19530,1583 19848,1075 Z"/>
         </g>
        </g>
        <g class="com.sun.star.drawing.LineShape">
         <g id="id16">
-         <rect class="BoundingBox" stroke="none" fill="none" x="16829" y="3517" width="819" height="3902"/>
-         <path fill="none" stroke="rgb(255,0,0)" stroke-width="53" stroke-linejoin="round" d="M 16856,3544 L 17465,6883"/>
-         <path fill="rgb(255,0,0)" stroke="none" d="M 17562,7418 L 17647,6825 17274,6893 17562,7418 Z"/>
+         <rect class="BoundingBox" stroke="none" fill="none" x="16829" y="3517" width="820" height="3902"/>
+         <path fill="none" stroke="rgb(255,0,0)" stroke-width="53" stroke-linejoin="round" d="M 16856,3544 L 17465,6884"/>
+         <path fill="rgb(255,0,0)" stroke="none" d="M 17563,7418 L 17647,6825 17275,6893 17563,7418 Z"/>
         </g>
        </g>
        <g class="com.sun.star.drawing.LineShape">
         <g id="id17">
-         <rect class="BoundingBox" stroke="none" fill="none" x="16830" y="3499" width="3742" height="1439"/>
-         <path fill="none" stroke="rgb(52,235,94)" stroke-width="53" stroke-linejoin="round" d="M 16857,3526 L 20063,4743"/>
-         <path fill="rgb(52,235,94)" stroke="none" d="M 20571,4936 L 20107,4557 19972,4911 20571,4936 Z"/>
+         <rect class="BoundingBox" stroke="none" fill="none" x="16830" y="3499" width="3741" height="1438"/>
+         <path fill="none" stroke="rgb(52,235,94)" stroke-width="53" stroke-linejoin="round" d="M 16857,3526 L 20062,4743"/>
+         <path fill="rgb(52,235,94)" stroke="none" d="M 20570,4936 L 20106,4557 19971,4911 20570,4936 Z"/>
         </g>
        </g>
        <g class="com.sun.star.drawing.TextShape">
         <g id="id18">
-         <rect class="BoundingBox" stroke="none" fill="none" x="19630" y="300" width="1377" height="1379"/>
-         <text class="TextShape" transform="rotate(50.4 20070 877)"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="20070" y="877"><tspan font-size="529px" fill="rgb(0,0,255)" stroke="none">z</tspan></tspan><tspan class="TextPosition" x="20105" y="1194"><tspan fill="rgb(0,0,255)" stroke="none">C</tspan></tspan></tspan></text>
+         <rect class="BoundingBox" stroke="none" fill="none" x="19823" y="506" width="990" height="967"/>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="20073" y="1109"><tspan font-size="529px" fill="rgb(0,0,255)" stroke="none">z</tspan></tspan><tspan class="TextPosition" y="1284"><tspan fill="rgb(0,0,255)" stroke="none">C</tspan></tspan></tspan></text>
         </g>
        </g>
        <g class="com.sun.star.drawing.TextShape">
         <g id="id19">
-         <rect class="BoundingBox" stroke="none" fill="none" x="17178" y="7070" width="1377" height="1379"/>
-         <text class="TextShape" transform="rotate(50.4 17618 7647)"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="17618" y="7647"><tspan font-size="529px" fill="rgb(255,0,0)" stroke="none">x</tspan></tspan><tspan class="TextPosition" x="17653" y="7964"><tspan fill="rgb(255,0,0)" stroke="none">C</tspan></tspan></tspan></text>
+         <rect class="BoundingBox" stroke="none" fill="none" x="17371" y="7276" width="990" height="967"/>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="17621" y="7879"><tspan font-size="529px" fill="rgb(255,0,0)" stroke="none">x</tspan></tspan><tspan class="TextPosition" y="8054"><tspan fill="rgb(255,0,0)" stroke="none">C</tspan></tspan></tspan></text>
         </g>
        </g>
        <g class="com.sun.star.drawing.TextShape">
         <g id="id20">
-         <rect class="BoundingBox" stroke="none" fill="none" x="20416" y="4449" width="1377" height="1379"/>
-         <text class="TextShape" transform="rotate(50.4 20856 5026)"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="20856" y="5026"><tspan font-size="529px" fill="rgb(52,235,94)" stroke="none">y</tspan></tspan><tspan class="TextPosition" x="20891" y="5343"><tspan fill="rgb(52,235,94)" stroke="none">C</tspan></tspan></tspan></text>
+         <rect class="BoundingBox" stroke="none" fill="none" x="20609" y="4655" width="990" height="967"/>
+         <text class="TextShape"><tspan class="TextParagraph" font-family="Liberation Sans, sans-serif" font-size="307px" font-weight="400"><tspan class="TextPosition" x="20859" y="5258"><tspan font-size="529px" fill="rgb(52,235,94)" stroke="none">y</tspan></tspan><tspan class="TextPosition" y="5433"><tspan fill="rgb(52,235,94)" stroke="none">C</tspan></tspan></tspan></text>
         </g>
        </g>
       </g>
