@@ -93,7 +93,7 @@
                     <ul>
                         <li>O <b class="itext">torque no motor das juntas, \(\tau\)</b>,</li>
                         <li>A <b class="itext">velocidade de configuração desejada \(\dot{q}_d\)</b>,</li>
-                        <li>A <b class="itext">configuração deejada \(q_d\)</b>,</li>
+                        <li>A <b class="itext">configuração desejada \(q_d\)</b>,</li>
                         <li>A <b class="itext">pose do efetuador desejada \(\hat{H}_d\)</b>.</li>
                     </ul>
 
@@ -1087,7 +1087,7 @@
                     $$\frac{d}{dt} r(q,t) = \frac{\partial r}{\partial q}(q,t)\dot{q}+\frac{\partial r}{\partial t}(q,t).$$
                     <p>Essa equação permite calcular a <b class="itext">Jacobiana de tarefa</b> \(J_r(q,t)=\frac{\partial r}{\partial q}(q,t)\), como no caso constante.</p>
                     <p>Note que agora a Jacobiana de tarefa depende de \(t\).</p>
-                    <p>O termo que "sobra" (que não está multiplicado por \(\dot{q}\), \(\frac{\partial r}{\partial t}(q,t)\) também vai ser importante, e chamamos de <b class="itext">Feedforward de tarefa</b>.</p>
+                    <p>O termo que "sobra" (que não está multiplicado por \(\dot{q}\), \(\frac{\partial r}{\partial t}(q,t)\)) também vai ser importante, e chamamos de <b class="itext">Feedforward de tarefa</b>.</p>
                     <p>Só existe (não nulo) para tarefas variantes no tempo.</p>
                 </div>
 
